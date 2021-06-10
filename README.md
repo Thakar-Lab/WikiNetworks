@@ -10,3 +10,25 @@ WikiNetworks is written entirely in Python and is available on github.com/Thakar
 ## Contact: 
 Juilee_Thakar@URMC.Rochester.edu
 Mukta_Palshikar@URMC.Rochester.edu
+## Dependencies (Python packages):
+ - networkx
+ - re
+ - urllib
+ - csv
+ - itertools
+ - sys
+ - bs4
+ - random
+ - requests
+ - binascii
+ - bioservices
+ - numpy
+ - shapely
+ - scipy
+ - pandas
+ - fiona
+ - geopandas
+ - matplotlib
+ - seaborn
+ - glob
+ - string
