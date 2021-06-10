@@ -8,8 +8,7 @@ WikiPathways is a database of ~2300 manually created biologically pathways acros
 ## Availability and Implementation: 
 WikiNetworks is written entirely in Python and is available on github.com/Thakar-Lab and on pip. Tested for use with Python 3.7 in Windows and Linux environments. 
 ## Contact: 
-Juilee_Thakar@URMC.Rochester.edu
-Mukta_Palshikar@URMC.Rochester.edu
+Juilee_Thakar@URMC.Rochester.edu; Mukta_Palshikar@URMC.Rochester.edu
 ## Dependencies (Python packages):
  - networkx
  - re
