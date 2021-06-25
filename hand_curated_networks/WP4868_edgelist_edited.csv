@@ -1,0 +1,117 @@
+Source,Target,signal
+ACE2,Endosome,a
+azithromycin,STAT1,i
+azithromycin,STAT2,i
+azithromycin,IRF9,i
+azithromycin,"Pro-inflammatory 
+cytokines production",i
+GRL0617,PLpro (nsp3),i
+IFNAR1,JAK1,a
+IFNAR1,TYK2,a
+IFNAR1,IFNAR2,a
+IFNAR2,JAK1,a
+IFNAR2,TYK2,a
+IFNAR2,IFNAR1,a
+IKBKE,IRF3,a
+IKBKE,TBK1,a
+INF-I alpha/ beta,IFNAR1,a
+INF-I alpha/ beta,IFNAR2,a
+INF-I alpha/ beta,INF-I alpha/ beta,a
+IRAK4,TRAF6,a
+IRAK4,TRAF3,a
+IRF3,INF-I alpha/ beta,a
+IRF3,IRF3,a
+IRF3,IRF7,a
+IRF7,INF-I alpha/ beta,a
+IRF7,IRF3,a
+IRF9,ISGs,a
+ISGs,OAS1,a
+ISGs,PKR,a
+ISGs,OAS2,a
+ISGs,OAS3,a
+JAK1,STAT1,a
+JAK1,TYK2,a
+MAVS,TRAF3,a
+MDA5,MAVS,a
+MYD88,TRAF6,a
+MYD88,IRAK4,a
+NFkB,"Pro-inflammatory 
+cytokines production",a
+nsp1,STAT1,i
+nsp1,INF-I alpha/ beta,i
+nsp10,MDA5,i
+nsp10,RIG-I (DDX58),i
+nsp13,TBK1,i
+nsp14,MDA5,i
+nsp14,RIG-I (DDX58),i
+nsp15,MDA5,i
+nsp15,RIG-I (DDX58),i
+nsp16,RIG-I (DDX58),i
+nsp16,MDA5,i
+OAS1,Innate Immunity,a
+OAS1,PKR,a
+OAS1,OAS3,a
+OAS1,OAS1,a
+OAS2,Innate Immunity,a
+OAS2,OAS2,a
+OAS2,OAS1,a
+OAS2,PKR,a
+OAS2,OAS3,a
+OAS3,Innate Immunity,a
+OAS3,OAS3,a
+OAS3,OAS1,a
+OAS3,PKR,a
+ORF3a,IFNAR1,i
+ORF6,ORF6,i
+PKR,Innate Immunity,a
+PKR,OAS2,a
+PLpro (nsp3),IKBKE,i
+PLpro (nsp3),TRAF3,i
+PLpro (nsp3),TRAF6,i
+PLpro (nsp3),IRF3,i
+RIG-I (DDX58),MAVS,a
+SARS-CoV 2,nsp16,a
+SARS-CoV 2,TLR3,a
+SARS-CoV 2,TLR9,a
+SARS-CoV 2,SARS-CoV 2 RNA,a
+SARS-CoV 2,TLR7,a
+SARS-CoV 2 RNA,MDA5,a
+SARS-CoV 2 RNA,TLR9,a
+SARS-CoV 2 RNA,TLR7,a
+SARS-CoV 2 RNA,RIG-I (DDX58),a
+SARS-CoV 2 RNA,TLR3,a
+STAT1,ISGs,a
+STAT1,STAT1,a
+STAT1,STAT2,a
+STAT1,IRF9,a
+STAT2,ISGs,a
+STAT2,ISGs,a
+STAT2,STAT1,a
+STAT2,STAT2,a
+STAT2,IRF9,a
+TBK1,IRF3,a
+TBK1,IKBKE,a
+TLR2,MYD88,a
+TLR2,TLR6,a
+TLR3,TRIF,a
+TLR4,MYD88,a
+TLR4,TRIF,a
+TLR4,TLR6,a
+TLR6,MYD88,a
+TLR6,TLR2,a
+TLR6,TLR4,a
+TLR7,MYD88,a
+TLR9,MYD88,a
+TMPRSS2,SARS-CoV,a
+TRAF3,IKBKE,a
+TRAF3,TBK1,a
+TRAF6,NFkB,a
+TREML4,STAT1,a
+TREML4,TLR7,a
+TRIF,TRAF3,a
+TYK2,STAT1,a
+TYK2,JAK1,a
+SARS-CoV 2,ACE2,a
+SARS-CoV 2,TLR2,a
+SARS-CoV 2,TLR6,a
+SARS-CoV 2,TLR4,a
