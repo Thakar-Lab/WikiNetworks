@@ -1,0 +1,1779 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns">
+    <key attr.name="SUID" attr.type="long" for="node" id="SUID"/>
+    <key attr.name="shared name" attr.type="string" for="node" id="shared name"/>
+    <key attr.name="name" attr.type="string" for="node" id="name"/>
+    <key attr.name="selected" attr.type="boolean" for="node" id="selected"/>
+    <key attr.name="GraphID" attr.type="string" for="node" id="GraphID"/>
+    <key attr.name="Type" attr.type="string" for="node" id="Type"/>
+    <key attr.name="XrefId" attr.type="string" for="node" id="XrefId"/>
+    <key attr.name="XrefDatasource" attr.type="string" for="node" id="XrefDatasource"/>
+    <key attr.name="Color" attr.type="string" for="node" id="Color"/>
+    <key attr.name="Border Width" attr.type="double" for="node" id="Border Width"/>
+    <key attr.name="Node Size" attr.type="double" for="node" id="Node Size"/>
+    <key attr.name="Label Font Size" attr.type="double" for="node" id="Label Font Size"/>
+    <key attr.name="Ensembl" attr.type="string" for="node" id="Ensembl"/>
+    <key attr.name="SUID" attr.type="long" for="edge" id="SUID"/>
+    <key attr.name="shared name" attr.type="string" for="edge" id="shared name"/>
+    <key attr.name="shared interaction" attr.type="string" for="edge" id="shared interaction"/>
+    <key attr.name="name" attr.type="string" for="edge" id="name"/>
+    <key attr.name="selected" attr.type="boolean" for="edge" id="selected"/>
+    <key attr.name="interaction" attr.type="string" for="edge" id="interaction"/>
+    <key attr.name="WP.type" attr.type="string" for="edge" id="WP.type"/>
+    <key attr.name="Width" attr.type="double" for="edge" id="Width"/>
+    <key attr.name="LineStyle" attr.type="string" for="edge" id="LineStyle"/>
+    <key attr.name="Source Arrow Shape" attr.type="string" for="edge" id="Source Arrow Shape"/>
+    <key attr.name="Target Arrow Shape" attr.type="string" for="edge" id="Target Arrow Shape"/>
+    <key attr.name="Color" attr.type="string" for="edge" id="Color"/>
+    <key attr.name="SUID" attr.type="long" for="graph" id="SUID"/>
+    <key attr.name="shared name" attr.type="string" for="graph" id="shared name"/>
+    <key attr.name="name" attr.type="string" for="graph" id="name"/>
+    <key attr.name="selected" attr.type="boolean" for="graph" id="selected"/>
+    <key attr.name="__Annotations" attr.type="string" for="graph" id="__Annotations"/>
+    <graph edgedefault="directed" id="IL-1 signaling pathway - Homo sapiens">
+        <node id="2529">
+            <data key="SUID">2529</data>
+            <data key="selected">false</data>
+            <data key="GraphID">a276c</data>
+            <data key="Type">Anchor</data>
+        </node>
+        <node id="2528">
+            <data key="SUID">2528</data>
+            <data key="selected">false</data>
+            <data key="GraphID">e6f2c</data>
+            <data key="Type">Anchor</data>
+        </node>
+        <node id="2527">
+            <data key="SUID">2527</data>
+            <data key="selected">false</data>
+            <data key="GraphID">a6625</data>
+            <data key="Type">Anchor</data>
+        </node>
+        <node id="2526">
+            <data key="SUID">2526</data>
+            <data key="selected">false</data>
+            <data key="GraphID">a359b</data>
+            <data key="Type">Anchor</data>
+        </node>
+        <node id="2525">
+            <data key="SUID">2525</data>
+            <data key="shared name">Ligand</data>
+            <data key="name">Ligand</data>
+            <data key="selected">false</data>
+            <data key="GraphID">d54bb</data>
+            <data key="Type">Label</data>
+        </node>
+        <node id="2524">
+            <data key="SUID">2524</data>
+            <data key="shared name">Receptor</data>
+            <data key="name">Receptor</data>
+            <data key="selected">false</data>
+            <data key="GraphID">cae59</data>
+            <data key="Type">Label</data>
+        </node>
+        <node id="2520">
+            <data key="SUID">2520</data>
+            <data key="shared name">group_NFKB1_RELA_REL</data>
+            <data key="name">group_NFKB1_RELA_REL</data>
+            <data key="selected">false</data>
+            <data key="GraphID">e66f3</data>
+            <data key="Type">Group</data>
+        </node>
+        <node id="2515">
+            <data key="SUID">2515</data>
+            <data key="shared name">group_IKBKB_IKBKG_IKBKG_CHUK</data>
+            <data key="name">group_IKBKB_IKBKG_IKBKG_CHUK</data>
+            <data key="selected">false</data>
+            <data key="GraphID">c6d64</data>
+            <data key="Type">Group</data>
+        </node>
+        <node id="2512">
+            <data key="SUID">2512</data>
+            <data key="shared name">group_UBE2N_UBE2V1</data>
+            <data key="name">group_UBE2N_UBE2V1</data>
+            <data key="selected">false</data>
+            <data key="GraphID">c2ceb</data>
+            <data key="Type">Group</data>
+        </node>
+        <node id="2509">
+            <data key="SUID">2509</data>
+            <data key="shared name">group_MAP2K2_MAP2K1</data>
+            <data key="name">group_MAP2K2_MAP2K1</data>
+            <data key="selected">false</data>
+            <data key="GraphID">c2c3a</data>
+            <data key="Type">Group</data>
+        </node>
+        <node id="2506">
+            <data key="SUID">2506</data>
+            <data key="shared name">group_NFKBIA_NFKBIB</data>
+            <data key="name">group_NFKBIA_NFKBIB</data>
+            <data key="selected">false</data>
+            <data key="GraphID">bed7f</data>
+            <data key="Type">Group</data>
+        </node>
+        <node id="2503">
+            <data key="SUID">2503</data>
+            <data key="shared name">group_TOLLIP_TOLLIP</data>
+            <data key="name">group_TOLLIP_TOLLIP</data>
+            <data key="selected">false</data>
+            <data key="GraphID">be30e</data>
+            <data key="Type">Group</data>
+        </node>
+        <node id="2499">
+            <data key="SUID">2499</data>
+            <data key="shared name">group_RELA_REL_NFKB1</data>
+            <data key="name">group_RELA_REL_NFKB1</data>
+            <data key="selected">false</data>
+            <data key="GraphID">b7c39</data>
+            <data key="Type">Group</data>
+        </node>
+        <node id="2496">
+            <data key="SUID">2496</data>
+            <data key="shared name">group_MYD88_MYD88</data>
+            <data key="name">group_MYD88_MYD88</data>
+            <data key="selected">false</data>
+            <data key="GraphID">b2cae</data>
+            <data key="Type">Group</data>
+        </node>
+        <node id="2493">
+            <data key="SUID">2493</data>
+            <data key="shared name">group_PIK3R1_PIK3R2</data>
+            <data key="name">group_PIK3R1_PIK3R2</data>
+            <data key="selected">false</data>
+            <data key="GraphID">b043f</data>
+            <data key="Type">Group</data>
+        </node>
+        <node id="2486">
+            <data key="SUID">2486</data>
+            <data key="shared name">group_IL1RAP_IL1RAP_IL1R1_IL1B_IL1R1_IL1A</data>
+            <data key="name">group_IL1RAP_IL1RAP_IL1R1_IL1B_IL1R1_IL1A</data>
+            <data key="selected">false</data>
+            <data key="GraphID">acd41</data>
+            <data key="Type">Group</data>
+        </node>
+        <node id="2483">
+            <data key="SUID">2483</data>
+            <data key="shared name">group_MAPK9_MAPK8</data>
+            <data key="name">group_MAPK9_MAPK8</data>
+            <data key="selected">false</data>
+            <data key="GraphID">a34c3</data>
+            <data key="Type">Group</data>
+        </node>
+        <node id="2478">
+            <data key="SUID">2478</data>
+            <data key="shared name">group_MAP3K7_TAB3_TAB1_TAB2</data>
+            <data key="name">group_MAP3K7_TAB3_TAB1_TAB2</data>
+            <data key="selected">false</data>
+            <data key="GraphID">a239a</data>
+            <data key="Type">Group</data>
+        </node>
+        <node id="2477">
+            <data key="SUID">2477</data>
+            <data key="shared name">ATF2</data>
+            <data key="name">ATF2</data>
+            <data key="selected">false</data>
+            <data key="GraphID">f06cc</data>
+            <data key="Type">Protein</data>
+            <data key="XrefId">1386</data>
+            <data key="XrefDatasource">Entrez Gene</data>
+            <data key="Color">#000000</data>
+            <data key="Border Width">1.0</data>
+            <data key="Node Size">62.0</data>
+            <data key="Ensembl">ENSG00000115966</data>
+        </node>
+        <node id="2476">
+            <data key="SUID">2476</data>
+            <data key="shared name">JUN</data>
+            <data key="name">JUN</data>
+            <data key="selected">false</data>
+            <data key="GraphID">d07b4</data>
+            <data key="Type">Protein</data>
+            <data key="XrefId">3725</data>
+            <data key="XrefDatasource">Entrez Gene</data>
+            <data key="Color">#000000</data>
+            <data key="Border Width">1.0</data>
+            <data key="Node Size">40.0</data>
+            <data key="Ensembl">ENSG00000177606</data>
+        </node>
+        <node id="2475">
+            <data key="SUID">2475</data>
+            <data key="shared name">MAP3K7</data>
+            <data key="name">MAP3K7</data>
+            <data key="selected">false</data>
+            <data key="GraphID">c5660</data>
+            <data key="Type">Protein</data>
+            <data key="XrefId">6885</data>
+            <data key="XrefDatasource">Entrez Gene</data>
+            <data key="Color">#000000</data>
+            <data key="Border Width">1.0</data>
+            <data key="Node Size">71.0</data>
+            <data key="Ensembl">ENSG00000135341</data>
+        </node>
+        <node id="2474">
+            <data key="SUID">2474</data>
+            <data key="shared name">IRAK2</data>
+            <data key="name">IRAK2</data>
+            <data key="selected">false</data>
+            <data key="GraphID">fe64e</data>
+            <data key="Type">Protein</data>
+            <data key="XrefId">3656</data>
+            <data key="XrefDatasource">Entrez Gene</data>
+            <data key="Color">#000000</data>
+            <data key="Border Width">1.0</data>
+            <data key="Node Size">59.0</data>
+            <data key="Ensembl">ENSG00000134070</data>
+        </node>
+        <node id="2473">
+            <data key="SUID">2473</data>
+            <data key="shared name">IRAK3</data>
+            <data key="name">IRAK3</data>
+            <data key="selected">false</data>
+            <data key="GraphID">b6f6f</data>
+            <data key="Type">Protein</data>
+            <data key="XrefId">11213</data>
+            <data key="XrefDatasource">Entrez Gene</data>
+            <data key="Color">#000000</data>
+            <data key="Border Width">1.0</data>
+            <data key="Node Size">55.0</data>
+            <data key="Ensembl">ENSG00000090376</data>
+        </node>
+        <node id="2472">
+            <data key="SUID">2472</data>
+            <data key="shared name">IRAK1</data>
+            <data key="name">IRAK1</data>
+            <data key="selected">false</data>
+            <data key="GraphID">c1c4f</data>
+            <data key="Type">Protein</data>
+            <data key="XrefId">3654</data>
+            <data key="XrefDatasource">Entrez Gene</data>
+            <data key="Color">#000000</data>
+            <data key="Border Width">1.0</data>
+            <data key="Node Size">78.0</data>
+            <data key="Ensembl">ENSG00000184216</data>
+        </node>
+        <node id="2471">
+            <data key="SUID">2471</data>
+            <data key="shared name">IRAK4</data>
+            <data key="name">IRAK4</data>
+            <data key="selected">false</data>
+            <data key="GraphID">bf0bd</data>
+            <data key="Type">Protein</data>
+            <data key="XrefId">51135</data>
+            <data key="XrefDatasource">Entrez Gene</data>
+            <data key="Color">#000000</data>
+            <data key="Border Width">1.0</data>
+            <data key="Node Size">77.0</data>
+            <data key="Ensembl">ENSG00000198001</data>
+        </node>
+        <node id="2470">
+            <data key="SUID">2470</data>
+            <data key="shared name">MAP2K4</data>
+            <data key="name">MAP2K4</data>
+            <data key="selected">false</data>
+            <data key="GraphID">f54dd</data>
+            <data key="Type">Protein</data>
+            <data key="XrefId">6416</data>
+            <data key="XrefDatasource">Entrez Gene</data>
+            <data key="Color">#000000</data>
+            <data key="Border Width">1.0</data>
+            <data key="Node Size">60.0</data>
+            <data key="Ensembl">ENSG00000065559</data>
+        </node>
+        <node id="2469">
+            <data key="SUID">2469</data>
+            <data key="shared name">TAB1</data>
+            <data key="name">TAB1</data>
+            <data key="selected">false</data>
+            <data key="GraphID">efd2d</data>
+            <data key="Type">Protein</data>
+            <data key="XrefId">10454</data>
+            <data key="XrefDatasource">Entrez Gene</data>
+            <data key="Color">#000000</data>
+            <data key="Border Width">1.0</data>
+            <data key="Node Size">39.0</data>
+            <data key="Ensembl">ENSG00000100324</data>
+        </node>
+        <node id="2468">
+            <data key="SUID">2468</data>
+            <data key="shared name">MAP3K3</data>
+            <data key="name">MAP3K3</data>
+            <data key="selected">false</data>
+            <data key="GraphID">ef92b</data>
+            <data key="Type">Protein</data>
+            <data key="XrefId">4215</data>
+            <data key="XrefDatasource">Entrez Gene</data>
+            <data key="Color">#000000</data>
+            <data key="Border Width">1.0</data>
+            <data key="Node Size">59.0</data>
+            <data key="Ensembl">ENSG00000198909</data>
+        </node>
+        <node id="2467">
+            <data key="SUID">2467</data>
+            <data key="shared name">MAP2K7</data>
+            <data key="name">MAP2K7</data>
+            <data key="selected">false</data>
+            <data key="GraphID">eeb2d</data>
+            <data key="Type">Protein</data>
+            <data key="XrefId">5609</data>
+            <data key="XrefDatasource">Entrez Gene</data>
+            <data key="Color">#000000</data>
+            <data key="Border Width">1.0</data>
+            <data key="Node Size">59.0</data>
+            <data key="Ensembl">ENSG00000076984</data>
+        </node>
+        <node id="2466">
+            <data key="SUID">2466</data>
+            <data key="shared name">MAP3K1</data>
+            <data key="name">MAP3K1</data>
+            <data key="selected">false</data>
+            <data key="GraphID">eea63</data>
+            <data key="Type">Protein</data>
+            <data key="XrefId">4214</data>
+            <data key="XrefDatasource">Entrez Gene</data>
+            <data key="Color">#000000</data>
+            <data key="Border Width">1.0</data>
+            <data key="Node Size">62.0</data>
+            <data key="Ensembl">ENSG00000095015</data>
+        </node>
+        <node id="2465">
+            <data key="SUID">2465</data>
+            <data key="shared name">PELI2</data>
+            <data key="name">PELI2</data>
+            <data key="selected">false</data>
+            <data key="GraphID">ed51c</data>
+            <data key="Type">Protein</data>
+            <data key="XrefId">57161</data>
+            <data key="XrefDatasource">Entrez Gene</data>
+            <data key="Color">#000000</data>
+            <data key="Border Width">1.0</data>
+            <data key="Node Size">46.0</data>
+            <data key="Ensembl">ENSG00000139946</data>
+        </node>
+        <node id="2464">
+            <data key="SUID">2464</data>
+            <data key="shared name">MAPK9</data>
+            <data key="name">MAPK9</data>
+            <data key="selected">false</data>
+            <data key="GraphID">eaf32</data>
+            <data key="Type">Protein</data>
+            <data key="XrefId">5601</data>
+            <data key="XrefDatasource">Entrez Gene</data>
+            <data key="Color">#000000</data>
+            <data key="Border Width">1.0</data>
+            <data key="Node Size">60.0</data>
+            <data key="Ensembl">ENSG00000050748</data>
+        </node>
+        <node id="2463">
+            <data key="SUID">2463</data>
+            <data key="shared name">IL1R1</data>
+            <data key="name">IL1R1</data>
+            <data key="selected">false</data>
+            <data key="GraphID">eac9c</data>
+            <data key="Type">Protein</data>
+            <data key="XrefId">3554</data>
+            <data key="XrefDatasource">Entrez Gene</data>
+            <data key="Color">#000000</data>
+            <data key="Border Width">1.0</data>
+            <data key="Node Size">63.0</data>
+            <data key="Ensembl">ENSG00000115594</data>
+        </node>
+        <node id="2462">
+            <data key="SUID">2462</data>
+            <data key="shared name">MAPK8</data>
+            <data key="name">MAPK8</data>
+            <data key="selected">false</data>
+            <data key="GraphID">e73b2</data>
+            <data key="Type">Protein</data>
+            <data key="XrefId">5599</data>
+            <data key="XrefDatasource">Entrez Gene</data>
+            <data key="Color">#000000</data>
+            <data key="Border Width">1.0</data>
+            <data key="Node Size">60.0</data>
+            <data key="Ensembl">ENSG00000107643</data>
+        </node>
+        <node id="2461">
+            <data key="SUID">2461</data>
+            <data key="shared name">IL1B</data>
+            <data key="name">IL1B</data>
+            <data key="selected">false</data>
+            <data key="GraphID">e424b</data>
+            <data key="Type">Protein</data>
+            <data key="XrefId">3553</data>
+            <data key="XrefDatasource">Entrez Gene</data>
+            <data key="Color">#000000</data>
+            <data key="Border Width">1.0</data>
+            <data key="Node Size">52.0</data>
+            <data key="Ensembl">ENSG00000125538</data>
+        </node>
+        <node id="2460">
+            <data key="SUID">2460</data>
+            <data key="shared name">IL1RAP</data>
+            <data key="name">IL1RAP</data>
+            <data key="selected">false</data>
+            <data key="GraphID">e2af7</data>
+            <data key="Type">Protein</data>
+            <data key="XrefId">3556</data>
+            <data key="XrefDatasource">Entrez Gene</data>
+            <data key="Color">#000000</data>
+            <data key="Border Width">1.0</data>
+            <data key="Node Size">67.0</data>
+            <data key="Ensembl">ENSG00000196083</data>
+        </node>
+        <node id="2459">
+            <data key="SUID">2459</data>
+            <data key="shared name">UBE2V1</data>
+            <data key="name">UBE2V1</data>
+            <data key="selected">false</data>
+            <data key="GraphID">ddb0f</data>
+            <data key="Type">Protein</data>
+            <data key="XrefId">7335</data>
+            <data key="XrefDatasource">Entrez Gene</data>
+            <data key="Color">#000000</data>
+            <data key="Border Width">1.0</data>
+            <data key="Node Size">57.0</data>
+            <data key="Ensembl">ENSG00000244687</data>
+        </node>
+        <node id="2458">
+            <data key="SUID">2458</data>
+            <data key="shared name">MAP2K6</data>
+            <data key="name">MAP2K6</data>
+            <data key="selected">false</data>
+            <data key="GraphID">dbc27</data>
+            <data key="Type">Protein</data>
+            <data key="XrefId">5608</data>
+            <data key="XrefDatasource">Entrez Gene</data>
+            <data key="Color">#000000</data>
+            <data key="Border Width">1.0</data>
+            <data key="Node Size">60.0</data>
+            <data key="Ensembl">ENSG00000108984</data>
+        </node>
+        <node id="2457">
+            <data key="SUID">2457</data>
+            <data key="shared name">TAB3</data>
+            <data key="name">TAB3</data>
+            <data key="selected">false</data>
+            <data key="GraphID">db920</data>
+            <data key="Type">Protein</data>
+            <data key="XrefId">257397</data>
+            <data key="XrefDatasource">Entrez Gene</data>
+            <data key="Color">#000000</data>
+            <data key="Border Width">1.0</data>
+            <data key="Node Size">41.0</data>
+            <data key="Ensembl">ENSG00000157625</data>
+        </node>
+        <node id="2456">
+            <data key="SUID">2456</data>
+            <data key="shared name">IL1A</data>
+            <data key="name">IL1A</data>
+            <data key="selected">false</data>
+            <data key="GraphID">d9512</data>
+            <data key="Type">Protein</data>
+            <data key="XrefId">3552</data>
+            <data key="XrefDatasource">Entrez Gene</data>
+            <data key="Color">#000000</data>
+            <data key="Border Width">1.0</data>
+            <data key="Node Size">48.0</data>
+            <data key="Ensembl">ENSG00000115008</data>
+        </node>
+        <node id="2455">
+            <data key="SUID">2455</data>
+            <data key="shared name">PLCG1</data>
+            <data key="name">PLCG1</data>
+            <data key="selected">false</data>
+            <data key="GraphID">d91d6</data>
+            <data key="Type">Protein</data>
+            <data key="XrefId">5335</data>
+            <data key="XrefDatasource">Entrez Gene</data>
+            <data key="Color">#000000</data>
+            <data key="Border Width">1.0</data>
+            <data key="Node Size">54.0</data>
+            <data key="Ensembl">ENSG00000124181</data>
+        </node>
+        <node id="2454">
+            <data key="SUID">2454</data>
+            <data key="shared name">MAP2K1</data>
+            <data key="name">MAP2K1</data>
+            <data key="selected">false</data>
+            <data key="GraphID">d8e8d</data>
+            <data key="Type">Protein</data>
+            <data key="XrefId">5604</data>
+            <data key="XrefDatasource">Entrez Gene</data>
+            <data key="Color">#000000</data>
+            <data key="Border Width">1.0</data>
+            <data key="Node Size">65.0</data>
+            <data key="Ensembl">ENSG00000169032</data>
+        </node>
+        <node id="2453">
+            <data key="SUID">2453</data>
+            <data key="shared name">MAPK1</data>
+            <data key="name">MAPK1</data>
+            <data key="selected">false</data>
+            <data key="GraphID">d7f2f</data>
+            <data key="Type">Protein</data>
+            <data key="XrefId">5594</data>
+            <data key="XrefDatasource">Entrez Gene</data>
+            <data key="Color">#000000</data>
+            <data key="Border Width">1.0</data>
+            <data key="Node Size">65.0</data>
+            <data key="Ensembl">ENSG00000100030</data>
+        </node>
+        <node id="2452">
+            <data key="SUID">2452</data>
+            <data key="shared name">MAPKAPK2</data>
+            <data key="name">MAPKAPK2</data>
+            <data key="selected">false</data>
+            <data key="GraphID">d712e</data>
+            <data key="Type">Protein</data>
+            <data key="XrefId">9261</data>
+            <data key="XrefDatasource">Entrez Gene</data>
+            <data key="Color">#000000</data>
+            <data key="Border Width">1.0</data>
+            <data key="Node Size">86.0</data>
+            <data key="Ensembl">ENSG00000162889</data>
+        </node>
+        <node id="2451">
+            <data key="SUID">2451</data>
+            <data key="shared name">PTPN11</data>
+            <data key="name">PTPN11</data>
+            <data key="selected">false</data>
+            <data key="GraphID">d2e9d</data>
+            <data key="Type">Protein</data>
+            <data key="XrefId">5781</data>
+            <data key="XrefDatasource">Entrez Gene</data>
+            <data key="Color">#000000</data>
+            <data key="Border Width">1.0</data>
+            <data key="Node Size">59.0</data>
+            <data key="Ensembl">ENSG00000179295</data>
+        </node>
+        <node id="2450">
+            <data key="SUID">2450</data>
+            <data key="shared name">IKBKG</data>
+            <data key="name">IKBKG</data>
+            <data key="selected">false</data>
+            <data key="GraphID">cfe0e</data>
+            <data key="Type">Protein</data>
+            <data key="XrefId">8517</data>
+            <data key="XrefDatasource">Entrez Gene</data>
+            <data key="Color">#000000</data>
+            <data key="Border Width">1.0</data>
+            <data key="Node Size">46.0</data>
+            <data key="Ensembl">ENSG00000269335</data>
+        </node>
+        <node id="2449">
+            <data key="SUID">2449</data>
+            <data key="shared name">PELI1</data>
+            <data key="name">PELI1</data>
+            <data key="selected">false</data>
+            <data key="GraphID">cfddc</data>
+            <data key="Type">Protein</data>
+            <data key="XrefId">57162</data>
+            <data key="XrefDatasource">Entrez Gene</data>
+            <data key="Color">#000000</data>
+            <data key="Border Width">1.0</data>
+            <data key="Node Size">47.0</data>
+            <data key="Ensembl">ENSG00000197329</data>
+        </node>
+        <node id="2448">
+            <data key="SUID">2448</data>
+            <data key="shared name">MAP2K3</data>
+            <data key="name">MAP2K3</data>
+            <data key="selected">false</data>
+            <data key="GraphID">ca274</data>
+            <data key="Type">Protein</data>
+            <data key="XrefId">5606</data>
+            <data key="XrefDatasource">Entrez Gene</data>
+            <data key="Color">#000000</data>
+            <data key="Border Width">1.0</data>
+            <data key="Node Size">62.0</data>
+            <data key="Ensembl">ENSG00000034152</data>
+        </node>
+        <node id="2447">
+            <data key="SUID">2447</data>
+            <data key="shared name">PIK3R1</data>
+            <data key="name">PIK3R1</data>
+            <data key="selected">false</data>
+            <data key="GraphID">c6a8b</data>
+            <data key="Type">Protein</data>
+            <data key="XrefId">5295</data>
+            <data key="XrefDatasource">Entrez Gene</data>
+            <data key="Color">#000000</data>
+            <data key="Border Width">1.0</data>
+            <data key="Node Size">54.0</data>
+            <data key="Ensembl">ENSG00000145675</data>
+        </node>
+        <node id="2446">
+            <data key="SUID">2446</data>
+            <data key="shared name">AKT1</data>
+            <data key="name">AKT1</data>
+            <data key="selected">false</data>
+            <data key="GraphID">c2de7</data>
+            <data key="Type">Protein</data>
+            <data key="XrefId">207</data>
+            <data key="XrefDatasource">Entrez Gene</data>
+            <data key="Color">#000000</data>
+            <data key="Border Width">1.0</data>
+            <data key="Node Size">43.0</data>
+            <data key="Ensembl">ENSG00000142208</data>
+        </node>
+        <node id="2445">
+            <data key="SUID">2445</data>
+            <data key="shared name">NFKB1</data>
+            <data key="name">NFKB1</data>
+            <data key="selected">false</data>
+            <data key="GraphID">c19bf</data>
+            <data key="Type">Protein</data>
+            <data key="XrefId">4790</data>
+            <data key="XrefDatasource">Entrez Gene</data>
+            <data key="Color">#000000</data>
+            <data key="Border Width">1.0</data>
+            <data key="Node Size">54.0</data>
+            <data key="Ensembl">ENSG00000109320</data>
+        </node>
+        <node id="2444">
+            <data key="SUID">2444</data>
+            <data key="shared name">NFKBIA</data>
+            <data key="name">NFKBIA</data>
+            <data key="selected">false</data>
+            <data key="GraphID">c1945</data>
+            <data key="Type">Protein</data>
+            <data key="XrefId">4792</data>
+            <data key="XrefDatasource">Entrez Gene</data>
+            <data key="Color">#000000</data>
+            <data key="Border Width">1.0</data>
+            <data key="Node Size">55.0</data>
+            <data key="Ensembl">ENSG00000100906</data>
+        </node>
+        <node id="2443">
+            <data key="SUID">2443</data>
+            <data key="shared name">CCL2</data>
+            <data key="name">CCL2</data>
+            <data key="selected">false</data>
+            <data key="GraphID">bfec9</data>
+            <data key="Type">Rna</data>
+            <data key="XrefId">6347</data>
+            <data key="XrefDatasource">Entrez Gene</data>
+            <data key="Color">#000000</data>
+            <data key="Border Width">1.0</data>
+            <data key="Node Size">47.0</data>
+        </node>
+        <node id="2442">
+            <data key="SUID">2442</data>
+            <data key="shared name">MAPK14</data>
+            <data key="name">MAPK14</data>
+            <data key="selected">false</data>
+            <data key="GraphID">bedd5</data>
+            <data key="Type">Protein</data>
+            <data key="XrefId">1432</data>
+            <data key="XrefDatasource">Entrez Gene</data>
+            <data key="Color">#000000</data>
+            <data key="Border Width">1.0</data>
+            <data key="Node Size">64.0</data>
+            <data key="Ensembl">ENSG00000112062</data>
+        </node>
+        <node id="2441">
+            <data key="SUID">2441</data>
+            <data key="shared name">RELA</data>
+            <data key="name">RELA</data>
+            <data key="selected">false</data>
+            <data key="GraphID">bec0c</data>
+            <data key="Type">Protein</data>
+            <data key="XrefId">5970</data>
+            <data key="XrefDatasource">Entrez Gene</data>
+            <data key="Color">#000000</data>
+            <data key="Border Width">1.0</data>
+            <data key="Node Size">54.0</data>
+            <data key="Ensembl">ENSG00000173039</data>
+        </node>
+        <node id="2440">
+            <data key="SUID">2440</data>
+            <data key="shared name">NFKBIB</data>
+            <data key="name">NFKBIB</data>
+            <data key="selected">false</data>
+            <data key="GraphID">bd5ca</data>
+            <data key="Type">Protein</data>
+            <data key="XrefId">4793</data>
+            <data key="XrefDatasource">Entrez Gene</data>
+            <data key="Color">#000000</data>
+            <data key="Border Width">1.0</data>
+            <data key="Node Size">55.0</data>
+            <data key="Ensembl">ENSG00000104825</data>
+        </node>
+        <node id="2439">
+            <data key="SUID">2439</data>
+            <data key="shared name">CHUK</data>
+            <data key="name">CHUK</data>
+            <data key="selected">false</data>
+            <data key="GraphID">bd5b2</data>
+            <data key="Type">Protein</data>
+            <data key="XrefId">1147</data>
+            <data key="XrefDatasource">Entrez Gene</data>
+            <data key="Color">#000000</data>
+            <data key="Border Width">1.0</data>
+            <data key="Node Size">46.0</data>
+            <data key="Ensembl">ENSG00000213341</data>
+        </node>
+        <node id="2438">
+            <data key="SUID">2438</data>
+            <data key="shared name">SQSTM1</data>
+            <data key="name">SQSTM1</data>
+            <data key="selected">false</data>
+            <data key="GraphID">ba9f6</data>
+            <data key="Type">Protein</data>
+            <data key="XrefId">8878</data>
+            <data key="XrefDatasource">Entrez Gene</data>
+            <data key="Color">#000000</data>
+            <data key="Border Width">1.0</data>
+            <data key="Node Size">59.0</data>
+            <data key="Ensembl">ENSG00000161011</data>
+        </node>
+        <node id="2437">
+            <data key="SUID">2437</data>
+            <data key="shared name">ECSIT</data>
+            <data key="name">ECSIT</data>
+            <data key="selected">false</data>
+            <data key="GraphID">b54e0</data>
+            <data key="Type">Protein</data>
+            <data key="XrefId">51295</data>
+            <data key="XrefDatasource">Entrez Gene</data>
+            <data key="Color">#000000</data>
+            <data key="Border Width">1.0</data>
+            <data key="Node Size">50.0</data>
+            <data key="Ensembl">ENSG00000130159</data>
+        </node>
+        <node id="2436">
+            <data key="SUID">2436</data>
+            <data key="shared name">TOLLIP</data>
+            <data key="name">TOLLIP</data>
+            <data key="selected">false</data>
+            <data key="GraphID">af4c2</data>
+            <data key="Type">Protein</data>
+            <data key="XrefId">54472</data>
+            <data key="XrefDatasource">Entrez Gene</data>
+            <data key="Color">#000000</data>
+            <data key="Border Width">1.0</data>
+            <data key="Node Size">53.0</data>
+            <data key="Ensembl">ENSG00000078902</data>
+        </node>
+        <node id="2435">
+            <data key="SUID">2435</data>
+            <data key="shared name">MYD88</data>
+            <data key="name">MYD88</data>
+            <data key="selected">false</data>
+            <data key="GraphID">ae4a7</data>
+            <data key="Type">Protein</data>
+            <data key="XrefId">4615</data>
+            <data key="XrefDatasource">Entrez Gene</data>
+            <data key="Color">#000000</data>
+            <data key="Border Width">1.0</data>
+            <data key="Node Size">50.0</data>
+            <data key="Ensembl">ENSG00000172936</data>
+        </node>
+        <node id="2434">
+            <data key="SUID">2434</data>
+            <data key="shared name">TRAF6</data>
+            <data key="name">TRAF6</data>
+            <data key="selected">false</data>
+            <data key="GraphID">ae19d</data>
+            <data key="Type">Protein</data>
+            <data key="XrefId">7189</data>
+            <data key="XrefDatasource">Entrez Gene</data>
+            <data key="Color">#000000</data>
+            <data key="Border Width">1.0</data>
+            <data key="Node Size">59.0</data>
+            <data key="Ensembl">ENSG00000175104</data>
+        </node>
+        <node id="2433">
+            <data key="SUID">2433</data>
+            <data key="shared name">PIK3R2</data>
+            <data key="name">PIK3R2</data>
+            <data key="selected">false</data>
+            <data key="GraphID">ac9e3</data>
+            <data key="Type">Protein</data>
+            <data key="XrefId">5296</data>
+            <data key="XrefDatasource">Entrez Gene</data>
+            <data key="Color">#000000</data>
+            <data key="Border Width">1.0</data>
+            <data key="Node Size">54.0</data>
+            <data key="Ensembl">ENSG00000105647</data>
+        </node>
+        <node id="2432">
+            <data key="SUID">2432</data>
+            <data key="shared name">MAP2K2</data>
+            <data key="name">MAP2K2</data>
+            <data key="selected">false</data>
+            <data key="GraphID">ac6ca</data>
+            <data key="Type">Protein</data>
+            <data key="XrefId">5605</data>
+            <data key="XrefDatasource">Entrez Gene</data>
+            <data key="Color">#000000</data>
+            <data key="Border Width">1.0</data>
+            <data key="Node Size">65.0</data>
+            <data key="Ensembl">ENSG00000126934</data>
+        </node>
+        <node id="2431">
+            <data key="SUID">2431</data>
+            <data key="shared name">MAP3K14</data>
+            <data key="name">MAP3K14</data>
+            <data key="selected">false</data>
+            <data key="GraphID">aba92</data>
+            <data key="Type">Protein</data>
+            <data key="XrefId">ENSG00000006062</data>
+            <data key="XrefDatasource">Ensembl</data>
+            <data key="Color">#000000</data>
+            <data key="Border Width">1.0</data>
+            <data key="Node Size">64.0</data>
+            <data key="Ensembl">ENSG00000006062</data>
+        </node>
+        <node id="2430">
+            <data key="SUID">2430</data>
+            <data key="shared name">TAB2</data>
+            <data key="name">TAB2</data>
+            <data key="selected">false</data>
+            <data key="GraphID">ab8b2</data>
+            <data key="Type">Protein</data>
+            <data key="XrefId">23118</data>
+            <data key="XrefDatasource">Entrez Gene</data>
+            <data key="Color">#000000</data>
+            <data key="Border Width">1.0</data>
+            <data key="Node Size">45.0</data>
+            <data key="Ensembl">ENSG00000055208</data>
+        </node>
+        <node id="2429">
+            <data key="SUID">2429</data>
+            <data key="shared name">Ca 2+</data>
+            <data key="name">Ca 2+</data>
+            <data key="selected">false</data>
+            <data key="GraphID">a98e3</data>
+            <data key="Type">Metabolite</data>
+            <data key="XrefId">HMDB0000464</data>
+            <data key="XrefDatasource">HMDB</data>
+            <data key="Color">#0000ff</data>
+            <data key="Border Width">1.0</data>
+            <data key="Node Size">53.98984990821728</data>
+        </node>
+        <node id="2428">
+            <data key="SUID">2428</data>
+            <data key="shared name">PRKCZ</data>
+            <data key="name">PRKCZ</data>
+            <data key="selected">false</data>
+            <data key="GraphID">a6fa8</data>
+            <data key="Type">Protein</data>
+            <data key="XrefId">5590</data>
+            <data key="XrefDatasource">Entrez Gene</data>
+            <data key="Color">#000000</data>
+            <data key="Border Width">1.0</data>
+            <data key="Node Size">49.0</data>
+            <data key="Ensembl">ENSG00000067606</data>
+        </node>
+        <node id="2427">
+            <data key="SUID">2427</data>
+            <data key="shared name">IKBKB</data>
+            <data key="name">IKBKB</data>
+            <data key="selected">false</data>
+            <data key="GraphID">a6dbb</data>
+            <data key="Type">Protein</data>
+            <data key="XrefId">3551</data>
+            <data key="XrefDatasource">Entrez Gene</data>
+            <data key="Color">#000000</data>
+            <data key="Border Width">1.0</data>
+            <data key="Node Size">46.0</data>
+            <data key="Ensembl">ENSG00000104365</data>
+        </node>
+        <node id="2426">
+            <data key="SUID">2426</data>
+            <data key="shared name">MAPK3</data>
+            <data key="name">MAPK3</data>
+            <data key="selected">false</data>
+            <data key="GraphID">a6d59</data>
+            <data key="Type">Protein</data>
+            <data key="XrefId">5595</data>
+            <data key="XrefDatasource">Entrez Gene</data>
+            <data key="Color">#000000</data>
+            <data key="Border Width">1.0</data>
+            <data key="Node Size">66.0</data>
+            <data key="Ensembl">ENSG00000102882</data>
+        </node>
+        <node id="2425">
+            <data key="SUID">2425</data>
+            <data key="shared name">HSPB2</data>
+            <data key="name">HSPB2</data>
+            <data key="selected">false</data>
+            <data key="GraphID">a5a3a</data>
+            <data key="Type">Protein</data>
+            <data key="XrefId">3316</data>
+            <data key="XrefDatasource">Entrez Gene</data>
+            <data key="Color">#000000</data>
+            <data key="Border Width">1.0</data>
+            <data key="Node Size">62.0</data>
+            <data key="Ensembl">ENSG00000170276</data>
+        </node>
+        <node id="2424">
+            <data key="SUID">2424</data>
+            <data key="shared name">REL</data>
+            <data key="name">REL</data>
+            <data key="selected">false</data>
+            <data key="GraphID">a367b</data>
+            <data key="Type">Protein</data>
+            <data key="XrefId">5966</data>
+            <data key="XrefDatasource">Entrez Gene</data>
+            <data key="Color">#000000</data>
+            <data key="Border Width">1.0</data>
+            <data key="Node Size">37.0</data>
+            <data key="Ensembl">ENSG00000162924</data>
+        </node>
+        <node id="2423">
+            <data key="SUID">2423</data>
+            <data key="shared name">MAP3K2</data>
+            <data key="name">MAP3K2</data>
+            <data key="selected">false</data>
+            <data key="GraphID">a1150</data>
+            <data key="Type">Protein</data>
+            <data key="XrefId">10746</data>
+            <data key="XrefDatasource">Entrez Gene</data>
+            <data key="Color">#000000</data>
+            <data key="Border Width">1.0</data>
+            <data key="Node Size">60.0</data>
+            <data key="Ensembl">ENSG00000169967</data>
+        </node>
+        <node id="2422">
+            <data key="SUID">2422</data>
+            <data key="shared name">UBE2N</data>
+            <data key="name">UBE2N</data>
+            <data key="selected">false</data>
+            <data key="GraphID">a06a4</data>
+            <data key="Type">Protein</data>
+            <data key="XrefId">7334</data>
+            <data key="XrefDatasource">Entrez Gene</data>
+            <data key="Color">#000000</data>
+            <data key="Border Width">1.0</data>
+            <data key="Node Size">57.0</data>
+            <data key="Ensembl">ENSG00000177889</data>
+        </node>
+        <edge source="2529" target="2448">
+            <data key="SUID">2592</data>
+            <data key="selected">false</data>
+            <data key="WP.type">Arrow</data>
+            <data key="Width">2.0080543848088293</data>
+            <data key="LineStyle">Dots</data>
+            <data key="Source Arrow Shape">Line</data>
+            <data key="Target Arrow Shape">Arrow</data>
+            <data key="Color">#000000</data>
+        </edge>
+        <edge source="2529" target="2450">
+            <data key="SUID">2585</data>
+            <data key="selected">false</data>
+            <data key="WP.type">Arrow</data>
+            <data key="Width">2.0048277641219405</data>
+            <data key="LineStyle">Dots</data>
+            <data key="Source Arrow Shape">Line</data>
+            <data key="Target Arrow Shape">Arrow</data>
+            <data key="Color">#000000</data>
+        </edge>
+        <edge source="2528" target="2467">
+            <data key="SUID">2593</data>
+            <data key="selected">false</data>
+            <data key="WP.type">Arrow</data>
+            <data key="Width">2.001784035845333</data>
+            <data key="LineStyle">Solid</data>
+            <data key="Source Arrow Shape">Line</data>
+            <data key="Target Arrow Shape">Arrow</data>
+            <data key="Color">#0000ff</data>
+        </edge>
+        <edge source="2528" target="2470">
+            <data key="SUID">2584</data>
+            <data key="selected">false</data>
+            <data key="WP.type">Arrow</data>
+            <data key="Width">2.0039383668587307</data>
+            <data key="LineStyle">Solid</data>
+            <data key="Source Arrow Shape">Line</data>
+            <data key="Target Arrow Shape">Arrow</data>
+            <data key="Color">#0000ff</data>
+        </edge>
+        <edge source="2527" target="2470">
+            <data key="SUID">2576</data>
+            <data key="selected">false</data>
+            <data key="WP.type">Arrow</data>
+            <data key="Width">2.0078257115798888</data>
+            <data key="LineStyle">Dots</data>
+            <data key="Source Arrow Shape">Line</data>
+            <data key="Target Arrow Shape">Arrow</data>
+            <data key="Color">#000000</data>
+        </edge>
+        <edge source="2527" target="2448">
+            <data key="SUID">2543</data>
+            <data key="selected">false</data>
+            <data key="WP.type">Arrow</data>
+            <data key="Width">2.00002901124428</data>
+            <data key="LineStyle">Dots</data>
+            <data key="Source Arrow Shape">Line</data>
+            <data key="Target Arrow Shape">Arrow</data>
+            <data key="Color">#000000</data>
+        </edge>
+        <edge source="2526" target="2527">
+            <data key="SUID">2575</data>
+            <data key="selected">false</data>
+            <data key="WP.type">Arrow</data>
+            <data key="Width">2.0074001532909054</data>
+            <data key="LineStyle">Dots</data>
+            <data key="Source Arrow Shape">Line</data>
+            <data key="Target Arrow Shape">Arrow</data>
+            <data key="Color">#000000</data>
+        </edge>
+        <edge source="2526" target="2458">
+            <data key="SUID">2538</data>
+            <data key="selected">false</data>
+            <data key="WP.type">Arrow</data>
+            <data key="Width">2.008233621525075</data>
+            <data key="LineStyle">Dots</data>
+            <data key="Source Arrow Shape">Line</data>
+            <data key="Target Arrow Shape">Arrow</data>
+            <data key="Color">#000000</data>
+        </edge>
+        <edge source="2486" target="2447">
+            <data key="SUID">2594</data>
+            <data key="selected">false</data>
+            <data key="WP.type">Arrow</data>
+            <data key="Width">2.0049466249940924</data>
+            <data key="LineStyle">Solid</data>
+            <data key="Source Arrow Shape">Line</data>
+            <data key="Target Arrow Shape">Arrow</data>
+            <data key="Color">#00cc00</data>
+        </edge>
+        <edge source="2486" target="2436">
+            <data key="SUID">2581</data>
+            <data key="selected">false</data>
+            <data key="WP.type">Arrow</data>
+            <data key="Width">2.002415368284359</data>
+            <data key="LineStyle">Solid</data>
+            <data key="Source Arrow Shape">Line</data>
+            <data key="Target Arrow Shape">Arrow</data>
+            <data key="Color">#00cc00</data>
+        </edge>
+        <edge source="2486" target="2451">
+            <data key="SUID">2578</data>
+            <data key="selected">false</data>
+            <data key="WP.type">Arrow</data>
+            <data key="Width">2.0045176942159846</data>
+            <data key="LineStyle">Dots</data>
+            <data key="Source Arrow Shape">Line</data>
+            <data key="Target Arrow Shape">Arrow</data>
+            <data key="Color">#000000</data>
+        </edge>
+        <edge source="2486" target="2435">
+            <data key="SUID">2564</data>
+            <data key="selected">false</data>
+            <data key="WP.type">Arrow</data>
+            <data key="Width">2.0098809419713697</data>
+            <data key="LineStyle">Solid</data>
+            <data key="Source Arrow Shape">Line</data>
+            <data key="Target Arrow Shape">Arrow</data>
+            <data key="Color">#00cc00</data>
+        </edge>
+        <edge source="2486" target="2474">
+            <data key="SUID">2563</data>
+            <data key="selected">false</data>
+            <data key="WP.type">Arrow</data>
+            <data key="Width">2.005262870301641</data>
+            <data key="LineStyle">Solid</data>
+            <data key="Source Arrow Shape">Line</data>
+            <data key="Target Arrow Shape">Arrow</data>
+            <data key="Color">#00cc00</data>
+        </edge>
+        <edge source="2486" target="2472">
+            <data key="SUID">2531</data>
+            <data key="selected">false</data>
+            <data key="WP.type">Arrow</data>
+            <data key="Width">2.0020712015189925</data>
+            <data key="LineStyle">Solid</data>
+            <data key="Source Arrow Shape">Line</data>
+            <data key="Target Arrow Shape">Arrow</data>
+            <data key="Color">#00cc00</data>
+        </edge>
+        <edge source="2477" target="2476">
+            <data key="SUID">2597</data>
+            <data key="selected">false</data>
+            <data key="WP.type">Arrow</data>
+            <data key="Width">2.001923673966556</data>
+            <data key="LineStyle">Solid</data>
+            <data key="Source Arrow Shape">Line</data>
+            <data key="Target Arrow Shape">Arrow</data>
+            <data key="Color">#00cc00</data>
+        </edge>
+        <edge source="2475" target="2526">
+            <data key="SUID">2574</data>
+            <data key="selected">false</data>
+            <data key="WP.type">Arrow</data>
+            <data key="Width">2.009523812029559</data>
+            <data key="LineStyle">Dots</data>
+            <data key="Source Arrow Shape">Line</data>
+            <data key="Target Arrow Shape">Arrow</data>
+            <data key="Color">#000000</data>
+        </edge>
+        <edge source="2475" target="2431">
+            <data key="SUID">2573</data>
+            <data key="selected">false</data>
+            <data key="WP.type">Arrow</data>
+            <data key="Width">2.005198832343851</data>
+            <data key="LineStyle">Solid</data>
+            <data key="Source Arrow Shape">Line</data>
+            <data key="Target Arrow Shape">Arrow</data>
+            <data key="Color">#0000ff</data>
+        </edge>
+        <edge source="2475" target="2468">
+            <data key="SUID">2565</data>
+            <data key="selected">false</data>
+            <data key="WP.type">Arrow</data>
+            <data key="Width">2.0093796671793487</data>
+            <data key="LineStyle">Solid</data>
+            <data key="Source Arrow Shape">Line</data>
+            <data key="Target Arrow Shape">Arrow</data>
+            <data key="Color">#00cc00</data>
+        </edge>
+        <edge source="2475" target="2478">
+            <data key="SUID">2479</data>
+            <data key="selected">false</data>
+        </edge>
+        <edge source="2474" target="2434">
+            <data key="SUID">2542</data>
+            <data key="selected">false</data>
+            <data key="WP.type">Arrow</data>
+            <data key="Width">2.0090400120257623</data>
+            <data key="LineStyle">Solid</data>
+            <data key="Source Arrow Shape">Line</data>
+            <data key="Target Arrow Shape">Arrow</data>
+            <data key="Color">#00cc00</data>
+        </edge>
+        <edge source="2472" target="2465">
+            <data key="SUID">2580</data>
+            <data key="selected">false</data>
+            <data key="WP.type">Arrow</data>
+            <data key="Width">2.0059429718987634</data>
+            <data key="LineStyle">Solid</data>
+            <data key="Source Arrow Shape">Line</data>
+            <data key="Target Arrow Shape">Arrow</data>
+            <data key="Color">#0000ff</data>
+        </edge>
+        <edge source="2472" target="2449">
+            <data key="SUID">2579</data>
+            <data key="selected">false</data>
+            <data key="WP.type">Arrow</data>
+            <data key="Width">2.007069338399033</data>
+            <data key="LineStyle">Solid</data>
+            <data key="Source Arrow Shape">Line</data>
+            <data key="Target Arrow Shape">Arrow</data>
+            <data key="Color">#00cc00</data>
+        </edge>
+        <edge source="2472" target="2474">
+            <data key="SUID">2554</data>
+            <data key="selected">false</data>
+            <data key="WP.type">Arrow</data>
+            <data key="Width">2.0068728148565715</data>
+            <data key="LineStyle">Solid</data>
+            <data key="Source Arrow Shape">Line</data>
+            <data key="Target Arrow Shape">Arrow</data>
+            <data key="Color">#0000ff</data>
+        </edge>
+        <edge source="2472" target="2473">
+            <data key="SUID">2552</data>
+            <data key="selected">false</data>
+            <data key="WP.type">Arrow</data>
+            <data key="Width">2.0041812344255368</data>
+            <data key="LineStyle">Solid</data>
+            <data key="Source Arrow Shape">Line</data>
+            <data key="Target Arrow Shape">Arrow</data>
+            <data key="Color">#0000ff</data>
+        </edge>
+        <edge source="2472" target="2436">
+            <data key="SUID">2539</data>
+            <data key="selected">false</data>
+            <data key="WP.type">Arrow</data>
+            <data key="Width">2.001805275912878</data>
+            <data key="LineStyle">Solid</data>
+            <data key="Source Arrow Shape">Line</data>
+            <data key="Target Arrow Shape">Arrow</data>
+            <data key="Color">#0000ff</data>
+        </edge>
+        <edge source="2471" target="2449">
+            <data key="SUID">2590</data>
+            <data key="selected">false</data>
+            <data key="WP.type">Arrow</data>
+            <data key="Width">2.008256459831263</data>
+            <data key="LineStyle">Solid</data>
+            <data key="Source Arrow Shape">Line</data>
+            <data key="Target Arrow Shape">Arrow</data>
+            <data key="Color">#00cc00</data>
+        </edge>
+        <edge source="2471" target="2434">
+            <data key="SUID">2551</data>
+            <data key="selected">false</data>
+            <data key="WP.type">Arrow</data>
+            <data key="Width">2.0047358575253056</data>
+            <data key="LineStyle">Solid</data>
+            <data key="Source Arrow Shape">Line</data>
+            <data key="Target Arrow Shape">Arrow</data>
+            <data key="Color">#00cc00</data>
+        </edge>
+        <edge source="2471" target="2472">
+            <data key="SUID">2533</data>
+            <data key="selected">false</data>
+            <data key="WP.type">Arrow</data>
+            <data key="Width">2.000848030774142</data>
+            <data key="LineStyle">Solid</data>
+            <data key="Source Arrow Shape">Line</data>
+            <data key="Target Arrow Shape">Arrow</data>
+            <data key="Color">#0000ff</data>
+        </edge>
+        <edge source="2470" target="2462">
+            <data key="SUID">2588</data>
+            <data key="selected">false</data>
+            <data key="WP.type">Arrow</data>
+            <data key="Width">2.008783132904753</data>
+            <data key="LineStyle">Dots</data>
+            <data key="Source Arrow Shape">Line</data>
+            <data key="Target Arrow Shape">Arrow</data>
+            <data key="Color">#000000</data>
+        </edge>
+        <edge source="2470" target="2442">
+            <data key="SUID">2532</data>
+            <data key="selected">false</data>
+            <data key="WP.type">Arrow</data>
+            <data key="Width">2.001986504066598</data>
+            <data key="LineStyle">Dots</data>
+            <data key="Source Arrow Shape">Line</data>
+            <data key="Target Arrow Shape">Arrow</data>
+            <data key="Color">#000000</data>
+        </edge>
+        <edge source="2469" target="2478">
+            <data key="SUID">2481</data>
+            <data key="selected">false</data>
+        </edge>
+        <edge source="2468" target="2529">
+            <data key="SUID">2591</data>
+            <data key="selected">false</data>
+            <data key="WP.type">Arrow</data>
+            <data key="Width">2.000342788964478</data>
+            <data key="LineStyle">Dots</data>
+            <data key="Source Arrow Shape">Line</data>
+            <data key="Target Arrow Shape">Arrow</data>
+            <data key="Color">#000000</data>
+        </edge>
+        <edge source="2468" target="2467">
+            <data key="SUID">2569</data>
+            <data key="selected">false</data>
+            <data key="WP.type">Arrow</data>
+            <data key="Width">2.0098841924352118</data>
+            <data key="LineStyle">Dots</data>
+            <data key="Source Arrow Shape">Line</data>
+            <data key="Target Arrow Shape">Arrow</data>
+            <data key="Color">#000000</data>
+        </edge>
+        <edge source="2468" target="2458">
+            <data key="SUID">2547</data>
+            <data key="selected">false</data>
+            <data key="WP.type">Arrow</data>
+            <data key="Width">2.0090659038566017</data>
+            <data key="LineStyle">Dots</data>
+            <data key="Source Arrow Shape">Line</data>
+            <data key="Target Arrow Shape">Arrow</data>
+            <data key="Color">#000000</data>
+        </edge>
+        <edge source="2467" target="2462">
+            <data key="SUID">2535</data>
+            <data key="selected">false</data>
+            <data key="WP.type">Arrow</data>
+            <data key="Width">2.006074816786007</data>
+            <data key="LineStyle">Dots</data>
+            <data key="Source Arrow Shape">Line</data>
+            <data key="Target Arrow Shape">Arrow</data>
+            <data key="Color">#000000</data>
+        </edge>
+        <edge source="2466" target="2467">
+            <data key="SUID">2586</data>
+            <data key="selected">false</data>
+            <data key="WP.type">Arrow</data>
+            <data key="Width">2.0008892458653236</data>
+            <data key="LineStyle">Dots</data>
+            <data key="Source Arrow Shape">Line</data>
+            <data key="Target Arrow Shape">Arrow</data>
+            <data key="Color">#000000</data>
+        </edge>
+        <edge source="2466" target="2470">
+            <data key="SUID">2544</data>
+            <data key="selected">false</data>
+            <data key="WP.type">Arrow</data>
+            <data key="Width">2.00593891202737</data>
+            <data key="LineStyle">Dots</data>
+            <data key="Source Arrow Shape">Line</data>
+            <data key="Target Arrow Shape">Arrow</data>
+            <data key="Color">#000000</data>
+        </edge>
+        <edge source="2464" target="2462">
+            <data key="SUID">2596</data>
+            <data key="selected">false</data>
+            <data key="WP.type">Arrow</data>
+            <data key="Width">2.0071878005640476</data>
+            <data key="LineStyle">Dots</data>
+            <data key="Source Arrow Shape">Line</data>
+            <data key="Target Arrow Shape">Arrow</data>
+            <data key="Color">#00cccc</data>
+        </edge>
+        <edge source="2464" target="2476">
+            <data key="SUID">2561</data>
+            <data key="selected">false</data>
+            <data key="WP.type">Arrow</data>
+            <data key="Width">2.002068387956247</data>
+            <data key="LineStyle">Solid</data>
+            <data key="Source Arrow Shape">Line</data>
+            <data key="Target Arrow Shape">Arrow</data>
+            <data key="Color">#0000ff</data>
+        </edge>
+        <edge source="2464" target="2483">
+            <data key="SUID">2484</data>
+            <data key="selected">false</data>
+        </edge>
+        <edge source="2463" target="2486">
+            <data key="SUID">2491</data>
+            <data key="selected">false</data>
+        </edge>
+        <edge source="2463" target="2486">
+            <data key="SUID">2489</data>
+            <data key="selected">false</data>
+        </edge>
+        <edge source="2462" target="2483">
+            <data key="SUID">2485</data>
+            <data key="selected">false</data>
+        </edge>
+        <edge source="2461" target="2486">
+            <data key="SUID">2490</data>
+            <data key="selected">false</data>
+        </edge>
+        <edge source="2460" target="2486">
+            <data key="SUID">2488</data>
+            <data key="selected">false</data>
+        </edge>
+        <edge source="2460" target="2486">
+            <data key="SUID">2487</data>
+            <data key="selected">false</data>
+        </edge>
+        <edge source="2459" target="2512">
+            <data key="SUID">2514</data>
+            <data key="selected">false</data>
+        </edge>
+        <edge source="2458" target="2442">
+            <data key="SUID">2571</data>
+            <data key="selected">false</data>
+            <data key="WP.type">Arrow</data>
+            <data key="Width">2.006388266767402</data>
+            <data key="LineStyle">Dots</data>
+            <data key="Source Arrow Shape">Line</data>
+            <data key="Target Arrow Shape">Arrow</data>
+            <data key="Color">#000000</data>
+        </edge>
+        <edge source="2457" target="2478">
+            <data key="SUID">2480</data>
+            <data key="selected">false</data>
+        </edge>
+        <edge source="2456" target="2486">
+            <data key="SUID">2492</data>
+            <data key="selected">false</data>
+        </edge>
+        <edge source="2455" target="2429">
+            <data key="SUID">2558</data>
+            <data key="selected">false</data>
+            <data key="WP.type">Arrow</data>
+            <data key="Width">2.0083276125636047</data>
+            <data key="LineStyle">Dots</data>
+            <data key="Source Arrow Shape">Line</data>
+            <data key="Target Arrow Shape">Arrow</data>
+            <data key="Color">#000000</data>
+        </edge>
+        <edge source="2454" target="2453">
+            <data key="SUID">2562</data>
+            <data key="selected">false</data>
+            <data key="WP.type">Arrow</data>
+            <data key="Width">2.0064572486631196</data>
+            <data key="LineStyle">Dots</data>
+            <data key="Source Arrow Shape">Line</data>
+            <data key="Target Arrow Shape">Arrow</data>
+            <data key="Color">#000000</data>
+        </edge>
+        <edge source="2454" target="2509">
+            <data key="SUID">2511</data>
+            <data key="selected">false</data>
+        </edge>
+        <edge source="2452" target="2425">
+            <data key="SUID">2541</data>
+            <data key="selected">false</data>
+            <data key="WP.type">Arrow</data>
+            <data key="Width">2.0023575169906906</data>
+            <data key="LineStyle">Dots</data>
+            <data key="Source Arrow Shape">Line</data>
+            <data key="Target Arrow Shape">Arrow</data>
+            <data key="Color">#000000</data>
+        </edge>
+        <edge source="2451" target="2455">
+            <data key="SUID">2555</data>
+            <data key="selected">false</data>
+            <data key="WP.type">Arrow</data>
+            <data key="Width">2.0005368961292</data>
+            <data key="LineStyle">Dots</data>
+            <data key="Source Arrow Shape">Line</data>
+            <data key="Target Arrow Shape">Arrow</data>
+            <data key="Color">#000000</data>
+        </edge>
+        <edge source="2450" target="2515">
+            <data key="SUID">2518</data>
+            <data key="selected">false</data>
+        </edge>
+        <edge source="2450" target="2515">
+            <data key="SUID">2517</data>
+            <data key="selected">false</data>
+        </edge>
+        <edge source="2448" target="2442">
+            <data key="SUID">2587</data>
+            <data key="selected">false</data>
+            <data key="WP.type">Arrow</data>
+            <data key="Width">2.004191924482609</data>
+            <data key="LineStyle">Dots</data>
+            <data key="Source Arrow Shape">Line</data>
+            <data key="Target Arrow Shape">Arrow</data>
+            <data key="Color">#000000</data>
+        </edge>
+        <edge source="2447" target="2493">
+            <data key="SUID">2494</data>
+            <data key="selected">false</data>
+        </edge>
+        <edge source="2445" target="2445">
+            <data key="SUID">2589</data>
+            <data key="selected">false</data>
+            <data key="WP.type">Arrow</data>
+            <data key="Width">2.002865260525649</data>
+            <data key="LineStyle">Dots</data>
+            <data key="Source Arrow Shape">Line</data>
+            <data key="Target Arrow Shape">Arrow</data>
+            <data key="Color">#00cccc</data>
+        </edge>
+        <edge source="2445" target="2443">
+            <data key="SUID">2582</data>
+            <data key="selected">false</data>
+            <data key="WP.type">mim-transcription-translation</data>
+            <data key="Width">2.000915827180861</data>
+            <data key="LineStyle">Solid</data>
+            <data key="Source Arrow Shape">Line</data>
+            <data key="Target Arrow Shape">mim-transcription-translation</data>
+            <data key="Color">#000000</data>
+        </edge>
+        <edge source="2445" target="2520">
+            <data key="SUID">2521</data>
+            <data key="selected">false</data>
+        </edge>
+        <edge source="2445" target="2499">
+            <data key="SUID">2502</data>
+            <data key="selected">false</data>
+        </edge>
+        <edge source="2444" target="2445">
+            <data key="SUID">2570</data>
+            <data key="selected">false</data>
+            <data key="WP.type">Arrow</data>
+            <data key="Width">2.005973329787097</data>
+            <data key="LineStyle">Solid</data>
+            <data key="Source Arrow Shape">Line</data>
+            <data key="Target Arrow Shape">Arrow</data>
+            <data key="Color">#00cc00</data>
+        </edge>
+        <edge source="2444" target="2506">
+            <data key="SUID">2507</data>
+            <data key="selected">false</data>
+        </edge>
+        <edge source="2442" target="2442">
+            <data key="SUID">2598</data>
+            <data key="selected">false</data>
+            <data key="WP.type">Arrow</data>
+            <data key="Width">2.0013944186959516</data>
+            <data key="LineStyle">Dots</data>
+            <data key="Source Arrow Shape">Line</data>
+            <data key="Target Arrow Shape">Arrow</data>
+            <data key="Color">#00cccc</data>
+        </edge>
+        <edge source="2442" target="2477">
+            <data key="SUID">2548</data>
+            <data key="selected">false</data>
+            <data key="WP.type">Arrow</data>
+            <data key="Width">2.0085409936332774</data>
+            <data key="LineStyle">Solid</data>
+            <data key="Source Arrow Shape">Line</data>
+            <data key="Target Arrow Shape">Arrow</data>
+            <data key="Color">#0000ff</data>
+        </edge>
+        <edge source="2442" target="2452">
+            <data key="SUID">2536</data>
+            <data key="selected">false</data>
+            <data key="WP.type">Arrow</data>
+            <data key="Width">2.003918896826782</data>
+            <data key="LineStyle">Dots</data>
+            <data key="Source Arrow Shape">Line</data>
+            <data key="Target Arrow Shape">Arrow</data>
+            <data key="Color">#000000</data>
+        </edge>
+        <edge source="2441" target="2441">
+            <data key="SUID">2560</data>
+            <data key="selected">false</data>
+            <data key="WP.type">Arrow</data>
+            <data key="Width">2.004097316979718</data>
+            <data key="LineStyle">Dots</data>
+            <data key="Source Arrow Shape">Line</data>
+            <data key="Target Arrow Shape">Arrow</data>
+            <data key="Color">#00cccc</data>
+        </edge>
+        <edge source="2441" target="2520">
+            <data key="SUID">2522</data>
+            <data key="selected">false</data>
+        </edge>
+        <edge source="2441" target="2499">
+            <data key="SUID">2500</data>
+            <data key="selected">false</data>
+        </edge>
+        <edge source="2440" target="2506">
+            <data key="SUID">2508</data>
+            <data key="selected">false</data>
+        </edge>
+        <edge source="2439" target="2441">
+            <data key="SUID">2545</data>
+            <data key="selected">false</data>
+            <data key="WP.type">Arrow</data>
+            <data key="Width">2.0014094616195486</data>
+            <data key="LineStyle">Solid</data>
+            <data key="Source Arrow Shape">Line</data>
+            <data key="Target Arrow Shape">Arrow</data>
+            <data key="Color">#0000ff</data>
+        </edge>
+        <edge source="2439" target="2515">
+            <data key="SUID">2519</data>
+            <data key="selected">false</data>
+        </edge>
+        <edge source="2437" target="2466">
+            <data key="SUID">2546</data>
+            <data key="selected">false</data>
+            <data key="WP.type">Arrow</data>
+            <data key="Width">2.0075503423093615</data>
+            <data key="LineStyle">Solid</data>
+            <data key="Source Arrow Shape">Line</data>
+            <data key="Target Arrow Shape">Arrow</data>
+            <data key="Color">#00cc00</data>
+        </edge>
+        <edge source="2436" target="2503">
+            <data key="SUID">2505</data>
+            <data key="selected">false</data>
+        </edge>
+        <edge source="2436" target="2503">
+            <data key="SUID">2504</data>
+            <data key="selected">false</data>
+        </edge>
+        <edge source="2435" target="2474">
+            <data key="SUID">2572</data>
+            <data key="selected">false</data>
+            <data key="WP.type">Arrow</data>
+            <data key="Width">2.0023299032582202</data>
+            <data key="LineStyle">Solid</data>
+            <data key="Source Arrow Shape">Line</data>
+            <data key="Target Arrow Shape">Arrow</data>
+            <data key="Color">#00cc00</data>
+        </edge>
+        <edge source="2435" target="2472">
+            <data key="SUID">2568</data>
+            <data key="selected">false</data>
+            <data key="WP.type">Arrow</data>
+            <data key="Width">2.0014395457597924</data>
+            <data key="LineStyle">Solid</data>
+            <data key="Source Arrow Shape">Line</data>
+            <data key="Target Arrow Shape">Arrow</data>
+            <data key="Color">#00cc00</data>
+        </edge>
+        <edge source="2435" target="2471">
+            <data key="SUID">2550</data>
+            <data key="selected">false</data>
+            <data key="WP.type">Arrow</data>
+            <data key="Width">2.0010553935050734</data>
+            <data key="LineStyle">Solid</data>
+            <data key="Source Arrow Shape">Line</data>
+            <data key="Target Arrow Shape">Arrow</data>
+            <data key="Color">#00cc00</data>
+        </edge>
+        <edge source="2435" target="2496">
+            <data key="SUID">2498</data>
+            <data key="selected">false</data>
+        </edge>
+        <edge source="2435" target="2496">
+            <data key="SUID">2497</data>
+            <data key="selected">false</data>
+        </edge>
+        <edge source="2434" target="2438">
+            <data key="SUID">2577</data>
+            <data key="selected">false</data>
+            <data key="WP.type">Arrow</data>
+            <data key="Width">2.0076744289834276</data>
+            <data key="LineStyle">Solid</data>
+            <data key="Source Arrow Shape">Line</data>
+            <data key="Target Arrow Shape">Arrow</data>
+            <data key="Color">#00cc00</data>
+        </edge>
+        <edge source="2434" target="2428">
+            <data key="SUID">2567</data>
+            <data key="selected">false</data>
+            <data key="WP.type">Arrow</data>
+            <data key="Width">2.0062851208371675</data>
+            <data key="LineStyle">Solid</data>
+            <data key="Source Arrow Shape">Line</data>
+            <data key="Target Arrow Shape">Arrow</data>
+            <data key="Color">#00cc00</data>
+        </edge>
+        <edge source="2434" target="2437">
+            <data key="SUID">2566</data>
+            <data key="selected">false</data>
+            <data key="WP.type">Arrow</data>
+            <data key="Width">2.005831550823737</data>
+            <data key="LineStyle">Solid</data>
+            <data key="Source Arrow Shape">Line</data>
+            <data key="Target Arrow Shape">Arrow</data>
+            <data key="Color">#00cc00</data>
+        </edge>
+        <edge source="2434" target="2468">
+            <data key="SUID">2549</data>
+            <data key="selected">false</data>
+            <data key="WP.type">Arrow</data>
+            <data key="Width">2.0019193612865265</data>
+            <data key="LineStyle">Solid</data>
+            <data key="Source Arrow Shape">Line</data>
+            <data key="Target Arrow Shape">Arrow</data>
+            <data key="Color">#00cc00</data>
+        </edge>
+        <edge source="2434" target="2430">
+            <data key="SUID">2540</data>
+            <data key="selected">false</data>
+            <data key="WP.type">Arrow</data>
+            <data key="Width">2.004647793405112</data>
+            <data key="LineStyle">Solid</data>
+            <data key="Source Arrow Shape">Line</data>
+            <data key="Target Arrow Shape">Arrow</data>
+            <data key="Color">#cc00cc</data>
+        </edge>
+        <edge source="2434" target="2457">
+            <data key="SUID">2537</data>
+            <data key="selected">false</data>
+            <data key="WP.type">Arrow</data>
+            <data key="Width">2.0005016653484486</data>
+            <data key="LineStyle">Solid</data>
+            <data key="Source Arrow Shape">Line</data>
+            <data key="Target Arrow Shape">Arrow</data>
+            <data key="Color">#cc00cc</data>
+        </edge>
+        <edge source="2434" target="2475">
+            <data key="SUID">2530</data>
+            <data key="selected">false</data>
+            <data key="WP.type">Arrow</data>
+            <data key="Width">2.0000079707786127</data>
+            <data key="LineStyle">Solid</data>
+            <data key="Source Arrow Shape">Line</data>
+            <data key="Target Arrow Shape">Arrow</data>
+            <data key="Color">#cc00cc</data>
+        </edge>
+        <edge source="2433" target="2446">
+            <data key="SUID">2559</data>
+            <data key="selected">false</data>
+            <data key="WP.type">Arrow</data>
+            <data key="Width">2.005021643563793</data>
+            <data key="LineStyle">Dots</data>
+            <data key="Source Arrow Shape">Line</data>
+            <data key="Target Arrow Shape">Arrow</data>
+            <data key="Color">#000000</data>
+        </edge>
+        <edge source="2433" target="2493">
+            <data key="SUID">2495</data>
+            <data key="selected">false</data>
+        </edge>
+        <edge source="2432" target="2509">
+            <data key="SUID">2510</data>
+            <data key="selected">false</data>
+        </edge>
+        <edge source="2431" target="2439">
+            <data key="SUID">2553</data>
+            <data key="selected">false</data>
+            <data key="WP.type">Arrow</data>
+            <data key="Width">2.0046169663367106</data>
+            <data key="LineStyle">Solid</data>
+            <data key="Source Arrow Shape">Line</data>
+            <data key="Target Arrow Shape">Arrow</data>
+            <data key="Color">#00cc00</data>
+        </edge>
+        <edge source="2430" target="2478">
+            <data key="SUID">2482</data>
+            <data key="selected">false</data>
+        </edge>
+        <edge source="2429" target="2432">
+            <data key="SUID">2556</data>
+            <data key="selected">false</data>
+            <data key="WP.type">Arrow</data>
+            <data key="Width">2.0045708799987105</data>
+            <data key="LineStyle">Dots</data>
+            <data key="Source Arrow Shape">Line</data>
+            <data key="Target Arrow Shape">Arrow</data>
+            <data key="Color">#000000</data>
+        </edge>
+        <edge source="2427" target="2444">
+            <data key="SUID">2557</data>
+            <data key="selected">false</data>
+            <data key="WP.type">Arrow</data>
+            <data key="Width">2.0059875714628412</data>
+            <data key="LineStyle">Solid</data>
+            <data key="Source Arrow Shape">Line</data>
+            <data key="Target Arrow Shape">Arrow</data>
+            <data key="Color">#0000ff</data>
+        </edge>
+        <edge source="2427" target="2515">
+            <data key="SUID">2516</data>
+            <data key="selected">false</data>
+        </edge>
+        <edge source="2424" target="2424">
+            <data key="SUID">2534</data>
+            <data key="selected">false</data>
+            <data key="WP.type">Arrow</data>
+            <data key="Width">2.0057543859670846</data>
+            <data key="LineStyle">Dots</data>
+            <data key="Source Arrow Shape">Line</data>
+            <data key="Target Arrow Shape">Arrow</data>
+            <data key="Color">#00cccc</data>
+        </edge>
+        <edge source="2424" target="2520">
+            <data key="SUID">2523</data>
+            <data key="selected">false</data>
+        </edge>
+        <edge source="2424" target="2499">
+            <data key="SUID">2501</data>
+            <data key="selected">false</data>
+        </edge>
+        <edge source="2423" target="2528">
+            <data key="SUID">2583</data>
+            <data key="selected">false</data>
+            <data key="WP.type">Arrow</data>
+            <data key="Width">2.0080452507245763</data>
+            <data key="LineStyle">Solid</data>
+            <data key="Source Arrow Shape">Line</data>
+            <data key="Target Arrow Shape">Arrow</data>
+            <data key="Color">#0000ff</data>
+        </edge>
+        <edge source="2422" target="2434">
+            <data key="SUID">2595</data>
+            <data key="selected">false</data>
+            <data key="WP.type">Arrow</data>
+            <data key="Width">2.006027826771785</data>
+            <data key="LineStyle">Solid</data>
+            <data key="Source Arrow Shape">Line</data>
+            <data key="Target Arrow Shape">Arrow</data>
+            <data key="Color">#cc00cc</data>
+        </edge>
+        <edge source="2422" target="2512">
+            <data key="SUID">2513</data>
+            <data key="selected">false</data>
+        </edge>
+    </graph>
+</graphml>
