@@ -1,0 +1,1476 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns">
+    <key attr.name="SUID" attr.type="long" for="node" id="SUID"/>
+    <key attr.name="shared name" attr.type="string" for="node" id="shared name"/>
+    <key attr.name="name" attr.type="string" for="node" id="name"/>
+    <key attr.name="selected" attr.type="boolean" for="node" id="selected"/>
+    <key attr.name="GraphID" attr.type="string" for="node" id="GraphID"/>
+    <key attr.name="Type" attr.type="string" for="node" id="Type"/>
+    <key attr.name="XrefId" attr.type="string" for="node" id="XrefId"/>
+    <key attr.name="XrefDatasource" attr.type="string" for="node" id="XrefDatasource"/>
+    <key attr.name="Color" attr.type="string" for="node" id="Color"/>
+    <key attr.name="Border Width" attr.type="double" for="node" id="Border Width"/>
+    <key attr.name="Node Size" attr.type="double" for="node" id="Node Size"/>
+    <key attr.name="Label Font Size" attr.type="double" for="node" id="Label Font Size"/>
+    <key attr.name="Ensembl" attr.type="string" for="node" id="Ensembl"/>
+    <key attr.name="SUID" attr.type="long" for="edge" id="SUID"/>
+    <key attr.name="shared name" attr.type="string" for="edge" id="shared name"/>
+    <key attr.name="shared interaction" attr.type="string" for="edge" id="shared interaction"/>
+    <key attr.name="name" attr.type="string" for="edge" id="name"/>
+    <key attr.name="selected" attr.type="boolean" for="edge" id="selected"/>
+    <key attr.name="interaction" attr.type="string" for="edge" id="interaction"/>
+    <key attr.name="WP.type" attr.type="string" for="edge" id="WP.type"/>
+    <key attr.name="Width" attr.type="double" for="edge" id="Width"/>
+    <key attr.name="LineStyle" attr.type="string" for="edge" id="LineStyle"/>
+    <key attr.name="Source Arrow Shape" attr.type="string" for="edge" id="Source Arrow Shape"/>
+    <key attr.name="Target Arrow Shape" attr.type="string" for="edge" id="Target Arrow Shape"/>
+    <key attr.name="Color" attr.type="string" for="edge" id="Color"/>
+    <key attr.name="SUID" attr.type="long" for="graph" id="SUID"/>
+    <key attr.name="shared name" attr.type="string" for="graph" id="shared name"/>
+    <key attr.name="name" attr.type="string" for="graph" id="name"/>
+    <key attr.name="selected" attr.type="boolean" for="graph" id="selected"/>
+    <key attr.name="__Annotations" attr.type="string" for="graph" id="__Annotations"/>
+    <graph edgedefault="directed" id="Type I interferon induction and signaling during SARS-CoV-2 infection - Homo sapiens">
+        <node id="2865">
+            <data key="SUID">2865</data>
+            <data key="selected">false</data>
+            <data key="GraphID">bfa88</data>
+            <data key="Type">Anchor</data>
+        </node>
+        <node id="2864">
+            <data key="SUID">2864</data>
+            <data key="shared name">NFkB</data>
+            <data key="name">NFkB</data>
+            <data key="selected">false</data>
+            <data key="GraphID">e788c</data>
+            <data key="Type">Label</data>
+        </node>
+        <node id="2862">
+            <data key="SUID">2862</data>
+            <data key="shared name">group_MAVS</data>
+            <data key="name">group_MAVS</data>
+            <data key="selected">false</data>
+            <data key="GraphID">fd019</data>
+            <data key="Type">Group</data>
+        </node>
+        <node id="2859">
+            <data key="SUID">2859</data>
+            <data key="shared name">group_STAT2_STAT1</data>
+            <data key="name">group_STAT2_STAT1</data>
+            <data key="selected">false</data>
+            <data key="GraphID">dffb5</data>
+            <data key="Type">Group</data>
+        </node>
+        <node id="2856">
+            <data key="SUID">2856</data>
+            <data key="shared name">group_TYK2_JAK1</data>
+            <data key="name">group_TYK2_JAK1</data>
+            <data key="selected">false</data>
+            <data key="GraphID">dd322</data>
+            <data key="Type">Group</data>
+        </node>
+        <node id="2853">
+            <data key="SUID">2853</data>
+            <data key="shared name">group_IRF7_IRF3</data>
+            <data key="name">group_IRF7_IRF3</data>
+            <data key="selected">false</data>
+            <data key="GraphID">db1fb</data>
+            <data key="Type">Group</data>
+        </node>
+        <node id="2849">
+            <data key="SUID">2849</data>
+            <data key="shared name">group_STAT2_IRF9_STAT1</data>
+            <data key="name">group_STAT2_IRF9_STAT1</data>
+            <data key="selected">false</data>
+            <data key="GraphID">d46a8</data>
+            <data key="Type">Group</data>
+        </node>
+        <node id="2844">
+            <data key="SUID">2844</data>
+            <data key="shared name">group_OAS3_OAS2_PKR_OAS1</data>
+            <data key="name">group_OAS3_OAS2_PKR_OAS1</data>
+            <data key="selected">false</data>
+            <data key="GraphID">c82e3</data>
+            <data key="Type">Group</data>
+        </node>
+        <node id="2843">
+            <data key="SUID">2843</data>
+            <data key="shared name">group</data>
+            <data key="name">group</data>
+            <data key="selected">false</data>
+            <data key="GraphID">c03e8</data>
+            <data key="Type">Group</data>
+        </node>
+        <node id="2840">
+            <data key="SUID">2840</data>
+            <data key="shared name">group_IKBKE_TBK1</data>
+            <data key="name">group_IKBKE_TBK1</data>
+            <data key="selected">false</data>
+            <data key="GraphID">bc0e3</data>
+            <data key="Type">Group</data>
+        </node>
+        <node id="2837">
+            <data key="SUID">2837</data>
+            <data key="shared name">group_IRF3_IRF3</data>
+            <data key="name">group_IRF3_IRF3</data>
+            <data key="selected">false</data>
+            <data key="GraphID">b8d9b</data>
+            <data key="Type">Group</data>
+        </node>
+        <node id="2834">
+            <data key="SUID">2834</data>
+            <data key="shared name">group_IFNAR2_IFNAR1</data>
+            <data key="name">group_IFNAR2_IFNAR1</data>
+            <data key="selected">false</data>
+            <data key="GraphID">b8407</data>
+            <data key="Type">Group</data>
+        </node>
+        <node id="2833">
+            <data key="SUID">2833</data>
+            <data key="shared name">group</data>
+            <data key="name">group</data>
+            <data key="selected">false</data>
+            <data key="GraphID">acfe9</data>
+            <data key="Type">Group</data>
+        </node>
+        <node id="2832">
+            <data key="SUID">2832</data>
+            <data key="shared name">group</data>
+            <data key="name">group</data>
+            <data key="selected">false</data>
+            <data key="GraphID">aa666</data>
+            <data key="Type">Group</data>
+        </node>
+        <node id="2831">
+            <data key="SUID">2831</data>
+            <data key="shared name">group</data>
+            <data key="name">group</data>
+            <data key="selected">false</data>
+            <data key="GraphID">a7a8e</data>
+            <data key="Type">Group</data>
+        </node>
+        <node id="2830">
+            <data key="SUID">2830</data>
+            <data key="shared name">group</data>
+            <data key="name">group</data>
+            <data key="selected">false</data>
+            <data key="Type">Group</data>
+        </node>
+        <node id="2829">
+            <data key="SUID">2829</data>
+            <data key="shared name">group</data>
+            <data key="name">group</data>
+            <data key="selected">false</data>
+            <data key="Type">Group</data>
+        </node>
+        <node id="2828">
+            <data key="SUID">2828</data>
+            <data key="shared name">group</data>
+            <data key="name">group</data>
+            <data key="selected">false</data>
+            <data key="Type">Group</data>
+        </node>
+        <node id="2827">
+            <data key="SUID">2827</data>
+            <data key="shared name">group</data>
+            <data key="name">group</data>
+            <data key="selected">false</data>
+            <data key="Type">Group</data>
+        </node>
+        <node id="2826">
+            <data key="SUID">2826</data>
+            <data key="shared name">azithromycin</data>
+            <data key="name">azithromycin</data>
+            <data key="selected">false</data>
+            <data key="GraphID">ac609</data>
+            <data key="Type">Metabolite</data>
+            <data key="XrefId">Q165399</data>
+            <data key="XrefDatasource">Wikidata</data>
+            <data key="Color">#0000ff</data>
+            <data key="Border Width">1.0</data>
+            <data key="Node Size">94.79441842893812</data>
+        </node>
+        <node id="2825">
+            <data key="SUID">2825</data>
+            <data key="shared name">ORF6</data>
+            <data key="name">ORF6</data>
+            <data key="selected">false</data>
+            <data key="GraphID">f3bd1</data>
+            <data key="Type">Protein</data>
+            <data key="XrefId">P0DTC6</data>
+            <data key="XrefDatasource">Uniprot-TrEMBL</data>
+            <data key="Color">#000000</data>
+            <data key="Border Width">1.0</data>
+            <data key="Node Size">54.992746849132345</data>
+        </node>
+        <node id="2824">
+            <data key="SUID">2824</data>
+            <data key="shared name">ORF3a</data>
+            <data key="name">ORF3a</data>
+            <data key="selected">false</data>
+            <data key="GraphID">b7f91</data>
+            <data key="Type">Protein</data>
+            <data key="XrefId">P0DTC3</data>
+            <data key="XrefDatasource">Uniprot-TrEMBL</data>
+            <data key="Color">#000000</data>
+            <data key="Border Width">1.0</data>
+            <data key="Node Size">54.992746849132345</data>
+        </node>
+        <node id="2823">
+            <data key="SUID">2823</data>
+            <data key="shared name">nsp16</data>
+            <data key="name">nsp16</data>
+            <data key="selected">false</data>
+            <data key="GraphID">c8bd9</data>
+            <data key="Type">Protein</data>
+            <data key="XrefId">YP_009725311</data>
+            <data key="XrefDatasource">NCBI Protein</data>
+            <data key="Color">#000000</data>
+            <data key="Border Width">1.0</data>
+            <data key="Node Size">38.260196721201396</data>
+        </node>
+        <node id="2822">
+            <data key="SUID">2822</data>
+            <data key="shared name">nsp15</data>
+            <data key="name">nsp15</data>
+            <data key="selected">false</data>
+            <data key="GraphID">beaa5</data>
+            <data key="Type">Protein</data>
+            <data key="XrefId">YP_009725310</data>
+            <data key="XrefDatasource">NCBI Protein</data>
+            <data key="Color">#000000</data>
+            <data key="Border Width">1.0</data>
+            <data key="Node Size">38.260196721201396</data>
+        </node>
+        <node id="2821">
+            <data key="SUID">2821</data>
+            <data key="shared name">nsp14</data>
+            <data key="name">nsp14</data>
+            <data key="selected">false</data>
+            <data key="GraphID">aaed9</data>
+            <data key="Type">Protein</data>
+            <data key="XrefId">YP_009725309</data>
+            <data key="XrefDatasource">NCBI Protein</data>
+            <data key="Color">#000000</data>
+            <data key="Border Width">1.0</data>
+            <data key="Node Size">38.260196721201396</data>
+        </node>
+        <node id="2820">
+            <data key="SUID">2820</data>
+            <data key="shared name">nsp10</data>
+            <data key="name">nsp10</data>
+            <data key="selected">false</data>
+            <data key="GraphID">b19e5</data>
+            <data key="Type">Protein</data>
+            <data key="XrefId">YP_009725306</data>
+            <data key="XrefDatasource">NCBI Protein</data>
+            <data key="Color">#000000</data>
+            <data key="Border Width">1.0</data>
+            <data key="Node Size">38.260196721201396</data>
+        </node>
+        <node id="2819">
+            <data key="SUID">2819</data>
+            <data key="shared name">nsp1</data>
+            <data key="name">nsp1</data>
+            <data key="selected">false</data>
+            <data key="GraphID">da173</data>
+            <data key="Type">Protein</data>
+            <data key="XrefId">YP_009725297</data>
+            <data key="XrefDatasource">NCBI Protein</data>
+            <data key="Color">#000000</data>
+            <data key="Border Width">1.0</data>
+            <data key="Node Size">54.992746849132345</data>
+        </node>
+        <node id="2818">
+            <data key="SUID">2818</data>
+            <data key="shared name">IRF7</data>
+            <data key="name">IRF7</data>
+            <data key="selected">false</data>
+            <data key="GraphID">eedb7</data>
+            <data key="Type">GeneProduct</data>
+            <data key="XrefId">ENSG00000185507</data>
+            <data key="XrefDatasource">Ensembl</data>
+            <data key="Color">#000000</data>
+            <data key="Border Width">1.0</data>
+            <data key="Node Size">55.0</data>
+            <data key="Ensembl">ENSG00000185507</data>
+        </node>
+        <node id="2817">
+            <data key="SUID">2817</data>
+            <data key="shared name">Pro-inflammatory 
+cytokines production</data>
+            <data key="name">Pro-inflammatory 
+cytokines production</data>
+            <data key="selected">false</data>
+            <data key="GraphID">d99d5</data>
+            <data key="Type">Pathway</data>
+            <data key="XrefId"/>
+            <data key="Color">#14961e</data>
+            <data key="Border Width">1.0</data>
+            <data key="Node Size">162.4525421118859</data>
+        </node>
+        <node id="2816">
+            <data key="SUID">2816</data>
+            <data key="shared name">TLR4</data>
+            <data key="name">TLR4</data>
+            <data key="selected">false</data>
+            <data key="GraphID">c7d93</data>
+            <data key="Type">Protein</data>
+            <data key="XrefId">O00206</data>
+            <data key="XrefDatasource">Uniprot-TrEMBL</data>
+            <data key="Color">#000000</data>
+            <data key="Border Width">1.0</data>
+            <data key="Node Size">41.31632653061862</data>
+            <data key="Ensembl">ENSG00000136869</data>
+        </node>
+        <node id="2815">
+            <data key="SUID">2815</data>
+            <data key="shared name">TLR6</data>
+            <data key="name">TLR6</data>
+            <data key="selected">false</data>
+            <data key="GraphID">b5481</data>
+            <data key="Type">Protein</data>
+            <data key="XrefId">Q9Y2C9</data>
+            <data key="XrefDatasource">Uniprot-TrEMBL</data>
+            <data key="Color">#000000</data>
+            <data key="Border Width">1.0</data>
+            <data key="Node Size">41.31632653061862</data>
+            <data key="Ensembl">ENSG00000174130</data>
+        </node>
+        <node id="2814">
+            <data key="SUID">2814</data>
+            <data key="shared name">TLR7</data>
+            <data key="name">TLR7</data>
+            <data key="selected">false</data>
+            <data key="GraphID">e4953</data>
+            <data key="Type">GeneProduct</data>
+            <data key="XrefId">ENSG00000196664</data>
+            <data key="XrefDatasource">Ensembl</data>
+            <data key="Color">#000000</data>
+            <data key="Border Width">1.0</data>
+            <data key="Node Size">55.0</data>
+            <data key="Ensembl">ENSG00000196664</data>
+        </node>
+        <node id="2813">
+            <data key="SUID">2813</data>
+            <data key="shared name">ACE2</data>
+            <data key="name">ACE2</data>
+            <data key="selected">false</data>
+            <data key="GraphID">e92a9</data>
+            <data key="Type">GeneProduct</data>
+            <data key="XrefId">Q9BYF1</data>
+            <data key="XrefDatasource">Uniprot-TrEMBL</data>
+            <data key="Color">#000000</data>
+            <data key="Border Width">1.0</data>
+            <data key="Node Size">45.14285714285706</data>
+            <data key="Ensembl">ENSG00000130234</data>
+        </node>
+        <node id="2812">
+            <data key="SUID">2812</data>
+            <data key="shared name">nsp13</data>
+            <data key="name">nsp13</data>
+            <data key="selected">false</data>
+            <data key="GraphID">f1b6a</data>
+            <data key="Type">Protein</data>
+            <data key="XrefId">QII57165.1</data>
+            <data key="XrefDatasource">RefSeq</data>
+            <data key="Color">#000000</data>
+            <data key="Border Width">1.0</data>
+            <data key="Node Size">54.992746849132345</data>
+        </node>
+        <node id="2811">
+            <data key="SUID">2811</data>
+            <data key="shared name">OAS3</data>
+            <data key="name">OAS3</data>
+            <data key="selected">false</data>
+            <data key="GraphID">c2d0e</data>
+            <data key="Type">GeneProduct</data>
+            <data key="XrefId">ENSG00000111331</data>
+            <data key="XrefDatasource">Ensembl</data>
+            <data key="Color">#000000</data>
+            <data key="Border Width">1.0</data>
+            <data key="Node Size">55.0</data>
+            <data key="Ensembl">ENSG00000111331</data>
+        </node>
+        <node id="2810">
+            <data key="SUID">2810</data>
+            <data key="shared name">OAS2</data>
+            <data key="name">OAS2</data>
+            <data key="selected">false</data>
+            <data key="GraphID">b07b4</data>
+            <data key="Type">GeneProduct</data>
+            <data key="XrefId">ENSG00000111335</data>
+            <data key="XrefDatasource">Ensembl</data>
+            <data key="Color">#000000</data>
+            <data key="Border Width">1.0</data>
+            <data key="Node Size">55.0</data>
+            <data key="Ensembl">ENSG00000111335</data>
+        </node>
+        <node id="2809">
+            <data key="SUID">2809</data>
+            <data key="shared name">ISGs</data>
+            <data key="name">ISGs</data>
+            <data key="selected">false</data>
+            <data key="GraphID">f1bfb</data>
+            <data key="Type">Protein</data>
+            <data key="XrefId"/>
+            <data key="Color">#9900cc</data>
+            <data key="Border Width">1.0</data>
+            <data key="Node Size">55.0</data>
+        </node>
+        <node id="2808">
+            <data key="SUID">2808</data>
+            <data key="shared name">INF-I alpha/ beta</data>
+            <data key="name">INF-I alpha/ beta</data>
+            <data key="selected">false</data>
+            <data key="GraphID">f1657</data>
+            <data key="Type">Protein</data>
+            <data key="XrefId">Q6046488</data>
+            <data key="XrefDatasource">Wikidata</data>
+            <data key="Color">#9900cc</data>
+            <data key="Border Width">1.0</data>
+            <data key="Node Size">103.36191779382443</data>
+        </node>
+        <node id="2807">
+            <data key="SUID">2807</data>
+            <data key="shared name">IRF9</data>
+            <data key="name">IRF9</data>
+            <data key="selected">false</data>
+            <data key="GraphID">ad356</data>
+            <data key="Type">GeneProduct</data>
+            <data key="XrefId">ENSG00000213928</data>
+            <data key="XrefDatasource">Ensembl</data>
+            <data key="Color">#000000</data>
+            <data key="Border Width">1.0</data>
+            <data key="Node Size">55.0</data>
+            <data key="Ensembl">ENSG00000213928</data>
+        </node>
+        <node id="2806">
+            <data key="SUID">2806</data>
+            <data key="shared name">STAT2</data>
+            <data key="name">STAT2</data>
+            <data key="selected">false</data>
+            <data key="GraphID">dcae8</data>
+            <data key="Type">GeneProduct</data>
+            <data key="XrefId">ENSG00000170581</data>
+            <data key="XrefDatasource">Ensembl</data>
+            <data key="Color">#000000</data>
+            <data key="Border Width">1.0</data>
+            <data key="Node Size">55.0</data>
+            <data key="Ensembl">ENSG00000170581</data>
+        </node>
+        <node id="2805">
+            <data key="SUID">2805</data>
+            <data key="shared name">STAT1</data>
+            <data key="name">STAT1</data>
+            <data key="selected">false</data>
+            <data key="GraphID">f2e43</data>
+            <data key="Type">GeneProduct</data>
+            <data key="XrefId">ENSG00000115415</data>
+            <data key="XrefDatasource">Ensembl</data>
+            <data key="Color">#000000</data>
+            <data key="Border Width">1.0</data>
+            <data key="Node Size">55.0</data>
+            <data key="Ensembl">ENSG00000115415</data>
+        </node>
+        <node id="2804">
+            <data key="SUID">2804</data>
+            <data key="shared name">TYK2</data>
+            <data key="name">TYK2</data>
+            <data key="selected">false</data>
+            <data key="GraphID">ab868</data>
+            <data key="Type">GeneProduct</data>
+            <data key="XrefId">ENSG00000105397</data>
+            <data key="XrefDatasource">Ensembl</data>
+            <data key="Color">#000000</data>
+            <data key="Border Width">1.0</data>
+            <data key="Node Size">55.0</data>
+            <data key="Ensembl">ENSG00000105397</data>
+        </node>
+        <node id="2803">
+            <data key="SUID">2803</data>
+            <data key="shared name">IFNAR2</data>
+            <data key="name">IFNAR2</data>
+            <data key="selected">false</data>
+            <data key="GraphID">fdf53</data>
+            <data key="Type">GeneProduct</data>
+            <data key="XrefId">ENSG00000159110</data>
+            <data key="XrefDatasource">Ensembl</data>
+            <data key="Color">#000000</data>
+            <data key="Border Width">1.0</data>
+            <data key="Node Size">55.0</data>
+            <data key="Ensembl">ENSG00000159110</data>
+        </node>
+        <node id="2802">
+            <data key="SUID">2802</data>
+            <data key="shared name">IFNAR1</data>
+            <data key="name">IFNAR1</data>
+            <data key="selected">false</data>
+            <data key="GraphID">fdb00</data>
+            <data key="Type">GeneProduct</data>
+            <data key="XrefId">ENSG00000142166</data>
+            <data key="XrefDatasource">Ensembl</data>
+            <data key="Color">#000000</data>
+            <data key="Border Width">1.0</data>
+            <data key="Node Size">55.0</data>
+            <data key="Ensembl">ENSG00000142166</data>
+        </node>
+        <node id="2801">
+            <data key="SUID">2801</data>
+            <data key="shared name">PLpro (nsp3)</data>
+            <data key="name">PLpro (nsp3)</data>
+            <data key="selected">false</data>
+            <data key="GraphID">e9fd0</data>
+            <data key="Type">Protein</data>
+            <data key="XrefId">YP_009725299.1</data>
+            <data key="XrefDatasource">RefSeq</data>
+            <data key="Color">#000000</data>
+            <data key="Border Width">1.0</data>
+            <data key="Node Size">86.186939226628</data>
+        </node>
+        <node id="2800">
+            <data key="SUID">2800</data>
+            <data key="shared name">PKR</data>
+            <data key="name">PKR</data>
+            <data key="selected">false</data>
+            <data key="GraphID">ebb0e</data>
+            <data key="Type">GeneProduct</data>
+            <data key="XrefId">ENSG00000055332</data>
+            <data key="XrefDatasource">Ensembl</data>
+            <data key="Color">#000000</data>
+            <data key="Border Width">1.0</data>
+            <data key="Node Size">55.0</data>
+            <data key="Ensembl">ENSG00000055332</data>
+        </node>
+        <node id="2799">
+            <data key="SUID">2799</data>
+            <data key="shared name">OAS1</data>
+            <data key="name">OAS1</data>
+            <data key="selected">false</data>
+            <data key="GraphID">bc8db</data>
+            <data key="Type">GeneProduct</data>
+            <data key="XrefId">ENSG00000089127</data>
+            <data key="XrefDatasource">Ensembl</data>
+            <data key="Color">#000000</data>
+            <data key="Border Width">1.0</data>
+            <data key="Node Size">55.0</data>
+            <data key="Ensembl">ENSG00000089127</data>
+        </node>
+        <node id="2798">
+            <data key="SUID">2798</data>
+            <data key="shared name">JAK1</data>
+            <data key="name">JAK1</data>
+            <data key="selected">false</data>
+            <data key="GraphID">c966a</data>
+            <data key="Type">GeneProduct</data>
+            <data key="XrefId">ENSG00000162434</data>
+            <data key="XrefDatasource">Ensembl</data>
+            <data key="Color">#000000</data>
+            <data key="Border Width">1.0</data>
+            <data key="Node Size">55.0</data>
+            <data key="Ensembl">ENSG00000162434</data>
+        </node>
+        <node id="2797">
+            <data key="SUID">2797</data>
+            <data key="shared name">TBK1</data>
+            <data key="name">TBK1</data>
+            <data key="selected">false</data>
+            <data key="GraphID">fb718</data>
+            <data key="Type">GeneProduct</data>
+            <data key="XrefId">ENSG00000183735</data>
+            <data key="XrefDatasource">Ensembl</data>
+            <data key="Color">#000000</data>
+            <data key="Border Width">1.0</data>
+            <data key="Node Size">55.0</data>
+            <data key="Ensembl">ENSG00000183735</data>
+        </node>
+        <node id="2796">
+            <data key="SUID">2796</data>
+            <data key="shared name">TRAF3</data>
+            <data key="name">TRAF3</data>
+            <data key="selected">false</data>
+            <data key="GraphID">f673f</data>
+            <data key="Type">GeneProduct</data>
+            <data key="XrefId">ENSG00000131323</data>
+            <data key="XrefDatasource">Ensembl</data>
+            <data key="Color">#000000</data>
+            <data key="Border Width">1.0</data>
+            <data key="Node Size">55.0</data>
+            <data key="Ensembl">ENSG00000131323</data>
+        </node>
+        <node id="2795">
+            <data key="SUID">2795</data>
+            <data key="shared name">MYD88</data>
+            <data key="name">MYD88</data>
+            <data key="selected">false</data>
+            <data key="GraphID">f8b63</data>
+            <data key="Type">GeneProduct</data>
+            <data key="XrefId">ENSG00000172936</data>
+            <data key="XrefDatasource">Ensembl</data>
+            <data key="Color">#000000</data>
+            <data key="Border Width">1.0</data>
+            <data key="Node Size">55.0</data>
+            <data key="Ensembl">ENSG00000172936</data>
+        </node>
+        <node id="2794">
+            <data key="SUID">2794</data>
+            <data key="shared name">TRAF6</data>
+            <data key="name">TRAF6</data>
+            <data key="selected">false</data>
+            <data key="GraphID">fe40f</data>
+            <data key="Type">GeneProduct</data>
+            <data key="XrefId">ENSG00000175104</data>
+            <data key="XrefDatasource">Ensembl</data>
+            <data key="Color">#000000</data>
+            <data key="Border Width">1.0</data>
+            <data key="Node Size">55.0</data>
+            <data key="Ensembl">ENSG00000175104</data>
+        </node>
+        <node id="2793">
+            <data key="SUID">2793</data>
+            <data key="shared name">IRF3</data>
+            <data key="name">IRF3</data>
+            <data key="selected">false</data>
+            <data key="GraphID">e7683</data>
+            <data key="Type">GeneProduct</data>
+            <data key="XrefId">ENSG00000126456</data>
+            <data key="XrefDatasource">Ensembl</data>
+            <data key="Color">#000000</data>
+            <data key="Border Width">1.0</data>
+            <data key="Node Size">55.0</data>
+            <data key="Ensembl">ENSG00000126456</data>
+        </node>
+        <node id="2792">
+            <data key="SUID">2792</data>
+            <data key="shared name">IKBKE</data>
+            <data key="name">IKBKE</data>
+            <data key="selected">false</data>
+            <data key="GraphID">cb0df</data>
+            <data key="Type">GeneProduct</data>
+            <data key="XrefId">ENSG00000263528</data>
+            <data key="XrefDatasource">Ensembl</data>
+            <data key="Color">#000000</data>
+            <data key="Border Width">1.0</data>
+            <data key="Node Size">55.0</data>
+            <data key="Ensembl">ENSG00000263528</data>
+        </node>
+        <node id="2791">
+            <data key="SUID">2791</data>
+            <data key="shared name">SARS-CoV 2 RNA</data>
+            <data key="name">SARS-CoV 2 RNA</data>
+            <data key="selected">false</data>
+            <data key="GraphID">ff396</data>
+            <data key="Type">Rna</data>
+            <data key="XrefId">Q82069695</data>
+            <data key="XrefDatasource">Wikidata</data>
+            <data key="Color">#101019</data>
+            <data key="Border Width">1.0</data>
+            <data key="Node Size">124.22448979591803</data>
+        </node>
+        <node id="2790">
+            <data key="SUID">2790</data>
+            <data key="shared name">MAVS</data>
+            <data key="name">MAVS</data>
+            <data key="selected">false</data>
+            <data key="GraphID">fa763</data>
+            <data key="Type">Protein</data>
+            <data key="XrefId">ENSG00000088888</data>
+            <data key="XrefDatasource">Ensembl</data>
+            <data key="Color">#000000</data>
+            <data key="Border Width">1.0</data>
+            <data key="Node Size">78.30612244897952</data>
+            <data key="Ensembl">ENSG00000088888</data>
+        </node>
+        <node id="2789">
+            <data key="SUID">2789</data>
+            <data key="shared name">GRL0617</data>
+            <data key="name">GRL0617</data>
+            <data key="selected">false</data>
+            <data key="GraphID">ebd2b</data>
+            <data key="Type">Metabolite</data>
+            <data key="XrefId">Q27097846</data>
+            <data key="XrefDatasource">Wikidata</data>
+            <data key="Color">#0000ff</data>
+            <data key="Border Width">1.0</data>
+            <data key="Node Size">70.39774000448173</data>
+        </node>
+        <node id="2788">
+            <data key="SUID">2788</data>
+            <data key="shared name">IRAK4</data>
+            <data key="name">IRAK4</data>
+            <data key="selected">false</data>
+            <data key="GraphID">e33f8</data>
+            <data key="Type">Protein</data>
+            <data key="XrefId">ENSG00000198001</data>
+            <data key="XrefDatasource">Ensembl</data>
+            <data key="Color">#000000</data>
+            <data key="Border Width">1.0</data>
+            <data key="Node Size">43.8673469387753</data>
+            <data key="Ensembl">ENSG00000198001</data>
+        </node>
+        <node id="2787">
+            <data key="SUID">2787</data>
+            <data key="shared name">TLR2</data>
+            <data key="name">TLR2</data>
+            <data key="selected">false</data>
+            <data key="GraphID">e33e6</data>
+            <data key="Type">Protein</data>
+            <data key="XrefId">O60603</data>
+            <data key="XrefDatasource">Uniprot-TrEMBL</data>
+            <data key="Color">#000000</data>
+            <data key="Border Width">1.0</data>
+            <data key="Node Size">41.31632653061861</data>
+            <data key="Ensembl">ENSG00000137462</data>
+        </node>
+        <node id="2786">
+            <data key="SUID">2786</data>
+            <data key="shared name">TMPRSS2</data>
+            <data key="name">TMPRSS2</data>
+            <data key="selected">false</data>
+            <data key="GraphID">df9cf</data>
+            <data key="Type">Protein</data>
+            <data key="XrefId">O15393</data>
+            <data key="XrefDatasource">Uniprot-TrEMBL</data>
+            <data key="Color">#000000</data>
+            <data key="Border Width">1.0</data>
+            <data key="Node Size">65.55102040816337</data>
+            <data key="Ensembl">ENSG00000184012</data>
+        </node>
+        <node id="2785">
+            <data key="SUID">2785</data>
+            <data key="shared name">RIG-I (DDX58)</data>
+            <data key="name">RIG-I (DDX58)</data>
+            <data key="selected">false</data>
+            <data key="GraphID">d88ba</data>
+            <data key="Type">Protein</data>
+            <data key="XrefId">ENSG00000107201</data>
+            <data key="XrefDatasource">Ensembl</data>
+            <data key="Color">#000000</data>
+            <data key="Border Width">1.0</data>
+            <data key="Node Size">101.93329658213906</data>
+            <data key="Ensembl">ENSG00000107201</data>
+        </node>
+        <node id="2784">
+            <data key="SUID">2784</data>
+            <data key="shared name">TREML4 </data>
+            <data key="name">TREML4 </data>
+            <data key="selected">false</data>
+            <data key="GraphID">d4fdc</data>
+            <data key="Type">Protein</data>
+            <data key="XrefId">Q6UXN2</data>
+            <data key="XrefDatasource">Uniprot-TrEMBL</data>
+            <data key="Color">#000000</data>
+            <data key="Border Width">1.0</data>
+            <data key="Node Size">51.0</data>
+            <data key="Ensembl">ENSG00000188056</data>
+        </node>
+        <node id="2783">
+            <data key="SUID">2783</data>
+            <data key="shared name">Innate Immunity</data>
+            <data key="name">Innate Immunity</data>
+            <data key="selected">false</data>
+            <data key="GraphID">c1ec8</data>
+            <data key="Type">Pathway</data>
+            <data key="XrefId"/>
+            <data key="Color">#14961e</data>
+            <data key="Border Width">1.0</data>
+            <data key="Node Size">122.36625514403283</data>
+        </node>
+        <node id="2782">
+            <data key="SUID">2782</data>
+            <data key="shared name">MDA5 </data>
+            <data key="name">MDA5 </data>
+            <data key="selected">false</data>
+            <data key="GraphID">b93b0</data>
+            <data key="Type">Protein</data>
+            <data key="XrefId">ENSG00000115267</data>
+            <data key="XrefDatasource">Ensembl</data>
+            <data key="Color">#000000</data>
+            <data key="Border Width">1.0</data>
+            <data key="Node Size">66.65214994487314</data>
+            <data key="Ensembl">ENSG00000115267</data>
+        </node>
+        <node id="2781">
+            <data key="SUID">2781</data>
+            <data key="shared name">TLR9</data>
+            <data key="name">TLR9</data>
+            <data key="selected">false</data>
+            <data key="GraphID">adc15</data>
+            <data key="Type">Protein</data>
+            <data key="XrefId">Q9NR96</data>
+            <data key="XrefDatasource">Uniprot-TrEMBL</data>
+            <data key="Color">#000000</data>
+            <data key="Border Width">1.0</data>
+            <data key="Node Size">52.295918367342324</data>
+            <data key="Ensembl">ENSG00000239732</data>
+        </node>
+        <node id="2780">
+            <data key="SUID">2780</data>
+            <data key="shared name">TLR3</data>
+            <data key="name">TLR3</data>
+            <data key="selected">false</data>
+            <data key="GraphID">ab922</data>
+            <data key="Type">Protein</data>
+            <data key="XrefId">O15455</data>
+            <data key="XrefDatasource">Uniprot-TrEMBL</data>
+            <data key="Color">#000000</data>
+            <data key="Border Width">1.0</data>
+            <data key="Node Size">61.72448979592123</data>
+            <data key="Ensembl">ENSG00000164342</data>
+        </node>
+        <node id="2779">
+            <data key="SUID">2779</data>
+            <data key="shared name">TRIF
+</data>
+            <data key="name">TRIF
+</data>
+            <data key="selected">false</data>
+            <data key="GraphID">a8003</data>
+            <data key="Type">Protein</data>
+            <data key="XrefId"/>
+            <data key="Color">#000000</data>
+            <data key="Border Width">1.0</data>
+            <data key="Node Size">59.03061224489802</data>
+        </node>
+        <edge source="2865" target="2795">
+            <data key="SUID">2882</data>
+            <data key="selected">false</data>
+            <data key="WP.type">mim-binding</data>
+            <data key="Width">1.0003521365158876</data>
+            <data key="LineStyle">Solid</data>
+            <data key="Source Arrow Shape">Line</data>
+            <data key="Target Arrow Shape">mim-binding</data>
+            <data key="Color">#000000</data>
+        </edge>
+        <edge source="2864" target="2817">
+            <data key="SUID">2898</data>
+            <data key="selected">false</data>
+            <data key="WP.type">Arrow</data>
+            <data key="Width">1.0091091317374379</data>
+            <data key="LineStyle">Solid</data>
+            <data key="Source Arrow Shape">Line</data>
+            <data key="Target Arrow Shape">Arrow</data>
+            <data key="Color">#000000</data>
+        </edge>
+        <edge source="2859" target="2849">
+            <data key="SUID">2911</data>
+            <data key="selected">false</data>
+            <data key="WP.type">Arrow</data>
+            <data key="Width">1.0058271799814034</data>
+            <data key="LineStyle">Solid</data>
+            <data key="Source Arrow Shape">Line</data>
+            <data key="Target Arrow Shape">Arrow</data>
+            <data key="Color">#000000</data>
+        </edge>
+        <edge source="2856" target="2805">
+            <data key="SUID">2867</data>
+            <data key="selected">false</data>
+            <data key="WP.type">Arrow</data>
+            <data key="Width">1.006301544220652</data>
+            <data key="LineStyle">Solid</data>
+            <data key="Source Arrow Shape">Line</data>
+            <data key="Target Arrow Shape">Arrow</data>
+            <data key="Color">#000000</data>
+        </edge>
+        <edge source="2853" target="2808">
+            <data key="SUID">2910</data>
+            <data key="selected">false</data>
+            <data key="WP.type">mim-transcription-translation</data>
+            <data key="Width">1.0021404824819549</data>
+            <data key="LineStyle">Solid</data>
+            <data key="Source Arrow Shape">Line</data>
+            <data key="Target Arrow Shape">mim-transcription-translation</data>
+            <data key="Color">#000000</data>
+        </edge>
+        <edge source="2849" target="2809">
+            <data key="SUID">2893</data>
+            <data key="selected">false</data>
+            <data key="WP.type">mim-transcription-translation</data>
+            <data key="Width">1.003574479663754</data>
+            <data key="LineStyle">Solid</data>
+            <data key="Source Arrow Shape">Line</data>
+            <data key="Target Arrow Shape">mim-transcription-translation</data>
+            <data key="Color">#000000</data>
+        </edge>
+        <edge source="2844" target="2783">
+            <data key="SUID">2885</data>
+            <data key="selected">false</data>
+            <data key="WP.type">Arrow</data>
+            <data key="Width">1.009177316643445</data>
+            <data key="LineStyle">Solid</data>
+            <data key="Source Arrow Shape">Line</data>
+            <data key="Target Arrow Shape">Arrow</data>
+            <data key="Color">#000000</data>
+        </edge>
+        <edge source="2840" target="2793">
+            <data key="SUID">2887</data>
+            <data key="selected">false</data>
+            <data key="WP.type">Arrow</data>
+            <data key="Width">1.0033293368757548</data>
+            <data key="LineStyle">Solid</data>
+            <data key="Source Arrow Shape">Line</data>
+            <data key="Target Arrow Shape">Arrow</data>
+            <data key="Color">#000000</data>
+        </edge>
+        <edge source="2837" target="2808">
+            <data key="SUID">2878</data>
+            <data key="selected">false</data>
+            <data key="WP.type">mim-transcription-translation</data>
+            <data key="Width">1.0094152393760205</data>
+            <data key="LineStyle">Solid</data>
+            <data key="Source Arrow Shape">Line</data>
+            <data key="Target Arrow Shape">mim-transcription-translation</data>
+            <data key="Color">#000000</data>
+        </edge>
+        <edge source="2826" target="2817">
+            <data key="SUID">2921</data>
+            <data key="selected">false</data>
+            <data key="WP.type">mim-inhibition</data>
+            <data key="Width">1.009164366300161</data>
+            <data key="LineStyle">Solid</data>
+            <data key="Source Arrow Shape">Line</data>
+            <data key="Target Arrow Shape">mim-inhibition</data>
+            <data key="Color">#cc0033</data>
+        </edge>
+        <edge source="2826" target="2849">
+            <data key="SUID">2920</data>
+            <data key="selected">false</data>
+            <data key="WP.type">mim-inhibition</data>
+            <data key="Width">1.0039527147492748</data>
+            <data key="LineStyle">Solid</data>
+            <data key="Source Arrow Shape">Line</data>
+            <data key="Target Arrow Shape">mim-inhibition</data>
+            <data key="Color">#cc0033</data>
+        </edge>
+        <edge source="2823" target="2782">
+            <data key="SUID">2918</data>
+            <data key="selected">false</data>
+            <data key="WP.type">mim-inhibition</data>
+            <data key="Width">1.0057736175109948</data>
+            <data key="LineStyle">Solid</data>
+            <data key="Source Arrow Shape">Line</data>
+            <data key="Target Arrow Shape">mim-inhibition</data>
+            <data key="Color">#cc0033</data>
+        </edge>
+        <edge source="2823" target="2785">
+            <data key="SUID">2917</data>
+            <data key="selected">false</data>
+            <data key="WP.type">mim-inhibition</data>
+            <data key="Width">1.0024544253672725</data>
+            <data key="LineStyle">Solid</data>
+            <data key="Source Arrow Shape">Line</data>
+            <data key="Target Arrow Shape">mim-inhibition</data>
+            <data key="Color">#cc0033</data>
+        </edge>
+        <edge source="2822" target="2782">
+            <data key="SUID">2919</data>
+            <data key="selected">false</data>
+            <data key="WP.type">mim-inhibition</data>
+            <data key="Width">1.0089940430492144</data>
+            <data key="LineStyle">Solid</data>
+            <data key="Source Arrow Shape">Line</data>
+            <data key="Target Arrow Shape">mim-inhibition</data>
+            <data key="Color">#cc0033</data>
+        </edge>
+        <edge source="2821" target="2785">
+            <data key="SUID">2916</data>
+            <data key="selected">false</data>
+            <data key="WP.type">mim-inhibition</data>
+            <data key="Width">1.006362930624078</data>
+            <data key="LineStyle">Solid</data>
+            <data key="Source Arrow Shape">Line</data>
+            <data key="Target Arrow Shape">mim-inhibition</data>
+            <data key="Color">#cc0033</data>
+        </edge>
+        <edge source="2821" target="2782">
+            <data key="SUID">2914</data>
+            <data key="selected">false</data>
+            <data key="WP.type">mim-inhibition</data>
+            <data key="Width">1.0041775392454926</data>
+            <data key="LineStyle">Solid</data>
+            <data key="Source Arrow Shape">Line</data>
+            <data key="Target Arrow Shape">mim-inhibition</data>
+            <data key="Color">#cc0033</data>
+        </edge>
+        <edge source="2820" target="2785">
+            <data key="SUID">2915</data>
+            <data key="selected">false</data>
+            <data key="WP.type">mim-inhibition</data>
+            <data key="Width">1.0036173402650848</data>
+            <data key="LineStyle">Solid</data>
+            <data key="Source Arrow Shape">Line</data>
+            <data key="Target Arrow Shape">mim-inhibition</data>
+            <data key="Color">#cc0033</data>
+        </edge>
+        <edge source="2820" target="2782">
+            <data key="SUID">2913</data>
+            <data key="selected">false</data>
+            <data key="WP.type">mim-inhibition</data>
+            <data key="Width">1.0005086352012234</data>
+            <data key="LineStyle">Solid</data>
+            <data key="Source Arrow Shape">Line</data>
+            <data key="Target Arrow Shape">mim-inhibition</data>
+            <data key="Color">#cc0033</data>
+        </edge>
+        <edge source="2819" target="2805">
+            <data key="SUID">2912</data>
+            <data key="selected">false</data>
+            <data key="WP.type">mim-inhibition</data>
+            <data key="Width">1.0049994824647612</data>
+            <data key="LineStyle">Solid</data>
+            <data key="Source Arrow Shape">Line</data>
+            <data key="Target Arrow Shape">mim-inhibition</data>
+            <data key="Color">#cc0033</data>
+        </edge>
+        <edge source="2819" target="2808">
+            <data key="SUID">2870</data>
+            <data key="selected">false</data>
+            <data key="WP.type">mim-inhibition</data>
+            <data key="Width">1.0032760585059473</data>
+            <data key="LineStyle">Solid</data>
+            <data key="Source Arrow Shape">Line</data>
+            <data key="Target Arrow Shape">mim-inhibition</data>
+            <data key="Color">#cc0033</data>
+        </edge>
+        <edge source="2818" target="2853">
+            <data key="SUID">2854</data>
+            <data key="selected">false</data>
+        </edge>
+        <edge source="2816" target="2779">
+            <data key="SUID">2899</data>
+            <data key="selected">false</data>
+            <data key="WP.type">mim-conversion</data>
+            <data key="Width">1.009461791344142</data>
+            <data key="LineStyle">Solid</data>
+            <data key="Source Arrow Shape">Line</data>
+            <data key="Target Arrow Shape">mim-conversion</data>
+            <data key="Color">#000000</data>
+        </edge>
+        <edge source="2816" target="2795">
+            <data key="SUID">2895</data>
+            <data key="selected">false</data>
+            <data key="WP.type">mim-conversion</data>
+            <data key="Width">1.0036100958750493</data>
+            <data key="LineStyle">Solid</data>
+            <data key="Source Arrow Shape">Line</data>
+            <data key="Target Arrow Shape">mim-conversion</data>
+            <data key="Color">#000000</data>
+        </edge>
+        <edge source="2815" target="2795">
+            <data key="SUID">2894</data>
+            <data key="selected">false</data>
+            <data key="WP.type">mim-conversion</data>
+            <data key="Width">1.003539205692076</data>
+            <data key="LineStyle">Solid</data>
+            <data key="Source Arrow Shape">Line</data>
+            <data key="Target Arrow Shape">mim-conversion</data>
+            <data key="Color">#000000</data>
+        </edge>
+        <edge source="2814" target="2865">
+            <data key="SUID">2881</data>
+            <data key="selected">false</data>
+            <data key="WP.type">mim-binding</data>
+            <data key="Width">1.0037042141817152</data>
+            <data key="LineStyle">Solid</data>
+            <data key="Source Arrow Shape">Line</data>
+            <data key="Target Arrow Shape">mim-binding</data>
+            <data key="Color">#000000</data>
+        </edge>
+        <edge source="2812" target="2797">
+            <data key="SUID">2879</data>
+            <data key="selected">false</data>
+            <data key="WP.type">mim-inhibition</data>
+            <data key="Width">1.006784006589973</data>
+            <data key="LineStyle">Solid</data>
+            <data key="Source Arrow Shape">Line</data>
+            <data key="Target Arrow Shape">mim-inhibition</data>
+            <data key="Color">#cc0033</data>
+        </edge>
+        <edge source="2811" target="2844">
+            <data key="SUID">2845</data>
+            <data key="selected">false</data>
+        </edge>
+        <edge source="2810" target="2844">
+            <data key="SUID">2846</data>
+            <data key="selected">false</data>
+        </edge>
+        <edge source="2809" target="2844">
+            <data key="SUID">2886</data>
+            <data key="selected">false</data>
+            <data key="WP.type">mim-transcription-translation</data>
+            <data key="Width">1.006807787990206</data>
+            <data key="LineStyle">Solid</data>
+            <data key="Source Arrow Shape">Line</data>
+            <data key="Target Arrow Shape">mim-transcription-translation</data>
+            <data key="Color">#000000</data>
+        </edge>
+        <edge source="2808" target="2808">
+            <data key="SUID">2875</data>
+            <data key="selected">false</data>
+            <data key="WP.type">Arrow</data>
+            <data key="Width">1.0001692256776078</data>
+            <data key="LineStyle">Solid</data>
+            <data key="Source Arrow Shape">Line</data>
+            <data key="Target Arrow Shape">Arrow</data>
+            <data key="Color">#000000</data>
+        </edge>
+        <edge source="2808" target="2808">
+            <data key="SUID">2872</data>
+            <data key="selected">false</data>
+            <data key="WP.type">mim-transcription-translation</data>
+            <data key="Width">1.0060146933778622</data>
+            <data key="LineStyle">Solid</data>
+            <data key="Source Arrow Shape">Line</data>
+            <data key="Target Arrow Shape">mim-transcription-translation</data>
+            <data key="Color">#000000</data>
+        </edge>
+        <edge source="2808" target="2834">
+            <data key="SUID">2868</data>
+            <data key="selected">false</data>
+            <data key="WP.type">mim-binding</data>
+            <data key="Width">1.004448510077487</data>
+            <data key="LineStyle">Solid</data>
+            <data key="Source Arrow Shape">Line</data>
+            <data key="Target Arrow Shape">mim-binding</data>
+            <data key="Color">#000000</data>
+        </edge>
+        <edge source="2807" target="2849">
+            <data key="SUID">2851</data>
+            <data key="selected">false</data>
+        </edge>
+        <edge source="2806" target="2859">
+            <data key="SUID">2860</data>
+            <data key="selected">false</data>
+        </edge>
+        <edge source="2806" target="2849">
+            <data key="SUID">2850</data>
+            <data key="selected">false</data>
+        </edge>
+        <edge source="2805" target="2859">
+            <data key="SUID">2861</data>
+            <data key="selected">false</data>
+        </edge>
+        <edge source="2805" target="2849">
+            <data key="SUID">2852</data>
+            <data key="selected">false</data>
+        </edge>
+        <edge source="2804" target="2856">
+            <data key="SUID">2857</data>
+            <data key="selected">false</data>
+        </edge>
+        <edge source="2803" target="2834">
+            <data key="SUID">2835</data>
+            <data key="selected">false</data>
+        </edge>
+        <edge source="2802" target="2834">
+            <data key="SUID">2836</data>
+            <data key="selected">false</data>
+        </edge>
+        <edge source="2801" target="2794">
+            <data key="SUID">2890</data>
+            <data key="selected">false</data>
+            <data key="WP.type">TBar</data>
+            <data key="Width">1.0040739304059567</data>
+            <data key="LineStyle">Solid</data>
+            <data key="Source Arrow Shape">Line</data>
+            <data key="Target Arrow Shape">TBar</data>
+            <data key="Color">#cc0033</data>
+        </edge>
+        <edge source="2801" target="2796">
+            <data key="SUID">2889</data>
+            <data key="selected">false</data>
+            <data key="WP.type">TBar</data>
+            <data key="Width">1.000962427284751</data>
+            <data key="LineStyle">Solid</data>
+            <data key="Source Arrow Shape">Line</data>
+            <data key="Target Arrow Shape">TBar</data>
+            <data key="Color">#cc0033</data>
+        </edge>
+        <edge source="2801" target="2792">
+            <data key="SUID">2888</data>
+            <data key="selected">false</data>
+            <data key="WP.type">TBar</data>
+            <data key="Width">1.0097076438114811</data>
+            <data key="LineStyle">Solid</data>
+            <data key="Source Arrow Shape">Line</data>
+            <data key="Target Arrow Shape">TBar</data>
+            <data key="Color">#cc0033</data>
+        </edge>
+        <edge source="2801" target="2793">
+            <data key="SUID">2874</data>
+            <data key="selected">false</data>
+            <data key="WP.type">TBar</data>
+            <data key="Width">1.0065666952556789</data>
+            <data key="LineStyle">Solid</data>
+            <data key="Source Arrow Shape">Line</data>
+            <data key="Target Arrow Shape">TBar</data>
+            <data key="Color">#cc0033</data>
+        </edge>
+        <edge source="2800" target="2844">
+            <data key="SUID">2847</data>
+            <data key="selected">false</data>
+        </edge>
+        <edge source="2799" target="2844">
+            <data key="SUID">2848</data>
+            <data key="selected">false</data>
+        </edge>
+        <edge source="2798" target="2856">
+            <data key="SUID">2858</data>
+            <data key="selected">false</data>
+        </edge>
+        <edge source="2797" target="2840">
+            <data key="SUID">2842</data>
+            <data key="selected">false</data>
+        </edge>
+        <edge source="2796" target="2840">
+            <data key="SUID">2891</data>
+            <data key="selected">false</data>
+            <data key="WP.type">Arrow</data>
+            <data key="Width">1.0004030114868827</data>
+            <data key="LineStyle">Solid</data>
+            <data key="Source Arrow Shape">Line</data>
+            <data key="Target Arrow Shape">Arrow</data>
+            <data key="Color">#000000</data>
+        </edge>
+        <edge source="2795" target="2788">
+            <data key="SUID">2907</data>
+            <data key="selected">false</data>
+            <data key="WP.type">Arrow</data>
+            <data key="Width">1.005765698606069</data>
+            <data key="LineStyle">Solid</data>
+            <data key="Source Arrow Shape">Line</data>
+            <data key="Target Arrow Shape">Arrow</data>
+            <data key="Color">#000000</data>
+        </edge>
+        <edge source="2795" target="2794">
+            <data key="SUID">2896</data>
+            <data key="selected">false</data>
+            <data key="WP.type">Arrow</data>
+            <data key="Width">1.0052982102685795</data>
+            <data key="LineStyle">Solid</data>
+            <data key="Source Arrow Shape">Line</data>
+            <data key="Target Arrow Shape">Arrow</data>
+            <data key="Color">#000000</data>
+        </edge>
+        <edge source="2794" target="2864">
+            <data key="SUID">2897</data>
+            <data key="selected">false</data>
+            <data key="WP.type">Arrow</data>
+            <data key="Width">1.0081715373451163</data>
+            <data key="LineStyle">Solid</data>
+            <data key="Source Arrow Shape">Line</data>
+            <data key="Target Arrow Shape">Arrow</data>
+            <data key="Color">#000000</data>
+        </edge>
+        <edge source="2793" target="2853">
+            <data key="SUID">2906</data>
+            <data key="selected">false</data>
+            <data key="WP.type">Arrow</data>
+            <data key="Width">1.0024262505673067</data>
+            <data key="LineStyle">Solid</data>
+            <data key="Source Arrow Shape">Line</data>
+            <data key="Target Arrow Shape">Arrow</data>
+            <data key="Color">#000000</data>
+        </edge>
+        <edge source="2793" target="2837">
+            <data key="SUID">2905</data>
+            <data key="selected">false</data>
+            <data key="WP.type">Arrow</data>
+            <data key="Width">1.0008456522903364</data>
+            <data key="LineStyle">Solid</data>
+            <data key="Source Arrow Shape">Line</data>
+            <data key="Target Arrow Shape">Arrow</data>
+            <data key="Color">#000000</data>
+        </edge>
+        <edge source="2793" target="2853">
+            <data key="SUID">2855</data>
+            <data key="selected">false</data>
+        </edge>
+        <edge source="2793" target="2837">
+            <data key="SUID">2839</data>
+            <data key="selected">false</data>
+        </edge>
+        <edge source="2793" target="2837">
+            <data key="SUID">2838</data>
+            <data key="selected">false</data>
+        </edge>
+        <edge source="2792" target="2840">
+            <data key="SUID">2841</data>
+            <data key="selected">false</data>
+        </edge>
+        <edge source="2791" target="2814">
+            <data key="SUID">2909</data>
+            <data key="selected">false</data>
+            <data key="WP.type">mim-stimulation</data>
+            <data key="Width">1.0080782031065172</data>
+            <data key="LineStyle">Solid</data>
+            <data key="Source Arrow Shape">Line</data>
+            <data key="Target Arrow Shape">mim-stimulation</data>
+            <data key="Color">#000000</data>
+        </edge>
+        <edge source="2791" target="2781">
+            <data key="SUID">2908</data>
+            <data key="selected">false</data>
+            <data key="WP.type">mim-stimulation</data>
+            <data key="Width">1.0012546294231526</data>
+            <data key="LineStyle">Solid</data>
+            <data key="Source Arrow Shape">Line</data>
+            <data key="Target Arrow Shape">mim-stimulation</data>
+            <data key="Color">#000000</data>
+        </edge>
+        <edge source="2791" target="2782">
+            <data key="SUID">2902</data>
+            <data key="selected">false</data>
+            <data key="WP.type">mim-binding</data>
+            <data key="Width">1.0073320262062275</data>
+            <data key="LineStyle">Solid</data>
+            <data key="Source Arrow Shape">Line</data>
+            <data key="Target Arrow Shape">mim-binding</data>
+            <data key="Color">#000000</data>
+        </edge>
+        <edge source="2791" target="2780">
+            <data key="SUID">2880</data>
+            <data key="selected">false</data>
+            <data key="WP.type">mim-stimulation</data>
+            <data key="Width">1.0045193350362527</data>
+            <data key="LineStyle">Solid</data>
+            <data key="Source Arrow Shape">Line</data>
+            <data key="Target Arrow Shape">mim-stimulation</data>
+            <data key="Color">#000000</data>
+        </edge>
+        <edge source="2791" target="2785">
+            <data key="SUID">2871</data>
+            <data key="selected">false</data>
+            <data key="WP.type">mim-binding</data>
+            <data key="Width">1.0067821880185528</data>
+            <data key="LineStyle">Solid</data>
+            <data key="Source Arrow Shape">Line</data>
+            <data key="Target Arrow Shape">mim-binding</data>
+            <data key="Color">#000000</data>
+        </edge>
+        <edge source="2790" target="2796">
+            <data key="SUID">2869</data>
+            <data key="selected">false</data>
+            <data key="WP.type">mim-conversion</data>
+            <data key="Width">1.0032945175832655</data>
+            <data key="LineStyle">Solid</data>
+            <data key="Source Arrow Shape">Line</data>
+            <data key="Target Arrow Shape">mim-conversion</data>
+            <data key="Color">#000000</data>
+        </edge>
+        <edge source="2790" target="2862">
+            <data key="SUID">2863</data>
+            <data key="selected">false</data>
+        </edge>
+        <edge source="2789" target="2801">
+            <data key="SUID">2892</data>
+            <data key="selected">false</data>
+            <data key="WP.type">TBar</data>
+            <data key="Width">1.0093690074816848</data>
+            <data key="LineStyle">Solid</data>
+            <data key="Source Arrow Shape">Line</data>
+            <data key="Target Arrow Shape">TBar</data>
+            <data key="Color">#cc0033</data>
+        </edge>
+        <edge source="2788" target="2794">
+            <data key="SUID">2883</data>
+            <data key="selected">false</data>
+            <data key="WP.type">Arrow</data>
+            <data key="Width">1.0036475211881792</data>
+            <data key="LineStyle">Solid</data>
+            <data key="Source Arrow Shape">Line</data>
+            <data key="Target Arrow Shape">Arrow</data>
+            <data key="Color">#000000</data>
+        </edge>
+        <edge source="2788" target="2796">
+            <data key="SUID">2876</data>
+            <data key="selected">false</data>
+            <data key="WP.type">Arrow</data>
+            <data key="Width">1.0029363896767467</data>
+            <data key="LineStyle">Solid</data>
+            <data key="Source Arrow Shape">Line</data>
+            <data key="Target Arrow Shape">Arrow</data>
+            <data key="Color">#000000</data>
+        </edge>
+        <edge source="2787" target="2795">
+            <data key="SUID">2877</data>
+            <data key="selected">false</data>
+            <data key="WP.type">mim-conversion</data>
+            <data key="Width">1.002034527064918</data>
+            <data key="LineStyle">Solid</data>
+            <data key="Source Arrow Shape">Line</data>
+            <data key="Target Arrow Shape">mim-conversion</data>
+            <data key="Color">#000000</data>
+        </edge>
+        <edge source="2785" target="2790">
+            <data key="SUID">2903</data>
+            <data key="selected">false</data>
+            <data key="WP.type">mim-binding</data>
+            <data key="Width">1.002196780114503</data>
+            <data key="LineStyle">Solid</data>
+            <data key="Source Arrow Shape">Line</data>
+            <data key="Target Arrow Shape">mim-binding</data>
+            <data key="Color">#000000</data>
+        </edge>
+        <edge source="2784" target="2865">
+            <data key="SUID">2873</data>
+            <data key="selected">false</data>
+            <data key="WP.type">mim-necessary-stimulation</data>
+            <data key="Width">1.0064731852338566</data>
+            <data key="LineStyle">Solid</data>
+            <data key="Source Arrow Shape">Line</data>
+            <data key="Target Arrow Shape">mim-necessary-stimulation</data>
+            <data key="Color">#000000</data>
+        </edge>
+        <edge source="2784" target="2805">
+            <data key="SUID">2866</data>
+            <data key="selected">false</data>
+            <data key="WP.type">mim-necessary-stimulation</data>
+            <data key="Width">1.0088642555910852</data>
+            <data key="LineStyle">Solid</data>
+            <data key="Source Arrow Shape">Line</data>
+            <data key="Target Arrow Shape">mim-necessary-stimulation</data>
+            <data key="Color">#000000</data>
+        </edge>
+        <edge source="2782" target="2790">
+            <data key="SUID">2904</data>
+            <data key="selected">false</data>
+            <data key="WP.type">mim-binding</data>
+            <data key="Width">1.0011131544844007</data>
+            <data key="LineStyle">Solid</data>
+            <data key="Source Arrow Shape">Line</data>
+            <data key="Target Arrow Shape">mim-binding</data>
+            <data key="Color">#000000</data>
+        </edge>
+        <edge source="2781" target="2795">
+            <data key="SUID">2884</data>
+            <data key="selected">false</data>
+            <data key="WP.type">mim-binding</data>
+            <data key="Width">1.0078747022127246</data>
+            <data key="LineStyle">Solid</data>
+            <data key="Source Arrow Shape">Line</data>
+            <data key="Target Arrow Shape">mim-binding</data>
+            <data key="Color">#000000</data>
+        </edge>
+        <edge source="2780" target="2779">
+            <data key="SUID">2900</data>
+            <data key="selected">false</data>
+            <data key="WP.type">mim-conversion</data>
+            <data key="Width">1.0028153436309541</data>
+            <data key="LineStyle">Solid</data>
+            <data key="Source Arrow Shape">Line</data>
+            <data key="Target Arrow Shape">mim-conversion</data>
+            <data key="Color">#000000</data>
+        </edge>
+        <edge source="2779" target="2796">
+            <data key="SUID">2901</data>
+            <data key="selected">false</data>
+            <data key="WP.type">mim-conversion</data>
+            <data key="Width">1.0028890352278261</data>
+            <data key="LineStyle">Solid</data>
+            <data key="Source Arrow Shape">Line</data>
+            <data key="Target Arrow Shape">mim-conversion</data>
+            <data key="Color">#000000</data>
+        </edge>
+    </graph>
+</graphml>
