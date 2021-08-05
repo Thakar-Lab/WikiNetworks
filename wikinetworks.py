@@ -19,6 +19,8 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 import glob
 from string import ascii_uppercase, digits
+from unidecode import unidecode
+import collections
 
 def id_generator(size=5, chars=ascii_uppercase + digits):
     return ''.join(choice(chars) for _ in range(size))
@@ -27,8 +29,31 @@ def givenCodeGetGPML(s, code):
     """download gpml files from wikipathways database"""
     code=code.decode()
     res=s.getPathwayAs(code, filetype="gpml")
+    #newres = unidecode(res)
     newres=binascii.a2b_base64(bytes(res,"ascii")) # convert to ascii
     return(newres)
+
+def getCurationTags(s, code):
+    url="https://webservice.wikipathways.org/getCurationTags?pwId="+str(code)+"&format=xml"
+    res=s.http_get(url + "&format=json")
+    return(res)
+    
+def processCurationTags(curationTagsDict):
+    """Processes the output of getCurationTags to get a readable list of warning labels. The user should consider this list of tags as a quality indicator."""
+    #get the dictionary of tags
+    #print the pathway information
+    print("\n***PATHWAY INFORMATION***\n")
+    print("Name: ", curationTagsDict['tags'][0]['name'], "\n")
+    print("Display Name: ", curationTagsDict['tags'][0]['displayName'], "\n")
+    for key in curationTagsDict['tags'][0]['pathway'].keys():
+        print(str(key)+": "+curationTagsDict['tags'][0]['pathway'][str(key)]+"\n")
+    print("\n***CURATION WARNINGS:***\n")
+    for annotation in range(1, len(curationTagsDict['tags'])):
+        print("\n***CURATION TAG "+str(annotation)+"***\n")
+        print("Name: "+curationTagsDict['tags'][annotation]['name'])
+        print("Display Name: "+curationTagsDict['tags'][annotation]['displayName'])
+        print("Description: "+curationTagsDict['tags'][annotation]['text'])
+    print("*********\n")
 
 def getAnchor(interacts, featureDFs):
     node_to_anchor = {}
@@ -87,9 +112,21 @@ def getNodeLoc(features):
         color = ''.join(["#",str(color)])
         if color is None or color is "None":
             color = "#000000"
-        nodeData.append([textlabel, graphid, groupRef, centerX, centerY, width, height, color])
-
-    nodeDF = pd.DataFrame(nodeData, columns = ['textlabel', 'graphid', 'groupref', 'centerX', 'centerY', 'width', 'height', 'color'])
+        #get database identifiers
+        databaseInf=entry.find("Xref")
+        if not databaseInf is None:
+            database=databaseInf.get("Database")
+            databaseID=databaseInf.get("ID")
+            #if database information is not found, replace with textlabel
+            if database is None or database is "":
+                database = "Unknown"
+            if databaseID is None or databaseID is "":
+                databaseID = textlabel
+        else:
+            database = "Unknown"
+            databaseID = textlabel
+        nodeData.append([textlabel, graphid, groupRef, centerX, centerY, width, height, color, database, databaseID])
+    nodeDF = pd.DataFrame(nodeData, columns = ['textlabel', 'graphid', 'groupref', 'centerX', 'centerY', 'width', 'height', 'color', 'database', 'databaseID'])
     nodeDF = gpd.GeoDataFrame(nodeDF, geometry = gpd.points_from_xy(nodeDF.centerX, nodeDF.centerY))
     return(nodeDF)
 
@@ -388,8 +425,10 @@ def makeMatchedDistHist(featureDFs, pathwayID):
     df = featureDFs['interactDF']
     #print(df.head(10))
     plotName = ''.join([pathwayID, "_disthist.svg"])
-    sns.distplot(df['matched_Node1_dist'], hist = True, kde = False, label='Node 1')
-    sns.distplot(df['matched_Node2_dist'], hist = True, kde = False, label='Node 2')
+    #sns.distplot(df['matched_Node1_dist'], hist = True, kde = False, label='Node 1')
+    #sns.distplot(df['matched_Node2_dist'], hist = True, kde = False, label='Node 2')
+    sns.displot(data = df, x = 'matched_Node1_dist', kind = "hist", label='Node 1')
+    sns.displot(data = df, x = 'matched_Node2_dist', kind = "hist", label='Node 2')
 
     # Plot formatting
     plt.legend(prop={'size': 12})
@@ -547,8 +586,6 @@ def matchRef(x, featureDFs, featureList, anchor_graphids):
 
     if not x is None:
         if x in anchor_graphids:
-            #if x == "d1ac3":
-                #print(x, anchor_graphids[x])
             x = anchor_graphids[x]
         else:
             x = x
@@ -573,7 +610,7 @@ def matchRef(x, featureDFs, featureList, anchor_graphids):
             elif temp_groupref is None and not shape_textlabels[shape_graphids.index(x)] is None:
                 return(shape_textlabels[shape_graphids.index(x)])
             else:
-                #print("Ungrouped shape ID: ", x)
+                #Ungrouped shape ID
                 return(x)
         elif x in label_graphids:
             #Use label graphid to find corresponding label groupref
@@ -583,7 +620,7 @@ def matchRef(x, featureDFs, featureList, anchor_graphids):
                 temp_textlabel = [label_textlabels[label_graphids.index(element)] for element in matchLabelID]
                 return(temp_textlabel)
             else:
-                #print("Ungrouped label ID: ", x)
+                #Ungrouped label ID
                 return(x)
         elif x in group_graphids:
             #Use group graphId to find corresponding groupId
@@ -626,11 +663,10 @@ def processInteractDF(featureDFs, featureList):
     featureDFs['interactDF']['matched_Node2_textlabel'] = [matchRef(x,featureDFs, featureList, anchor_graphids) for x in featureDFs['interactDF']['matched_Node2'].tolist()]
 
     # if endpoints are successfully mapped to nodes, assign a distance of zero to that mapped node
-    # TODO
 
     textlabels = featureDFs['datanodeDF']['textlabel'].tolist()
-    featureDFs['interactDF']['matched_Node1_textlabel'] = [matchRef(x, featureDFs, featureList, anchor_graphids) for x in featureDFs['interactDF']['matched_Node1'].tolist()]
-    featureDFs['interactDF']['matched_Node2_textlabel'] = [matchRef(x,featureDFs, featureList, anchor_graphids) for x in featureDFs['interactDF']['matched_Node2'].tolist()]
+    #featureDFs['interactDF']['matched_Node1_textlabel'] = [matchRef(x, featureDFs, featureList, anchor_graphids) for x in featureDFs['interactDF']['matched_Node1'].tolist()]
+    #featureDFs['interactDF']['matched_Node2_textlabel'] = [matchRef(x,featureDFs, featureList, anchor_graphids) for x in featureDFs['interactDF']['matched_Node2'].tolist()]
 
     featureDFs['interactDF']['matched_Node1_dist'] = np.where(featureDFs['interactDF']['matched_Node1_textlabel'].apply(replaceDist, textlabels = textlabels), 0, featureDFs['interactDF']['matched_Node1_dist'])
     featureDFs['interactDF']['matched_Node2_dist'] = np.where(featureDFs['interactDF']['matched_Node2_textlabel'].apply(replaceDist, textlabels = textlabels), 0, featureDFs['interactDF']['matched_Node2_dist'])
@@ -640,7 +676,7 @@ def processInteractDF(featureDFs, featureList):
     return(featureDFs['interactDF'])
 
 def flatten(l):
-    import collections
+    
     #https://stackoverflow.com/a/2158532
     for el in l:
         if isinstance(el, collections.Iterable) and not isinstance(el, (str, bytes)):
@@ -691,9 +727,9 @@ def makeGraph(featureDFs, featureList, reWire_Inferred_Groups=False):
             for n2 in node2:
                 if not arrow is None:
                     arrow, interaction, signal = checkArrow(arrow)
-                    G.add_edge(n1, n2, edgeID = edgeID, arrow = arrow, interaction = interaction, signal=signal, color=color)
+                    G.add_edge(str(n1), str(n2), edgeID = str(edgeID), arrow = str(arrow), interaction = str(interaction), signal=str(signal), color=str(color))
                 else:
-                    G.add_edge(n1, n2, edgeID = edgeID, arrow = "unknown", interaction = "u", signal="u", color=color)
+                    G.add_edge(str(n1), str(n2), edgeID = str(edgeID), arrow = "unknown", interaction = "u", signal="u", color=str(color))
     
     #get list of unlabeled nodes
     unlabeledNodes = set(featureDFs['interactDF'][featureDFs['interactDF'].matched_Node1 == featureDFs['interactDF'].matched_Node1_textlabel]['matched_Node1'].tolist() + featureDFs['interactDF'][featureDFs['interactDF'].matched_Node2 == featureDFs['interactDF'].matched_Node2_textlabel]['matched_Node2'].tolist())
@@ -715,7 +751,7 @@ def makeGraph(featureDFs, featureList, reWire_Inferred_Groups=False):
     all_datanodes = featureDFs['datanodeDF']['textlabel'].tolist()
     for node in all_datanodes:
         if not node in G.nodes():
-            G.add_node(node)
+            G.add_node(str(node))
 
     #rewire groups
     node_grouprefs = featureDFs['datanodeDF']['groupref'].tolist()
@@ -729,7 +765,7 @@ def makeGraph(featureDFs, featureList, reWire_Inferred_Groups=False):
             if (not group_node1 is None) & (not group_node2 is None):
                 if (group_node1 is group_node2) & (len(group_node1) > 0) & (len(group_node2) > 0) & (not node1 is node2):
                     #print("test",group_node1, group_node2, node1, node2)
-                    G.add_edge(node1, node2, arrow="group")
+                    G.add_edge(str(node1), str(node2), arrow="group")
 
     if reWire_Inferred_Groups:
         node_grouprefs = set(featureDFs['interactDF']['edgeID'].tolist())
@@ -754,16 +790,17 @@ def makeGraph(featureDFs, featureList, reWire_Inferred_Groups=False):
                                     if (n1 in upstreamNodes) & (x == n2) & (n1 != y):
                                         if not arrow is None:
                                             arrow, interaction, signal = checkArrow(arrow)
-                                            G.add_edge(n1, y, edgeID = edgeID, arrow = arrow, interaction = interaction, signal=signal, color=color)
+                                            G.add_edge(str(n1), str(y), edgeID = str(edgeID), arrow = str(arrow), interaction = str(interaction), signal=str(signal), color=str(color))
                                         else:
-                                            G.add_edge(n1, y, edgeID = edgeID, arrow = "unknown", interaction = "u", signal="u", color=color)
+                                            G.add_edge(str(n1), str(y), edgeID = str(edgeID), arrow = "unknown", interaction = "u", signal="u", color=str(color))
 
                                     elif (n2 in downstreamNodes) & (x == n1) & (n2 != y):
                                         if not arrow is None:
                                             arrow, interaction, signal = checkArrow(arrow)
-                                            G.add_edge(y, n2, edgeID = edgeID, arrow = arrow, interaction = interaction, signal=signal, color=color)
+                                            G.add_edge(str(y), str(n2), edgeID = str(edgeID), arrow = str(arrow), interaction = str(interaction), signal=str(signal), color=str(color))
                                         else:
-                                            G.add_edge(n2, y, edgeID = edgeID, arrow = "unknown", interaction = "u", signal="u", color=color)
+                                            #G.add_edge(n2, y, edgeID = edgeID, arrow = "unknown", interaction = "u", signal="u", color=color)
+                                            G.add_edge(str(y), str(n2), edgeID = str(edgeID), arrow = str(arrow), interaction = str("u"), signal=str("u"), color=str(color))
                                                 
     #last pass to check node aliases
     for node in G.nodes():
@@ -772,7 +809,7 @@ def makeGraph(featureDFs, featureList, reWire_Inferred_Groups=False):
     
     #finally - remove newlines in graph nodes
     for node in G.nodes():
-        node1 = node.strip() #re.sub("\n", " ", node)
+        node1 = re.sub("\n", " ", node) # node.strip()
         G = nx.relabel_nodes(G, {node: node1})
     
     #remove unlabeled nodes that are connected to nothing except themselves
@@ -800,7 +837,7 @@ def makeGraph(featureDFs, featureList, reWire_Inferred_Groups=False):
 
     return(G)
 
-#TODO
+
 def addEdgeAnnotations(annotationFile, graph):
     """
     Go through all edges in the edgelist and add colors from a pre-made annotation file
@@ -831,7 +868,7 @@ def mapUnlabeledGroups(featureDFs):
                 height2 = featureDFs['datanodeDF']['height'].tolist()[node2]
                 width2 = featureDFs['datanodeDF']['width'].tolist()[node2]
                 dist = distDF[node1, node2]
-                cond1 = dist <= ((height1 + height2)/2) + ((height1 + height2)/4)
+                cond1 = dist <= (height1 + height2)/4 #((height1 + height2)/2) + ((height1 + height2)/4)
                 #cond2a = dist <= (width1 + width2)/2 + (width1 + width2)/4 #close together horizontally 
                 #cond2b = abs(featureDFs['datanodeDF']['centerX'].tolist()[node1] - featureDFs['datanodeDF']['centerX'].tolist()[node2]) <= 0.5*abs(featureDFs['datanodeDF']['centerY'].tolist()[node1] - featureDFs['datanodeDF']['centerY'].tolist()[node2]) #linear/parallel
                 #cond2 = cond2a and cond2b
@@ -864,7 +901,6 @@ def passThroughUnlabeled(node, graph):
     upstream = graph.predecessors(node)
     downstream = graph.successors(node)
     new_edges = [(p,s) for p in upstream for s in downstream]
-    #print(new_edges)
     graph.remove_node(node)
     graph.add_edges_from(new_edges)
     return(graph)
@@ -890,7 +926,6 @@ def edgeListToCSV(G, pathwayID):
 def runParsePathway(s, pathwayID):
     #set up processing pipeline, stage processed input
     gpml = givenCodeGetGPML(s, pathwayID.encode('utf-8'))
-    #print(gpml)
     featureList = makeFeatureLists(gpml)
     featureDFs = getFeatureDFs(featureList)
     #pipeline
@@ -1085,7 +1120,7 @@ def evaluateCytoscapeOutput():
         
         nx.write_edgelist(graph, programOuts[i], delimiter="\t", data = ["targetArrows"]) # 
         print(programOuts[i])
-        tempDF = pd.read_csv(programOuts[i], header=None, sep="\t")
+        tempDF = pd.read_csv(programOuts[i], header=None, sep="\t", escapechar = "\\")
         tempDF.columns = ["Source", "Target", "signal"]
         tempDF.signal = [checkArrow(arrow)[1] for arrow in tempDF["signal"]]
         tempDF.to_csv(programOuts[i], quoting=csv.QUOTE_ALL)
