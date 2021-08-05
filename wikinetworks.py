@@ -665,8 +665,8 @@ def processInteractDF(featureDFs, featureList):
     # if endpoints are successfully mapped to nodes, assign a distance of zero to that mapped node
 
     textlabels = featureDFs['datanodeDF']['textlabel'].tolist()
-    #featureDFs['interactDF']['matched_Node1_textlabel'] = [matchRef(x, featureDFs, featureList, anchor_graphids) for x in featureDFs['interactDF']['matched_Node1'].tolist()]
-    #featureDFs['interactDF']['matched_Node2_textlabel'] = [matchRef(x,featureDFs, featureList, anchor_graphids) for x in featureDFs['interactDF']['matched_Node2'].tolist()]
+    featureDFs['interactDF']['matched_Node1_textlabel'] = [matchRef(x, featureDFs, featureList, anchor_graphids) for x in featureDFs['interactDF']['matched_Node1'].tolist()]
+    featureDFs['interactDF']['matched_Node2_textlabel'] = [matchRef(x,featureDFs, featureList, anchor_graphids) for x in featureDFs['interactDF']['matched_Node2'].tolist()]
 
     featureDFs['interactDF']['matched_Node1_dist'] = np.where(featureDFs['interactDF']['matched_Node1_textlabel'].apply(replaceDist, textlabels = textlabels), 0, featureDFs['interactDF']['matched_Node1_dist'])
     featureDFs['interactDF']['matched_Node2_dist'] = np.where(featureDFs['interactDF']['matched_Node2_textlabel'].apply(replaceDist, textlabels = textlabels), 0, featureDFs['interactDF']['matched_Node2_dist'])
@@ -730,22 +730,15 @@ def makeGraph(featureDFs, featureList, reWire_Inferred_Groups=False):
                     G.add_edge(str(n1), str(n2), edgeID = str(edgeID), arrow = str(arrow), interaction = str(interaction), signal=str(signal), color=str(color))
                 else:
                     G.add_edge(str(n1), str(n2), edgeID = str(edgeID), arrow = "unknown", interaction = "u", signal="u", color=str(color))
-    
-    #get list of unlabeled nodes
-    unlabeledNodes = set(featureDFs['interactDF'][featureDFs['interactDF'].matched_Node1 == featureDFs['interactDF'].matched_Node1_textlabel]['matched_Node1'].tolist() + featureDFs['interactDF'][featureDFs['interactDF'].matched_Node2 == featureDFs['interactDF'].matched_Node2_textlabel]['matched_Node2'].tolist())
-    
-    #remove unlabeled nodes
-    for node in unlabeledNodes:
-        node1 = matchRef(node, featureDFs, featureList, anchor_graphids)
-        #print(node, node1)
-        G = nx.relabel_nodes(G, {node: node1})
-        G = passThroughUnlabeled(node, G)
-    
+
     #remove nodes that are 'None'
     if None in G.nodes():
         G.remove_node(None)
     else:
-        G = G
+        if "None" in G.nodes():
+            G.remove_node("None")
+        else:
+            G = G
 
     #Add nodes that are not in any interaction
     all_datanodes = featureDFs['datanodeDF']['textlabel'].tolist()
@@ -753,6 +746,17 @@ def makeGraph(featureDFs, featureList, reWire_Inferred_Groups=False):
         if not node in G.nodes():
             G.add_node(str(node))
 
+    # get list of unlabeled nodes
+    unlabeledNodes = set(featureDFs['interactDF'][featureDFs['interactDF'].matched_Node1 == featureDFs['interactDF'].matched_Node1_textlabel]['matched_Node1'].tolist() + featureDFs['interactDF'][featureDFs['interactDF'].matched_Node2 == featureDFs['interactDF'].matched_Node2_textlabel]['matched_Node2'].tolist())
+    unlabeledNodes = unlabeledNodes.intersection(set(list(G.nodes())))
+
+    #remove unlabeled nodes
+    for node in list(set(unlabeledNodes)):
+        node1 = matchRef(node, featureDFs, featureList, anchor_graphids)
+        # print(node, node1)
+        G = nx.relabel_nodes(G, {node: node1})
+        G = passThroughUnlabeled(node, G)
+    
     #rewire groups
     node_grouprefs = featureDFs['datanodeDF']['groupref'].tolist()
 
@@ -809,7 +813,8 @@ def makeGraph(featureDFs, featureList, reWire_Inferred_Groups=False):
     
     #finally - remove newlines in graph nodes
     for node in G.nodes():
-        node1 = re.sub("\n", " ", node) # node.strip()
+        #node1 = re.sub("\n", " ", node) # 
+        node1 = node.strip()
         G = nx.relabel_nodes(G, {node: node1})
     
     #remove unlabeled nodes that are connected to nothing except themselves
@@ -868,7 +873,7 @@ def mapUnlabeledGroups(featureDFs):
                 height2 = featureDFs['datanodeDF']['height'].tolist()[node2]
                 width2 = featureDFs['datanodeDF']['width'].tolist()[node2]
                 dist = distDF[node1, node2]
-                cond1 = dist <= (height1 + height2)/4 #((height1 + height2)/2) + ((height1 + height2)/4)
+                cond1 = dist <= ((height1 + height2)/2) + ((height1 + height2)/4)
                 #cond2a = dist <= (width1 + width2)/2 + (width1 + width2)/4 #close together horizontally 
                 #cond2b = abs(featureDFs['datanodeDF']['centerX'].tolist()[node1] - featureDFs['datanodeDF']['centerX'].tolist()[node2]) <= 0.5*abs(featureDFs['datanodeDF']['centerY'].tolist()[node1] - featureDFs['datanodeDF']['centerY'].tolist()[node2]) #linear/parallel
                 #cond2 = cond2a and cond2b
