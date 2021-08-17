@@ -1,0 +1,102 @@
+Source,Target,signal
+MAPKAPK,GSK3B,i
+GSK3B,TAU,i
+GSK3B,CRMP2,i
+STMN,MT Catastrophe,a
+TAU,MT Stability,a
+PAK,STMN,i
+CLASP,MT Stability,a
+CLASP,CLIP,a
+XMAP215,"+ end Growth Promoting",a
+CLIP,"Delivery to
+MT Plus Ends",a
+CLIP,CLIP,a
+CLIP,Microtubule,a
+CLIP,CLASP,a
+"Delivery to
+MT Plus Ends",c-ABL,a
+"Delivery to
+MT Plus Ends",SRC,a
+AURKB,STMN,i
+AURKB,MCAK,i
+ROCK,PTEN,a
+PTEN,PIP3,i
+TRIO,RAC1,a
+TRIO,Rho,a
+RAC1,PAR3,a
+mDIA,mDIA,a
+mDIA,MT Stability,a
+mDIA,EB1,a
+mDIA,APC,a
+PIK3,PIP3,a
+PIP3,LL5b,a
+PIP3,AKT,a
+Rho,mDIA1,a
+Rho,Rho,a
+Rho,Focal Adhesion,a
+Rho,mDIA,a
+Rho,RhoGEF,a
+GNAQ,"Dynamic,
+Microtubules",a
+GNAQ,DVL,a
+GNAQ,WNT,a
+"Dynamic,
+Microtubules","Focal Adhesion",a
+"Dynamic,
+Microtubules",RhoGEF,i
+"Dynamic,
+Microtubules",Rho,i
+CDC42,PAR6,a
+PAR6,MARK2,i
+PAR6,PKC,a
+PAR6,PAR3,a
+Microtubule,CLIP,a
+Microtubule,Microtubule,None
+ERK,MAPKAPK,a
+ERK,STMN,i
+CRMP2,MT Polymerization,a
+CRMP2,EB1,i
+CRMP2,MAP1B,a
+CDK1,MCAK,i
+MCAK,"+/- end
+Destabilizing",a
+DVL,GSK3B,i
+PAR3,MARK2,i
+PAR3,PKC,a
+PAR3,PAR6,a
+RhoGEF,Rho,a
+PKC,MARK2,i
+PKC,PAR6,a
+PKC,PAR3,a
+MARK2,TAU,i
+MAP1B,MAP1B,a
+MAP1B,CLIP,a
+MARK,TAU,i
+MARK,PAR1,a
+LIMK,CFL,i
+LIMK,TPPP,i
+SRC,TIAM1,a
+TIAM1,RAC1,a
+c-ABL,TRIO,a
+PRKACA,STMN,i
+LL5b,MT Stability,a
+AKT,GSK3B,i
+STAT3,STMN,i
+TPPP,MT Stability,a
+EB1,MT Stability,a
+EB1,APC,a
+EB1,mDIA,a
+EB1,EB1,None
+TESK,CFL,i
+TESK,TAOK,i
+ICIS,MCAK,a
+TAOK,MARK,a
+APC,MT Stability,a
+APC,EB1,a
+APC,mDIA,a
+APC,APC,None
+CAMK,STMN,i
+SPRED1,TESK,i
+Neurotrophins,PIK3,a
+WNT,GNAQ,a
+PAR1,MARK,a
