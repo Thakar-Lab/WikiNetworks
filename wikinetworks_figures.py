@@ -11,7 +11,8 @@ if __name__ == '__main__':
     pd.set_option('display.max_rows', 10000)
 
     s=WikiPathways()
-    testPathways = ['WP4482', 'WP3935', 'WP4868', 'WP49', 'WP127', 'WP195', 'WP205', 'WP231', 'WP286', 'WP23'] #['WP254', 'WP23', "WP4495", "WP437",  "WP4495", "WP195", "WP49", "WP286", "WP395", "WP127", "WP364", "WP205", "WP231", "WP366"] # "WP1835", "WP1840",  "WP1919", "WP1836",
+    testPathways = ['WP4482', 'WP3935', 'WP4868', 'WP49', 'WP127', 'WP195', 'WP205', 'WP231', 'WP286', 'WP23', 'WP4462', 'WP2038', 'WP453', 'WP545', 'WP306'] #['WP254', 'WP23', "WP4495", "WP437",  "WP4495", "WP195", "WP49", "WP286", "WP395", "WP127", "WP364", "WP205", "WP231", "WP366"] # "WP1835", "WP1840",  "WP1919", "WP1836",
+    
     for pathID in testPathways:
         graph = runParsePathway(s, pathID)
         print("Nodes:", len(graph.nodes()))
@@ -22,9 +23,10 @@ if __name__ == '__main__':
     
     #unitTest("WP4482_112969.gpml", "WP4482")
     #testToyPathways()
-
+    
     evaluateProgramOutput()
     evaluateCytoscapeOutput()
     #evaluateCytoscapeOutput_fairplay()    
     makeComparisonPlots()
-    #compareCytoscapeWithProgramOutput()
+    compareCytoscapeWithProgramOutput()
+    createCombinedEdgelists()
