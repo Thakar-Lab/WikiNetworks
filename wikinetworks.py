@@ -55,6 +55,7 @@ def processCurationTags(curationTagsDict):
         print("Description: "+curationTagsDict['tags'][annotation]['text'])
     print("*********\n")
 
+
 def getAnchor(interacts, featureDFs):
     node_to_anchor = {}
     anchor_to_node = {}
@@ -64,15 +65,14 @@ def getAnchor(interacts, featureDFs):
         node2 = nodes[len(nodes) - 1].get('GraphRef')
         node1 = nodes[0].get('GraphRef')
         if not anchors is None:
-            #print("Anchors", anchors)
             i = 0
-            for anchor in list(anchors): #
+            for anchor in list(anchors):
                 i = i + 1
                 anchor_graphid = anchor.get('GraphId')
                 if anchor_graphid is None:
                     anchor_graphid = '_'.join([str(node1), str(node2), str(i)])
-                #if not anchor_graphid is None and not node1 is None:
-                #    anchor_to_node[anchor_graphid] = node1
+                #if not anchor_graphid is None and not node1 is None and not node2 is None:
+                #    anchor_to_node[anchor_graphid] = [node1, node2]
                 elif not anchor_graphid is None and not node2 is None and node1 is None:
                     #print("Get anchor", anchor_graphid, node2, node1)
                     anchor_to_node[anchor_graphid] = anchor_graphid #node2
@@ -84,7 +84,8 @@ def getAnchor(interacts, featureDFs):
                         temp = [x for x in temp if str(x) != 'nan']
                         #print(temp)
                         if len(temp) > 0:
-                            anchor_to_node[anchor_graphid] = [x for x in temp]
+                            anchor_to_node[anchor_graphid] = [str(x) for x in temp]
+                            anchor_to_node[anchor_graphid].append(str(node2))
                             #print(anchor_to_node[anchor_graphid])
                         elif len(temp) == 0:
                             anchor_to_node[anchor_graphid] = anchor_graphid
@@ -149,6 +150,9 @@ def getInteractionLoc(featureList):
     interacts = featureList[2]
     interactData = []
     node2Data = []
+    allAnchors = [] # create master list of anchors
+    anchor_to_edgeid = {}
+    edgeid_to_anchor = {}
     for entry in interacts:
         graphid=entry.get('GraphId')
         groupRef=entry.get('GroupRef')
@@ -165,34 +169,117 @@ def getInteractionLoc(featureList):
         node2_y=float(nodes[len(nodes)-1].get('Y'))
         node1_coords = Point(node1_x, node1_y)
         node2_coords = Point(node2_x, node2_y)
-        arrow = nodes[len(nodes)-1].get('ArrowHead')
+        arrow = []
+        for temp in range(0,len(nodes)):
+            tempArrow = nodes[temp].get('ArrowHead')
+            if not tempArrow is None:
+                arrow.append(tempArrow)
+            else:
+                arrow = arrow
         geometry = MultiPoint([(node1_x, node1_y), (node2_x, node2_y)]).convex_hull
         comments = entry.find_all("Comment")
-        anchor = entry.find("Anchor")
-        if anchor is None:
-            anchor = "None"
+        anchors = entry.find_all("Anchor")
+        if anchors is None:
+            anchors = "None"
+            anchorIDs = "None"
         else:
-            anchor = anchor.get("GraphId")
-        interactData.append([graphid, groupRef, node1_graphref, node1_x, node1_y, node1_coords, node2_graphref, node2_x, node2_y, node2_coords, arrow, geometry, comments, color, anchor])
+            anchorIDs = []
+            for anchor in list(anchors):
+                anchor_graphid = anchor.get("GraphId")                
+                if anchor_graphid is None:
+                    anchor_graphid = '_'.join([str(node1_graphref), str(node2_graphref)])
+                if not anchor_graphid in anchor_to_edgeid.keys():
+                    anchor_to_edgeid[anchor_graphid] = []
+                if not graphid in edgeid_to_anchor.keys():
+                    edgeid_to_anchor[graphid] = []
+                anchorIDs.append(str(anchor_graphid))
+                allAnchors.append(str(anchor_graphid))
+                anchor_to_edgeid[anchor_graphid].append(graphid)
+                edgeid_to_anchor[graphid].append(anchor_graphid)
+        if len(arrow) > 1: #bidirectional arrows
+            #print("Bidirectional arrow")
+            #print(arrow) 
+            #add first arrow 
+            interactData.append([graphid+"1", groupRef, node1_graphref, node1_x, node1_y, node1_coords, node2_graphref, node2_x, node2_y, node2_coords, arrow[0], geometry, comments, color, anchorIDs])
+            #add second arrow
+            interactData.append([graphid+"2", groupRef, node2_graphref, node2_x, node2_y, node2_coords,node1_graphref, node1_x, node1_y, node1_coords, arrow[1], geometry, comments, color, anchorIDs])
+        else:
+            interactData.append([graphid, groupRef, node1_graphref, node1_x, node1_y, node1_coords, node2_graphref, node2_x, node2_y, node2_coords, arrow, geometry, comments, color, anchorIDs])
     interactDF = gpd.GeoDataFrame(pd.DataFrame(interactData, columns=["edgeID", "edgeGroup", "node1_graphref", "node1_x", "node1_y", "node1_coords", "node2_graphref", "node2_x", "node2_y", "node2_coords", "arrow", "geometry", "comments", "color", "anchor"]))
+    # find edges where the downstream node is an anchor, ie, is in allAnchors
+    edgesOfAnchors = interactDF.loc[(interactDF["node2_graphref"].isin(allAnchors))]
+    # get the upstream nodes of these edges
+    enzymes1 = {list(edgesOfAnchors["node2_graphref"])[i]: list(edgesOfAnchors["node1_graphref"])[i] for i in range(0, len(edgesOfAnchors))}
+    """
+    edgesOfAnchors2 = interactDF.loc[(interactDF["node1_graphref"].isin(allAnchors))]
+    enzymes2 = {list(edgesOfAnchors2["node1_graphref"])[i]: list(edgesOfAnchors["node1_graphref"])[i] for i in range(0, len(edgesOfAnchors2))}
+    enzymes2 = {}
+    for i in range(0, len(edgesOfAnchors2)):
+        tempEnzyme = list(edgesOfAnchors2["node1_graphref"])[i] # this is an anchor
+        # to find the upstream node of this anchor - find the interaction where tempEnzyme is in node2_graphref
+        enzymes2[tempEnzyme] = list(edgesOfAnchors.node2_graphref)[list(edgesOfAnchors.node2_graphref) == tempEnzyme]
+    enzymes = {**enzymes1, **enzymes2}
+    """
+    enzymes = enzymes1
+    # find edges which have an anchor
+    mask = [0 for i in range(0, len(interactDF))]
+    for j in range(0, len(interactDF)):
+        mask[j] = False
+        #if interactDF.loc[j, "node1_graphref"] in allAnchors:
+        #    interactDF.at[j, "anchor"] = [str(interactDF.node1_graphref.iloc[j])]
+        #if interactDF.loc[j, "node2_graphref"] in allAnchors:
+        #    interactDF.at[j, "anchor"] = [str(interactDF.node2_graphref.iloc[j])]
+        for i in range(0, len(interactDF.anchor.iloc[j])):
+            if interactDF.anchor.iloc[j][i] in allAnchors:
+                mask[j] = True
+    edgesWithAnchors = interactDF[mask]
+    edgesWithAnchors2 = pd.DataFrame(columns = list(edgesWithAnchors.columns))
+    for j in range(0,len(edgesWithAnchors)):
+        for i in range(0, len(edgesWithAnchors.anchor.iloc[j])):
+            if edgesWithAnchors.anchor.iloc[j][i] in enzymes.keys():
+                # get the upstream node of this anchor
+                newNode = enzymes[str(edgesWithAnchors.anchor.iloc[j][i])]
+                # print(edgesWithAnchors.anchor.iloc[j][i], newNode)
+                # add an edge between the upstream node of the anchor and the downstream node of the edge
+                temp = pd.Series(edgesWithAnchors.iloc[j,])
+                temp = temp.to_dict()
+                temp["node1_graphref"] = newNode
+                edgesWithAnchors2 = edgesWithAnchors2.append(temp, ignore_index=True)
+    interactDF = pd.concat([interactDF, edgesWithAnchors2], ignore_index=True)
+    """
+    mask = [0 for i in range(0, len(interactDF))]
+    for j in range(0, len(interactDF)):
+        mask[j] = False
+        if interactDF.loc[j, "node1_graphref"] in allAnchors:
+            mask[j] = True
+    edgesWithUpstreamAnchors = interactDF[mask]
+    edgesWithUpstreamAnchors2 = pd.DataFrame(columns = list(edgesWithUpstreamAnchors.columns))
+    print(edgesWithUpstreamAnchors)
+    print(allAnchors)
+    print(enzymes)
+    print("d1ac3" in enzymes.keys())
+    for j in range(0,len(edgesWithUpstreamAnchors)):
+        newNode = enzymes[str(edgesWithUpstreamAnchors.node1_graphref.iloc[j])]
+        temp = pd.Series(edgesWithUpstreamAnchors.iloc[j,])
+        temp = temp.to_dict()
+        temp["node1_graphref"] = newNode
+        print(str(edgesWithUpstreamAnchors.node1_graphref.iloc[j]), newNode)
+        edgesWithUpstreamAnchors2 = edgesWithUpstreamAnchors2.append(temp, ignore_index=True)
+    interactDF = pd.concat([interactDF, edgesWithUpstreamAnchors2], ignore_index=True)
+    """
+    #interactDF.to_csv("tempInteract.csv")
     return(interactDF)
-
+    
 def joinGroups(nodeDF, interactDF):
     grouped_nodes = nodeDF.groupby('groupref')
     #print(pd.DataFrame(grouped_nodes))
     group_node_data = []
     for name, group in grouped_nodes:
-        #print("name", name)
-        #print("group", group)
         nodelist = group.graphid.tolist()
-        #if len(nodelist) == 1:
-        #    nodelist = [nodelist]
         groupRef = name
         arrow = "group"
         i = 1
-        #print("nodelist", nodelist)
         for node1 in nodelist:
-            #print("node1", node1)
             node1_graphref = node1
             node1_x = group.centerX[group.graphid == node1].astype(float)
             node1_y = group.centerY[group.graphid == node1].astype(float)
@@ -379,7 +466,7 @@ def mapPointsToInteractions(featureDFs,featureList):
         Instead of searching labels/shapes/datanodes for matches, search the endpoints of OTHER interactions for a match.
         This takes care of branched interactions.
     """
-    
+
     #Create geoDataFrames for endpoint 1 and endpoint 2 of each interaction
     node1DF = gpd.GeoDataFrame(featureDFs['interactDF'], geometry = featureDFs['interactDF'].node1_coords)
     node2DF = gpd.GeoDataFrame(featureDFs['interactDF'], geometry = featureDFs['interactDF'].node2_coords)
@@ -418,7 +505,7 @@ def mapPointsToInteractions(featureDFs,featureList):
     featureDFs['interactDF']['matched_Node1_dist'] = np.where(featureDFs['interactDF']['matched_Node1_dist'] >= distDF_node1['dist'], distDF_node1['dist'], featureDFs['interactDF']['matched_Node1_dist'])
 
     featureDFs['interactDF']['matched_Node1_cat'] = np.where(featureDFs['interactDF']['matched_Node1_dist'] >= distDF_node1['dist'], "edge", featureDFs['interactDF']['matched_Node1_cat'])
-    
+
     return(featureDFs['interactDF'])
 
 def makeMatchedDistHist(featureDFs, pathwayID):
@@ -449,7 +536,7 @@ def makeCombinedEndPointBarPlot(interactDFs=None):
     for df in interactDFs:
         pathwayID = re.sub("_interactDF.csv",  "", df)
         #print(pathwayID)
-        df = pd.read_csv(df, engine = "python", sep = None)
+        df = pd.read_csv(df, engine = "python", sep = None, escapechar = "\\")
         df = df.assign(PathwayID = str(pathwayID))
         if len(concatInteractDF) == 0:
             concatInteractDF = df
@@ -592,7 +679,6 @@ def matchRef(x, featureDFs, featureList, anchor_graphids):
         if x in node_graphids:
             #preferentially return graphids
             return(textlabels[node_graphids.index(x)])
-
         elif x in node_grouprefs:
             #match groupref to graphid
             matchGraphID = featureDFs['datanodeDF']['graphid'][featureDFs['datanodeDF']['groupref'] == x]
@@ -673,6 +759,10 @@ def processInteractDF(featureDFs, featureList):
 
     featureDFs['interactDF']['matched_Node1_cat'] = np.where(featureDFs['interactDF']['matched_Node1_textlabel'].isnull(), "unmapped", featureDFs['interactDF']['matched_Node1_cat'])
     featureDFs['interactDF']['matched_Node2_cat'] = np.where(featureDFs['interactDF']['matched_Node2_textlabel'].isnull(), "unmapped", featureDFs['interactDF']['matched_Node2_cat'])
+
+    #remove quotes from text labels
+    #featureDFs['interactDF']['matched_Node1_textlabel'] = [re.sub("\"", "", str(temp)) for temp in featureDFs['interactDF']['matched_Node1_textlabel'].astype(str).values.tolist()]
+    #featureDFs['interactDF']['matched_Node2_textlabel'] = [re.sub("\"", "", str(temp)) for temp in featureDFs['interactDF']['matched_Node2_textlabel'].astype(str).values.tolist()]
     return(featureDFs['interactDF'])
 
 def flatten(l):
@@ -690,7 +780,13 @@ def checkArrow(arrow):
     activationArrow = ["Line", "Arrow", "mim-stimulation", "mim-transcription-translation", "mim-transcription", "mim-translation", "mim-conversion", "mim-catalysis", "mim-binding", "mim-branching-left", "mim-branching-right", "mim-modification", "mim-necessary-stimulation"]#, "group"]
     groupArrow = ["group"]
     inhibitionArrow = ["TBar", "mim-inhibition"]
-
+    if isinstance(arrow, list):
+        if len(arrow) == 0:
+            arrow = None
+        else:
+            arrow = arrow[0]
+    else:
+        arrow = arrow
     if not arrow is None:
         if arrow in activationArrow:
             interactionType= "a"
@@ -716,6 +812,7 @@ def makeGraph(featureDFs, featureList, reWire_Inferred_Groups=False):
         Prepare a networkX graph from the processed interaction dataframe
     """
     anchor_graphids = getAnchor(featureList[2], featureDFs)
+
     #Add interactions between nodes with textlabels
     #G = nx.from_pandas_edgelist(featureDFs['interactDF'], source = 'matched_Node1_textlabel', target = 'matched_Node2_textlabel', edge_attr='arrow')
     featureDFs['interactDF']['color'] = [''.join(["#",str(temp)]) for temp in featureDFs['interactDF']['color'].tolist()]
@@ -839,7 +936,13 @@ def makeGraph(featureDFs, featureList, reWire_Inferred_Groups=False):
             attrDict[gi] = str(featureDFs['datanodeDF'][attr][featureDFs['datanodeDF']["graphid"] == gi].tolist()[0])
         nx.set_node_attributes(G, name= attr, values=attrDict)
 
-
+    #featureDFs['interactDF']['matched_Node1_textlabel'] = [re.sub("\"", "", str(temp)) for temp in featureDFs['interactDF']['matched_Node1_textlabel'].astype(str).values.tolist()]
+    #featureDFs['interactDF']['matched_Node2_textlabel'] = [re.sub("\"", "", str(temp)) for temp in featureDFs['interactDF']['matched_Node2_textlabel'].astype(str).values.tolist()]
+    oldNodeNames = list(G.nodes())
+    newNodeNames = [re.sub("\"", "", str(temp)) for temp in oldNodeNames]
+    mapping = dict(zip(oldNodeNames, newNodeNames))
+    #remove quotes from node names
+    nx.relabel_nodes(G, mapping, copy=False)
     return(G)
 
 
@@ -848,7 +951,7 @@ def addEdgeAnnotations(annotationFile, graph):
     Go through all edges in the edgelist and add colors from a pre-made annotation file
     """
     #Read annotation file
-    annotFile = pd.read_csv(annotationFile)
+    annotFile = pd.read_csv(annotationFile, escapechar = "\\")
     #print(annotFile.head(10))
 
     #Find edges that map to labels
@@ -935,8 +1038,11 @@ def runParsePathway(s, pathwayID):
     featureDFs = getFeatureDFs(featureList)
     #pipeline
     featureDFs['interactDF'] = mapEndPoints(featureDFs)
-    featureDFs['interactDF'] = mapPointsToInteractions(featureDFs, featureList)
+    #featureDFs['interactDF'].to_csv('temp2interact.csv')
+    #featureDFs['interactDF'] = mapPointsToInteractions(featureDFs, featureList)
+    #featureDFs['interactDF'].to_csv('temp3interact.csv')
     featureDFs['interactDF'] = processInteractDF(featureDFs, featureList)
+    featureDFs['interactDF'].to_csv('temp4interact.csv')
     #tests
     #with pd.option_context('display.max_rows', None, 'display.max_columns', None):  # more options can be specified also
     #    print("TEST2", featureDFs['interactDF']['matched_Node1'][featureDFs['interactDF']['edgeID'] == "e601a"], featureDFs['interactDF']['matched_Node2'][featureDFs['interactDF']['edgeID'] == "e601a"])
@@ -957,7 +1063,7 @@ def runParsePathway(s, pathwayID):
     return graph
 
 def unitTest(name, pathwayID):
-    gpml = open(str(name), 'r') #open("WP23_minimal.gpml", "r")
+    gpml = open(str(name), 'r')
     gpml = gpml.read()
     gpml = str(gpml)
 
@@ -984,10 +1090,12 @@ def unitTest(name, pathwayID):
     return graph
 
 def getNetworkDiffs(manualOut, programOut):
-    manual = pd.read_csv(manualOut, sep=None, engine = "python", header=0)
-    program = pd.read_csv(programOut, sep=None, engine = "python", header=0)
     print(manualOut)
     print(programOut)
+    manual = pd.read_csv(manualOut, sep=None, engine = "python", header=0, escapechar = "\\")
+    #print(manual)
+    program = pd.read_csv(programOut, sep=",", engine = "python", header=0, escapechar = "\\")
+    print(program.head())
     program=program.loc[:,["Source", "Target", "signal"]]
     #print(manual.columns)
     manual=manual.loc[:,["Source", "Target", "signal"]]
@@ -1018,7 +1126,10 @@ def getNetworkDiffs(manualOut, programOut):
     #print(truePositiveEdges)
     #print(len(extraEdgesInProgram))
     precision = truePositiveEdges/len(progList) #(truePositiveEdges + len(extraEdgesInProgram))
-    f1Score = float((2* precision * recall))/(precision + recall)
+    if float(precision + recall) == 0.0:
+        f1Score = 0.0
+    else:
+        f1Score = float((2* precision * recall))/(precision + recall)
     #false positive = edge where there is no edge, ie, the edge is in program but not in manual, ie, extra edges in program = "number_of_extra_programEdges"
     #true positive = edge where there is edge in both program and in manual
     #false negative = missing edge in program, ie, extra edges in manual, = "number_of_extra_manualEdges"
@@ -1054,8 +1165,8 @@ def getNetworkDiffs(manualOut, programOut):
     return(returnVec)
 
 def evaluateProgramOutput():
-    programOuts = ["WP49_edgeList.csv", "WP127_edgeList.csv", "WP195_edgeList.csv", "WP205_edgeList.csv", "WP231_edgeList.csv", "WP286_edgeList.csv", "WP23_edgeList.csv", "WP3935_edgeList.csv", "WP4482_edgeList.csv", "WP4868_edgeList.csv"] #, "test_1_edgeList.csv"
-    manualOuts = ["WP49_edgeList_edited.csv", "WP127_edgeList_edited.csv", "WP195_edgeList_edited.csv", "WP205_edgeList_edited.csv",  "WP231_edgeList_edited.csv",  "WP286_edgeList_edited.csv", "WP23_edgeList_edited.csv", "WP3935_edgelist_edited.csv", "WP4482_edgelist_edited.csv", "WP4868_edgelist_edited.csv"] #, "test_1_edgeList_edited.csv"
+    programOuts = ["WP49_edgeList.csv", "WP127_edgeList.csv", "WP195_edgeList.csv", "WP205_edgeList.csv", "WP231_edgeList.csv", "WP286_edgeList.csv", "WP23_edgeList.csv", "WP3935_edgeList.csv", "WP4482_edgeList.csv", "WP4868_edgeList.csv", 'WP4462_edgeList.csv', 'WP2038_edgeList.csv', 'WP453_edgeList.csv','WP545_edgeList.csv', 'WP306_edgeList.csv'] #, "test_1_edgeList.csv"
+    manualOuts = ["WP49_edgeList_edited.csv", "WP127_edgeList_edited.csv", "WP195_edgeList_edited.csv", "WP205_edgeList_edited.csv",  "WP231_edgeList_edited.csv",  "WP286_edgeList_edited.csv", "WP23_edgeList_edited.csv", "WP3935_edgelist_edited.csv", "WP4482_edgelist_edited.csv", "WP4868_edgelist_edited.csv", 'WP4462_edgelist_edited.csv', 'WP2038_edgelist_edited.csv', 'WP453_edgelist_edited.csv','WP545_edgelist_edited.csv', 'WP306_edgelist_edited.csv']
     fileNames = pd.DataFrame(list(zip(programOuts, manualOuts)), columns = ["programOuts", "manualOuts"])
     fileList = dict(zip(programOuts, manualOuts))
 
@@ -1079,8 +1190,8 @@ def evaluateProgramOutput():
     makeCombinedEndPointBarPlot(interactDFs=None)
 
 def compareCytoscapeWithProgramOutput():
-    programOuts = ["WP49_edgeList.csv", "WP127_edgeList.csv", "WP195_edgeList.csv", "WP205_edgeList.csv", "WP231_edgeList.csv", "WP286_edgeList.csv", "WP23_edgeList.csv", "WP3935_edgeList.csv", "WP4868_edgeList.csv", "WP4482_edgeList.csv"]
-    manualOuts = ["WP49_cytoscape.csv", "WP127_cytoscape.csv", "WP195_cytoscape.csv", "WP205_cytoscape.csv", "WP231_cytoscape.csv", "WP286_cytoscape.csv", "WP23_cytoscape.csv", "WP3935_cytoscape.csv", "WP4868_cytoscape.csv", "WP4482_cytoscape.csv"] 
+    programOuts = ["WP49_edgeList.csv", "WP127_edgeList.csv", "WP195_edgeList.csv", "WP205_edgeList.csv", "WP231_edgeList.csv", "WP286_edgeList.csv", "WP23_edgeList.csv", "WP3935_edgeList.csv", "WP4868_edgeList.csv", "WP4482_edgeList.csv", 'WP4462_edgeList.csv', 'WP2038_edgeList.csv', 'WP453_edgeList.csv','WP545_edgeList.csv', 'WP306_edgeList.csv']
+    manualOuts = ["WP49_cytoscape.csv", "WP127_cytoscape.csv", "WP195_cytoscape.csv", "WP205_cytoscape.csv", "WP231_cytoscape.csv", "WP286_cytoscape.csv", "WP23_cytoscape.csv", "WP3935_cytoscape.csv", "WP4868_cytoscape.csv", "WP4482_cytoscape.csv", 'WP4462_cytoscape.csv', 'WP2038_cytoscape.csv', 'WP453_cytoscape.csv','WP545_edgelist_edited.csv', 'WP306_edgelist_edited.csv'] 
     fileNames = pd.DataFrame(list(zip(programOuts, manualOuts)), columns = ["programOuts", "cytoscapeOuts"])
     fileList = dict(zip(programOuts, manualOuts))
 
@@ -1101,10 +1212,10 @@ def compareCytoscapeWithProgramOutput():
     #print(netDiffResult)
     netDiffResult.to_csv("netDiffResult_wikinetworksCytoscape.tsv", sep= "\t")
 
-def evaluateCytoscapeOutput():
-    programOuts = ["WP49_cytoscape.graphml", "WP127_cytoscape.graphml", "WP195_cytoscape.graphml", "WP205_cytoscape.graphml", "WP231_cytoscape.graphml", "WP286_cytoscape.graphml", "WP23_cytoscape.graphml", "WP3935_cytoscape.graphml", "WP4868_cytoscape.graphml", "WP4482_cytoscape.graphml"]
-    #Generate edgelists from cytoscape graphmls
-    for i in range(len(programOuts)):
+def convertGraphmlToEdgelist():
+    """Generate edgelists from cytoscape graphmls"""
+    programOuts = glob.glob("*_cytoscape.graphml")
+    for i in range(1, len(programOuts)):
         graph = programOuts[i]
         programOuts[i] = str(graph)[:-8]+".csv"
         graph = nx.read_graphml(graph)
@@ -1122,16 +1233,67 @@ def evaluateCytoscapeOutput():
             if not temp in targetArrows.keys():
                 targetArrows[temp] = "Unknown"
         nx.set_edge_attributes(graph, targetArrows, "targetArrows")
-        
-        nx.write_edgelist(graph, programOuts[i], delimiter="\t", data = ["targetArrows"]) # 
+        nx.write_edgelist(graph, programOuts[i], delimiter="\t", data = ["targetArrows"])
         print(programOuts[i])
         tempDF = pd.read_csv(programOuts[i], header=None, sep="\t", escapechar = "\\")
         tempDF.columns = ["Source", "Target", "signal"]
         tempDF.signal = [checkArrow(arrow)[1] for arrow in tempDF["signal"]]
         tempDF.to_csv(programOuts[i], quoting=csv.QUOTE_ALL)
-        #print(tempDF)
+        print(tempDF)
+
+def createCombinedEdgelists():
+    """Combine cytoscape and wikinetworks outputs to create a consensus that can be manually improved for evaluation of both programs"""
+    cytoscapeEdgelists = glob.glob("*_cytoscape.csv")
+    wikinetworksEdgelists = glob.glob("*_edgeList.csv")
+    for cel in cytoscapeEdgelists:
+        consensusFileName = str(cel)[:-14]+"_consensusEdgeList.csv"
+        print(consensusFileName)
+        wel = str(cel)[:-14]+"_edgeList.csv"
+        wel = pd.read_csv(wel, escapechar = "\\")
+        wel = wel[["Source", "Target", "signal"]]
+        wel["Program"] = "Wikinetworks"
+        cel = pd.read_csv(cel, escapechar = "\\")
+        cel = cel[["Source", "Target", "signal"]]
+        cel["Program"] = "Cytoscape"
+        consensus_edgelist = wel.append(cel, ignore_index=True)
+        consensus_edgelist = consensus_edgelist[~consensus_edgelist.Source.str.contains("group", na=False)]
+        consensus_edgelist = consensus_edgelist[~consensus_edgelist.Target.str.contains("group", na=False)]
+        consensus_edgelist = consensus_edgelist.drop_duplicates(subset = ["Source", "Target", "signal"])
+        consensus_edgelist.to_csv(consensusFileName, quoting=csv.QUOTE_ALL, index=False)
+
+def evaluateCytoscapeOutput():
+    programOuts = ["WP49_cytoscape.graphml", "WP127_cytoscape.graphml", "WP195_cytoscape.graphml", "WP205_cytoscape.graphml", "WP231_cytoscape.graphml", "WP286_cytoscape.graphml", "WP23_cytoscape.graphml", "WP3935_cytoscape.graphml", "WP4868_cytoscape.graphml", "WP4482_cytoscape.graphml", 'WP4462_cytoscape.graphml', 'WP2038_cytoscape.graphml', 'WP453_cytoscape.graphml','WP545_cytoscape.graphml', 'WP306_cytoscape.graphml']
+    #Generate edgelists from cytoscape graphmls
+    for i in range(0, len(programOuts)):
+        graph = programOuts[i]
+        programOuts[i] = str(graph)[:-8]+".csv"
+        graph = nx.read_graphml(graph)
+        nodeNames = nx.get_node_attributes(graph,"name") 
+        graphIDs = nx.get_node_attributes(graph,"GraphID")
+        for temp in list(graph.nodes):
+            if not temp in nodeNames.keys():
+                nodeNames[temp] = graphIDs[temp]
+            if nodeNames[temp] == "":
+                nodeNames[temp] = "unnamed"
+        nx.relabel_nodes(graph, mapping = nodeNames, copy=False)
+        targetArrows = nx.get_edge_attributes(graph, "Target Arrow Shape")
+        #print(targetArrows)
+        for temp in list(graph.edges):
+            if not temp in targetArrows.keys():
+                targetArrows[temp] = "Unknown"
+        nx.set_edge_attributes(graph, targetArrows, "targetArrows")
+        nx.write_edgelist(graph, programOuts[i], delimiter=",", data = ["targetArrows"])
+        print(programOuts[i])
+        #tempDF = pd.read_csv(programOuts[i], header=None, sep=None, escapechar = "\\", engine = "python")
+        tempDF = nx.to_pandas_edgelist(graph, source = 'Source', target = 'Target')
+        tempDF = tempDF[['Source', 'Target', 'targetArrows']]
+        print(tempDF.head())
+        tempDF.columns = ["Source", "Target", "signal"]
+        tempDF.signal = [checkArrow(arrow)[1] for arrow in tempDF["signal"]]
+        tempDF.to_csv(programOuts[i], quoting=csv.QUOTE_ALL)
+        print(tempDF)
     
-    manualOuts = ["WP49_edgeList_edited.csv", "WP127_edgeList_edited.csv", "WP195_edgeList_edited.csv", "WP205_edgeList_edited.csv",  "WP231_edgeList_edited.csv",  "WP286_edgeList_edited.csv", "WP23_edgeList_edited.csv", "WP3935_edgelist_edited.csv", "WP4868_edgelist_edited.csv", "WP4482_edgelist_edited.csv"]
+    manualOuts = ["WP49_edgeList_edited.csv", "WP127_edgeList_edited.csv", "WP195_edgeList_edited.csv", "WP205_edgeList_edited.csv",  "WP231_edgeList_edited.csv",  "WP286_edgeList_edited.csv", "WP23_edgeList_edited.csv", "WP3935_edgelist_edited.csv", "WP4868_edgelist_edited.csv", "WP4482_edgelist_edited.csv", 'WP4462_edgelist_edited.csv', 'WP2038_edgelist_edited.csv', 'WP453_edgelist_edited.csv', 'WP545_edgelist_edited.csv', 'WP306_edgelist_edited.csv']
     fileNames = pd.DataFrame(list(zip(programOuts, manualOuts)), columns = ["programOuts", "manualOuts"])
     fileList = dict(zip(programOuts, manualOuts))
     netDiffResult = pd.DataFrame()
@@ -1154,7 +1316,7 @@ def evaluateCytoscapeOutput():
     makeEvaluationPlots(netDiffResult, softwareName="cytoscape")
 
 def evaluateCytoscapeOutput_fairplay():
-    programOuts = ["WP49_cytoscape.graphml", "WP127_cytoscape.graphml", "WP195_cytoscape.graphml", "WP205_cytoscape.graphml", "WP231_cytoscape.graphml", "WP286_cytoscape.graphml", "WP23_cytoscape.graphml"]
+    programOuts = ["WP49_cytoscape.graphml", "WP127_cytoscape.graphml", "WP195_cytoscape.graphml", "WP205_cytoscape.graphml", "WP231_cytoscape.graphml", "WP286_cytoscape.graphml", "WP23_cytoscape.graphml", 'WP4462_cytoscape.graphml', 'WP2038_cytoscape.graphml', 'WP453_cytoscape.graphml', 'WP545_cytoscape.graphml', 'WP306_cytoscape.graphml']
     #Generate edgelists from cytoscape graphmls
     for i in range(len(programOuts)):
         graph = programOuts[i]
@@ -1178,13 +1340,13 @@ def evaluateCytoscapeOutput_fairplay():
                 graph = passThroughUnlabeled(temp, graph)
         nx.write_edgelist(graph, programOuts[i], delimiter="\t", data = ["targetArrows"]) # 
         #print(programOuts[i])
-        tempDF = pd.read_csv(programOuts[i], header=None, sep="\t")
+        tempDF = pd.read_csv(programOuts[i], header=None, sep="\t", escapechar = "\\")
         tempDF.columns = ["Source", "Target", "signal"]
         tempDF.signal = [checkArrow(arrow)[1] for arrow in tempDF["signal"]]
         tempDF.to_csv(programOuts[i], quoting=csv.QUOTE_ALL)
         #print(tempDF)
     
-    manualOuts = ["WP49_edgeList_edited.csv", "WP127_edgeList_edited.csv", "WP195_edgeList_edited.csv", "WP205_edgeList_edited.csv",  "WP231_edgeList_edited.csv",  "WP286_edgeList_edited.csv", "WP23_edgeList_edited.csv"]
+    manualOuts = ["WP49_edgeList_edited.csv", "WP127_edgeList_edited.csv", "WP195_edgeList_edited.csv", "WP205_edgeList_edited.csv",  "WP231_edgeList_edited.csv",  "WP286_edgeList_edited.csv", "WP23_edgeList_edited.csv", 'WP4462_edgeList_edited.csv', 'WP2038_edgeList_edited.csv', 'WP453_edgeList_edited.csv', 'WP545_edgelist_edited.csv', 'WP306_edgelist_edited.csv']
     fileNames = pd.DataFrame(list(zip(programOuts, manualOuts)), columns = ["programOuts", "manualOuts"])
     fileList = dict(zip(programOuts, manualOuts))
     netDiffResult = pd.DataFrame()
@@ -1293,9 +1455,9 @@ def testToyPathways():
 def makeComparisonPlots():
     cytoscape = pd.read_csv("netDiffResult_cytoscape.tsv", sep= "\t", index_col=0)
     cytoscape["Method"] = "cytoscape"
-    #cytoscapeFairplay = pd.read_csv("netDiffResult_cytoscape_fairplay.tsv", sep= "\t", index_col=0)
+    #cytoscapeFairplay = pd.read_csv("netDiffResult_cytoscape_fairplay.tsv", sep= "\t", index_col=0, escapechar = "\\")
     #cytoscapeFairplay["Method"] = "cytoscape_fairplay"
-    wikinetworks = pd.read_csv("netDiffResult_wikinetworks.tsv", sep= "\t", index_col=0)
+    wikinetworks = pd.read_csv("netDiffResult_wikinetworks.tsv", sep= "\t", index_col=0, escapechar = "\\")
     wikinetworks["Method"] = "wikinetworks"
     combinedDF =  pd.concat([wikinetworks, cytoscape]) #, cytoscapeFairplay])
     #combinedDF["propTrueEdges"] = [100*temp for temp in combinedDF["propTrueEdges"]]
