@@ -1,0 +1,20 @@
+[build-system]
+requires = [
+    "setuptools>=57.4.0",
+    "wheel>=0.37.0",
+    "networkx>=2.5",
+    "beautifulsoup4>=4",
+    "requests>=2",
+    "bioservices>=1.7",
+    "numpy>=1.19",
+    "shapely>=1.7",
+    "scipy>=1.5",
+    "pandas>=1.1",
+    "fiona>=1.8",
+    "pyproj>=3",
+    "rtree>=0.9",
+    "geopandas>=0.9",
+    "matplotlib>=3",
+    "seaborn>=0.11.1"
+]
+build-backend = "setuptools.build_meta"
