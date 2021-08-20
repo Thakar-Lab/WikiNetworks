@@ -7,12 +7,6 @@ This tutorial demonstrates the use of the WikiNetworks package to download and p
 ### <font color='red'>Install WikiNetworks</font>  
 
 **WikiNetworks requires Python 3.6 or newer.**
-
-With conda:
-    
-    conda wikinetworks create -f wikinetworks.yml
-    conda activate wikinetworks
-    conda install wikinetworks
     
 With pip:
 
