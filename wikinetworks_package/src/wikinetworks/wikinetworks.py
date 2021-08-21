@@ -892,22 +892,11 @@ def runParsePathway(s, pathwayID):
     featureDFs = getFeatureDFs(featureList)
     #pipeline
     featureDFs['interactDF'] = mapEndPoints(featureDFs)
-    #featureDFs['interactDF'].to_csv('temp2interact.csv')
-    #featureDFs['interactDF'] = mapPointsToInteractions(featureDFs, featureList)
-    #featureDFs['interactDF'].to_csv('temp3interact.csv')
     featureDFs['interactDF'] = processInteractDF(featureDFs, featureList)
     featureDFs['interactDF'].to_csv('temp4interact.csv')
-    #tests
-    #with pd.option_context('display.max_rows', None, 'display.max_columns', None):  # more options can be specified also
-    #    print("TEST2", featureDFs['interactDF']['matched_Node1'][featureDFs['interactDF']['edgeID'] == "e601a"], featureDFs['interactDF']['matched_Node2'][featureDFs['interactDF']['edgeID'] == "e601a"])
-    #    print("***")
-    #make diagnostic plots
-    makeMatchedDistHist(featureDFs, pathwayID)
-    makeEndPointBarPlot(featureDFs, pathwayID)
     #write out graphml
     graph = makeGraph(featureDFs, featureList)
     featureDFs['interactDF'].columns = ['Color' if x=='color' else x for x in featureDFs['interactDF'].columns]
-    #print(set(list(graph.nodes)))
     #write out edgelist
     featureDFs['interactDF'].to_csv('_'.join([pathwayID, "interactDF.csv"]))
     featureDFs['datanodeDF'].to_csv('_'.join([pathwayID, "datanodeDF.csv"]))
