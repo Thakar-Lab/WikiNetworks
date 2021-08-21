@@ -9,3 +9,5 @@ WikiNetworks is written entirely in Python and is available on github.com/Thakar
 Juilee_Thakar@URMC.Rochester.edu; Mukta_Palshikar@URMC.Rochester.edu
 ## Bug Tracker:
 https://github.com/Thakar-Lab/WikiNetworks/issues
+## Tutorials:
+https://github.com/Thakar-Lab/WikiNetworks/tree/main/Tutorials
