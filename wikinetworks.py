@@ -893,7 +893,6 @@ def runParsePathway(s, pathwayID):
     #pipeline
     featureDFs['interactDF'] = mapEndPoints(featureDFs)
     featureDFs['interactDF'] = processInteractDF(featureDFs, featureList)
-    featureDFs['interactDF'].to_csv('temp4interact.csv')
     #write out graphml
     graph = makeGraph(featureDFs, featureList)
     featureDFs['interactDF'].columns = ['Color' if x=='color' else x for x in featureDFs['interactDF'].columns]
