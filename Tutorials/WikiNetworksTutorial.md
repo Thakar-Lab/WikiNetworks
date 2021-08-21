@@ -7,7 +7,7 @@ This tutorial demonstrates the use of the WikiNetworks package to download and p
 ### <font color='red'>Install WikiNetworks</font>  
 
 **WikiNetworks requires Python 3.6 or newer.**
-    
+
 With pip:
 
     pip install --upgrade wikinetworks
@@ -19,7 +19,6 @@ With pip:
 from wikinetworks import *
 ```
 
-
 ### <font color='red'> Create an instance of the WikiPathways database using the bioservices package</font>  
 
 
@@ -27,6 +26,9 @@ from wikinetworks import *
 __all__ = ["WikiPathways"]
 s = WikiPathways()
 ```
+
+    WARNING [bioservices:WikiPathways]:  URL of the services contains a double //.Check your URL and remove trailing /
+
 
 ### <font color='red'>Specify the pathways from WikiPathways that you wish to convert into networks. </font>  
 Wikipathways entries are specified by Wikipathways ID - you can find this ID in the URL for the pathway of interest.
@@ -49,8 +51,12 @@ pathID = "WP4"
 
 
 ```python
-curationTagsDict = getCurationTags(s, pathID) 
+curationTagsDict = getCurationTags(s, pathID)
+print(curationTagsDict)
 ```
+
+    {'tags': [{'name': 'Curation:Tutorial', 'displayName': 'Test pathway', 'pathway': {'id': 'WP4', 'url': 'https://www.wikipathways.org/index.php/Pathway:WP4', 'name': 'Sandbox pathway test', 'species': 'Homo sapiens', 'revision': '119193'}, 'revision': None, 'text': '', 'timeModified': '20170121205948', 'userModified': 'AlexanderPico'}, {'name': 'Curation:MissingXRef', 'displayName': 'Annotate nodes', 'pathway': {'id': 'WP4', 'url': 'https://www.wikipathways.org/index.php/Pathway:WP4', 'name': 'Sandbox pathway test', 'species': 'Homo sapiens', 'revision': '119193'}, 'revision': None, 'text': '3 out of 14 DataNodes have a missing external reference. Check DataNode table at the bottom of the page.', 'timeModified': '20200727110051', 'userModified': 'MaintBot'}, {'name': 'Curation:NoInteractions', 'displayName': 'Fix interactions', 'pathway': {'id': 'WP4', 'url': 'https://www.wikipathways.org/index.php/Pathway:WP4', 'name': 'Sandbox pathway test', 'species': 'Homo sapiens', 'revision': '119193'}, 'revision': None, 'text': '2 out of 11 lines are not properly connected.', 'timeModified': '20190924090150', 'userModified': 'MaintBot'}]}
+
 
 #### <font color='red'>Print pathway and curation information</font>
 
@@ -60,6 +66,42 @@ curationTagsDict = getCurationTags(s, pathID)
 ```python
 processCurationTags(curationTagsDict)
 ```
+
+    
+    ***PATHWAY INFORMATION***
+    
+    Name:  Curation:Tutorial 
+    
+    Display Name:  Test pathway 
+    
+    id: WP4
+    
+    url: https://www.wikipathways.org/index.php/Pathway:WP4
+    
+    name: Sandbox pathway test
+    
+    species: Homo sapiens
+    
+    revision: 119193
+    
+    
+    ***CURATION WARNINGS:***
+    
+    
+    ***CURATION TAG 1***
+    
+    Name: Curation:MissingXRef
+    Display Name: Annotate nodes
+    Description: 3 out of 14 DataNodes have a missing external reference. Check DataNode table at the bottom of the page.
+    
+    ***CURATION TAG 2***
+    
+    Name: Curation:NoInteractions
+    Display Name: Fix interactions
+    Description: 2 out of 11 lines are not properly connected.
+    *********
+    
+
 
 ### <font color='red'>Download and process pathways into networks</font> 
 
@@ -73,6 +115,9 @@ This is the driver function for the WikiNetworks processing algorithm. This func
 graph = runParsePathway(s, pathID)
 ```
 
+    WARNING [bioservices:WikiPathways]:  URL of the services contains a double //.Check your URL and remove trailing /
+
+
 #### <font color='red'>Print basic network statistics</font> 
 
 Print the number of nodes and edges in the network.
@@ -83,6 +128,10 @@ print("Nodes:", len(graph.nodes())) #print number of nodes in the pathway
 print("Edges:", len(graph.edges())) #print number of edges in the pathway
 ```
 
+    Nodes: 13
+    Edges: 18
+
+
 #### <font color='red'>Print the names of the output files </font> 
 
 
@@ -90,6 +139,10 @@ print("Edges:", len(graph.edges())) #print number of edges in the pathway
 print("SIF graph:", '_'.join([pathID, "edgeList.csv"])) #location of the edgelist file. SIF = simple interaction format
 print("Graphml: ", ''.join([pathID, "_graph.graphml"])) #location of the graphml file
 ```
+
+    SIF graph: WP4_edgeList.csv
+    Graphml:  WP4_graph.graphml
+
 
 ### <font color='red'>Download and process multiple pathways into networks</font>
 
@@ -110,3 +163,134 @@ for pathID in testPathways:
     print("**********\n")
 
 ```
+
+    
+    ***PATHWAY INFORMATION***
+    
+    Name:  Curation:Tutorial 
+    
+    Display Name:  Test pathway 
+    
+    id: WP4
+    
+    url: https://www.wikipathways.org/index.php/Pathway:WP4
+    
+    name: Sandbox pathway test
+    
+    species: Homo sapiens
+    
+    revision: 119193
+    
+    
+    ***CURATION WARNINGS:***
+    
+    
+    ***CURATION TAG 1***
+    
+    Name: Curation:MissingXRef
+    Display Name: Annotate nodes
+    Description: 3 out of 14 DataNodes have a missing external reference. Check DataNode table at the bottom of the page.
+    
+    ***CURATION TAG 2***
+    
+    Name: Curation:NoInteractions
+    Display Name: Fix interactions
+    Description: 2 out of 11 lines are not properly connected.
+    *********
+    
+
+
+    WARNING [bioservices:WikiPathways]:  URL of the services contains a double //.Check your URL and remove trailing /
+
+
+    Nodes: 13
+    Edges: 18
+    SIF graph: WP4_edgeList.csv
+    Graphml:  WP4_graph.graphml
+    **********
+    
+    
+    ***PATHWAY INFORMATION***
+    
+    Name:  Curation:Reactome_Approved 
+    
+    Display Name:  Community: Reactome 
+    
+    id: WP2727
+    
+    url: https://www.wikipathways.org/index.php/Pathway:WP2727
+    
+    name: Cellular response to hypoxia
+    
+    species: Homo sapiens
+    
+    revision: 114982
+    
+    
+    ***CURATION WARNINGS:***
+    
+    
+    ***CURATION TAG 1***
+    
+    Name: Curation:NoInteractions
+    Display Name: Fix interactions
+    Description: 20 out of 114 lines are not properly connected.
+    *********
+    
+
+
+    WARNING [bioservices:WikiPathways]:  URL of the services contains a double //.Check your URL and remove trailing /
+
+
+    Nodes: 124
+    Edges: 3121
+    SIF graph: WP2727_edgeList.csv
+    Graphml:  WP2727_graph.graphml
+    **********
+    
+    
+    ***PATHWAY INFORMATION***
+    
+    Name:  Curation:AnalysisCollection 
+    
+    Display Name:  Approved version 
+    
+    id: WP2456
+    
+    url: https://www.wikipathways.org/index.php/Pathway:WP2456
+    
+    name: HIF1A and PPARG regulation of glycolysis
+    
+    species: Homo sapiens
+    
+    revision: 119185
+    
+    
+    ***CURATION WARNINGS:***
+    
+    
+    ***CURATION TAG 1***
+    
+    Name: Curation:NeedsReference
+    Display Name: Add references
+    Description: 
+    
+    ***CURATION TAG 2***
+    
+    Name: Curation:NeedsWork
+    Display Name: Needs work
+    Description: 
+    *********
+    
+
+
+    WARNING [bioservices:WikiPathways]:  URL of the services contains a double //.Check your URL and remove trailing /
+
+
+    Nodes: 19
+    Edges: 23
+    SIF graph: WP2456_edgeList.csv
+    Graphml:  WP2456_graph.graphml
+    **********
+    
+
