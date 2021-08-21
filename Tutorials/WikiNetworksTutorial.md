@@ -40,7 +40,7 @@ Note that the pathway ID is the first element in a list, and is *not* specified 
 
 
 ```python
-pathID = ["WP4"]
+pathID = "WP4"
 ```
 
 ### <font color='red'>Download and view the curation tags for the pathway of interest</font>   
