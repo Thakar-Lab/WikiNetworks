@@ -45,7 +45,7 @@ s = WikiPathways()
 # In[ ]:
 
 
-pathID = ["WP4"]
+pathID = "WP4"
 
 
 # ### <font color='red'>Download and view the curation tags for the pathway of interest</font>   
