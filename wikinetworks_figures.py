@@ -252,6 +252,8 @@ def evaluateCytoscapeOutput():
     #Generate edgelists from cytoscape graphmls
     for i in range(0, len(programOuts)):
         graph = programOuts[i]
+        print("Graph: ")
+        print(graph)
         programOuts[i] = str(graph)[:-8]+".csv"
         graph = nx.read_graphml(graph)
         nodeNames = nx.get_node_attributes(graph,"name") 
@@ -527,9 +529,9 @@ if __name__ == '__main__':
     __all__ = ["WikiPathways"]
     pd.set_option('display.max_colwidth', None)
     pd.set_option('display.max_rows', 10000)
-
+    
     s=WikiPathways()
-    testPathways = ['WP4482', 'WP3935', 'WP4868', 'WP49', 'WP127', 'WP195', 'WP205', 'WP231', 'WP286', 'WP23', 'WP4462', 'WP2038', 'WP453', 'WP545', 'WP306'] #['WP254', 'WP23', "WP4495", "WP437",  "WP4495", "WP195", "WP49", "WP286", "WP395", "WP127", "WP364", "WP205", "WP231", "WP366"] # "WP1835", "WP1840",  "WP1919", "WP1836",
+    testPathways = ['WP4482', 'WP3935', 'WP4868', 'WP49', 'WP127', 'WP195', 'WP205', 'WP231', 'WP286', 'WP23', 'WP4462', 'WP2038', 'WP453', 'WP545', 'WP306'] 
     
     for pathID in testPathways:
         graph = runParsePathway(s, pathID)
@@ -539,12 +541,9 @@ if __name__ == '__main__':
         print("Graphml: ", ''.join([pathID, "_graph.graphml"]))
         print("***")
     
-    #unitTest("WP4482_112969.gpml", "WP4482")
-    #testToyPathways()
-    
     evaluateProgramOutput()
+    
     evaluateCytoscapeOutput()
-    #evaluateCytoscapeOutput_fairplay()    
     makeComparisonPlots()
     compareCytoscapeWithProgramOutput()
     createCombinedEdgelists()
