@@ -1,4 +1,4 @@
-![PyPI - Python Version](https://img.shields.io/pypi/pyversions/wikinetworks?style=for-the-badge) ![GitHub last commit](https://img.shields.io/github/last-commit/Thakar-Lab/WikiNetworks?style=for-the-badge)
+![PyPI - Python Version](https://img.shields.io/pypi/pyversions/wikinetworks?style=for-the-badge) ![PyPI](https://img.shields.io/pypi/v/wikinetworks?style=for-the-badge) ![GitHub last commit](https://img.shields.io/github/last-commit/Thakar-Lab/WikiNetworks?style=for-the-badge)
 
 # WikiNetworks
 WikiNetworks is a user-friendly Python package to process pathways from the WikiPathways database into machine-readable network representations.
