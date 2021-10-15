@@ -23,14 +23,14 @@ https://github.com/Thakar-Lab/WikiNetworks/issues
 ## Tutorials:
 https://github.com/Thakar-Lab/WikiNetworks/tree/main/Tutorials
 ## Basic Usage:
-### <font color='red'>Import all functions from wikinetworks</font>   
+### Import all functions from wikinetworks
 
 
 ```python
 from wikinetworks import *
 ```
 
-### <font color='red'> Create an instance of the WikiPathways database using the bioservices package</font>  
+### Create an instance of the WikiPathways database using the bioservices package
 
 
 ```python
@@ -41,11 +41,8 @@ s = WikiPathways()
     WARNING [bioservices:WikiPathways]:  URL of the services contains a double //.Check your URL and remove trailing /
 
 
-### <font color='red'>Specify the pathways from WikiPathways that you wish to convert into networks. </font>  
+### Specify the pathways from WikiPathways that you wish to convert into networks.
 Wikipathways entries are specified by Wikipathways ID - you can find this ID in the URL for the pathway of interest.
-
-For example, the URL for the Apoptosis (*Homo sapiens*) pathway is https://www.wikipathways.org/index.php/Pathway:WP254 and the Wikipathways ID for this pathway is WP254. The ID begins with 'WP' and is followed by a string of digits.
-
 
 Here, we select the Sandbox pathway test https://www.wikipathways.org/index.php/Pathway:WP4 to demonstrate WikiNetworks' functionality.
 
@@ -56,7 +53,7 @@ Note that the pathway ID is the first element in a list, and is *not* specified 
 pathID = "WP4"
 ```
 
-### <font color='red'>Download and process pathways into networks</font> 
+### Download and process pathways into networks
 
 This is the driver function for the WikiNetworks processing algorithm. This function downloads GPML files for the requested pathway(s) from WikiPathways, processes the pathway into a network and attempts to correct drawing errors, and finally outputs the network as:
 1. a NetworkX digraph object that can be used for downstream programmatic applications, 
