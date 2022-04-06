@@ -9,7 +9,7 @@ The WikiNetworks software reconstructs networks from these pathways by combining
 WikiNetworks is written entirely in Python and is available on github.com/Thakar-Lab and on pip. Tested for use with Python 3.7 in Windows and Linux environments.
 ## Citation:
 
-Mukta G Palshikar, Shannon P Hilchey, Martin S Zand, Juilee Thakar, WikiNetworks: translating manually created biological pathways for topological analysis, Bioinformatics, Volume 38, Issue 3, 1 February 2022, Pages 869–871, [DOI](https://doi.org/10.1093/bioinformatics/btab699). PMID: [34636843](https://pubmed.ncbi.nlm.nih.gov/34636843/)
+Mukta G Palshikar, Shannon P Hilchey, Martin S Zand, Juilee Thakar, __WikiNetworks: translating manually created biological pathways for topological analysis__, Bioinformatics, Volume 38, Issue 3, 1 February 2022, Pages 869–871, [DOI](https://doi.org/10.1093/bioinformatics/btab699). PMID: [34636843](https://pubmed.ncbi.nlm.nih.gov/34636843/)
 
 ## Installation Instructions
 
