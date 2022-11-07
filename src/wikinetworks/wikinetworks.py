@@ -375,7 +375,7 @@ def getInteractionLoc(featureList):
                 )
                 temp = temp.to_dict()
                 temp["node1_graphref"] = newNode
-                edgesWithAnchors2 = edgesWithAnchors2.append(temp, ignore_index=True)
+                edgesWithAnchors2 =edgesWithAnchors2.append(temp, ignore_index=True)
     interactDF = pd.concat([interactDF, edgesWithAnchors2], ignore_index=True)
     """
     mask = [0 for i in range(0, len(interactDF))]
@@ -433,12 +433,12 @@ def joinGroups(nodeDF, interactDF):
                                 graphid,
                                 groupRef,
                                 node1_graphref,
-                                node1_x,
-                                node1_y,
+                                node1_x.tolist()[0],
+                                node1_y.tolist()[0],
                                 node1_coords,
                                 node2_graphref,
-                                node2_x,
-                                node2_y,
+                                node2_x.tolist()[0],
+                                node2_y.tolist()[0],
                                 node2_coords,
                                 arrow,
                                 geometry,
